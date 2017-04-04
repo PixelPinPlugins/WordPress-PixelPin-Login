@@ -179,9 +179,7 @@ function wsl_add_plugin_row_meta( $links, $file )
 	if( $file == $this_plugin )
 	{
 		$wsl_links = array(
-			'<a href="http://miled.github.io/wordpress-pixelpin-login/">'             . _wsl__( "Docs"             , 'wordpress-pixelpin-login' ) . '</a>',
-			'<a href="http://miled.github.io/wordpress-pixelpin-login/support.html">' . _wsl__( "Support"          , 'wordpress-pixelpin-login' ) . '</a>',
-			'<a href="https://github.com/miled/wordpress-pixelpin-login">'            . _wsl__( "Fork me on Github", 'wordpress-pixelpin-login' ) . '</a>',
+
 		);
 
 		return array_merge( $links, $wsl_links );

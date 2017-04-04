@@ -400,15 +400,6 @@ function wsl_admin_welcome_panel()
 					<li><a href="http://miled.github.io/wordpress-pixelpin-login/documentation.html" target="_blank"><?php _wsl_e('WSL Developer API', 'wordpress-pixelpin-login') ?></a></li>
 				</ul>
 			</td>
-			<td width="" valign="top">
-				<br />
-				<p>
-					<b><?php echo sprintf( _wsl__( "What's new on WSL %s", 'wordpress-pixelpin-login'), wsl_get_version() ) ?></b>
-				</p>
-
-				<ul style="margin-left:25px;">
-				</ul>
-			</td>
 		</tr>
 		<tr id="wsl-w-panel-updates-tr">
 			<td colspan="5" style="border-top:1px solid #ccc;" id="wsl-w-panel-updates-td">
