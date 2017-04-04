@@ -19,9 +19,9 @@ class Hybrid_Providers_PixelPin extends Hybrid_Provider_Model_OAuth2
 	{
 		parent::initialize();
 
-		$this->api->api_base_url  = "https://logincallum.pixelpin.co.uk/connect/";
-		$this->api->authorize_url = "https://logincallum.pixelpin.co.uk/connect/authorize";
-		$this->api->token_url     = "https://logincallum.pixelpin.co.uk/connect/token"; 
+		$this->api->api_base_url  = "https://login.pixelpin.io/connect/";
+		$this->api->authorize_url = "https://login.pixelpin.io/connect/authorize";
+		$this->api->token_url     = "https://login.pixelpin.io/connect/token"; 
 
 		$this->api->sign_token_name = "access_token";
 		$this->scope = "email openid profile address phone";

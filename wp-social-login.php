@@ -1,11 +1,11 @@
 <?php
 /*
 Plugin Name: WordPress PixelPin Login
-Plugin URI: http://miled.github.io/wordpress-pixelpin-login/
+Plugin URI: http://developer.pixelpin.io/ppwordpress.php
 Description: Allow your visitors to comment and login with pixelpin.
-Version: 2.3.0
-Author: Miled
-Author URI: https://github.com/miled
+Version: 1.0.0
+Author: PixelPin Plugins
+Author URI: https://github.com/PixelPinPlugins
 License: MIT License
 Text Domain: wordpress-pixelpin-login
 Domain Path: /languages

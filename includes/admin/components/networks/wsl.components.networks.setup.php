@@ -131,7 +131,7 @@ function wsl_component_networks_setup()
 									<option value="0" <?php if( ! get_option( 'wsl_settings_' . $provider_id . '_enabled' ) ) echo "selected"; ?> ><?php _wsl_e("No", 'wordpress-pixelpin-login') ?></option>
 								</select>
 							</td>
-							<td style="width:160px">&nbsp;</td>
+							<td style="width:260px">&nbsp;</td>
 						</tr>
 
 						<?php if ( $provider_new_app_link ){ ?>
@@ -139,13 +139,13 @@ function wsl_component_networks_setup()
 								<tr valign="top" <?php if( ! get_option( 'wsl_settings_' . $provider_id . '_enabled' ) ) echo 'style="display:none"'; ?> class="wsl_tr_settings_<?php echo $provider_id; ?>" >
 									<td><?php _wsl_e("Client ID", 'wordpress-pixelpin-login') ?>:</td>
 									<td><input dir="ltr" type="text" name="<?php echo 'wsl_settings_' . $provider_id . '_app_id' ?>" value="<?php echo get_option( 'wsl_settings_' . $provider_id . '_app_id' ); ?>" ></td>
-									<td><a href="javascript:void(0)" onClick="toggleproviderhelp('<?php echo $provider_id; ?>')"><?php _wsl_e("Where do I get this info?", 'wordpress-pixelpin-login') ?></a></td>
+									<td><a href="http://developer.pixelpin.io/developeraccount.php" target="_blank">Need A Client ID? Create a PixelPin Developer Account.</a></td>
 								</tr>
 							<?php } else { ?>
 								<tr valign="top" <?php if( ! get_option( 'wsl_settings_' . $provider_id . '_enabled' ) ) echo 'style="display:none"'; ?> class="wsl_tr_settings_<?php echo $provider_id; ?>" >
 									<td><?php _wsl_e("Client Key", 'wordpress-pixelpin-login') ?>:</td>
 									<td><input dir="ltr" type="text" name="<?php echo 'wsl_settings_' . $provider_id . '_app_key' ?>" value="<?php echo get_option( 'wsl_settings_' . $provider_id . '_app_key' ); ?>" ></td>
-									<td><a href="javascript:void(0)" onClick="toggleproviderhelp('<?php echo $provider_id; ?>')"><?php _wsl_e("Where do I get this info?", 'wordpress-pixelpin-login') ?></a></td>
+									<td><a href="http://developer.pixelpin.io/developeraccount.php" target="_blank">Need A Client ID? Create a PixelPin Developer Account.</a></td>
 								</tr>
 							<?php }; ?>
 
@@ -153,7 +153,7 @@ function wsl_component_networks_setup()
 								<tr valign="top" <?php if( ! get_option( 'wsl_settings_' . $provider_id . '_enabled' ) ) echo 'style="display:none"'; ?> class="wsl_tr_settings_<?php echo $provider_id; ?>" >
 									<td><?php _wsl_e("Client Secret", 'wordpress-pixelpin-login') ?>:</td>
 									<td><input dir="ltr" type="text" name="<?php echo 'wsl_settings_' . $provider_id . '_app_secret' ?>" value="<?php echo get_option( 'wsl_settings_' . $provider_id . '_app_secret' ); ?>" ></td>
-									<td><a href="javascript:void(0)" onClick="toggleproviderhelp('<?php echo $provider_id; ?>')"><?php _wsl_e("Where do I get this info?", 'wordpress-pixelpin-login') ?></a></td>
+									<td><a href="http://developer.pixelpin.io/developeraccount.php" target="_blank">Need A Client Secret? Create a PixelPin Developer Account.</a></td>
 								</tr>
 							<?php } ?>
 
@@ -218,23 +218,6 @@ function wsl_component_networks_setup()
 					class="wsl_div_settings_help_<?php echo $provider_id; ?>"
 					style="<?php if( isset( $_REQUEST["enable"] ) && ! isset( $_REQUEST["settings-updated"] ) && $_REQUEST["enable"] == $provider_id ) echo "-"; // <= lolz ?>display:none;"
 				>
-					<hr class="wsl" />
-					<?php if (  $provider_id == "Steam" ) : ?>
-					<?php elseif ( $provider_new_app_link  ) : ?>
-						<?php _wsl_e('<span style="color:#CB4B16;">Application</span> id and secret (also sometimes referred as <span style="color:#CB4B16;">Consumer</span> key and secret or <span style="color:#CB4B16;">Client</span> id and secret) are what we call an application credentials', 'wordpress-pixelpin-login') ?>.
-
-						<?php echo sprintf( _wsl__( 'This application will link your website <code>%s</code> to <code>%s API</code> and these credentials are needed in order for <b>%s</b> users to access your website', 'wordpress-pixelpin-login'), $_SERVER["SERVER_NAME"], $provider_name, $provider_name ) ?>.
-						<br />
-
-						<?php _wsl_e("These credentials may also differ in format, name and content depending on the pixelpin network.", 'wordpress-pixelpin-login') ?>
-						<br />
-						<br />
-
-						<?php echo sprintf( _wsl__('To enable authentication with this provider and to register a new <b>%s API Application</b>, follow the steps', 'wordpress-pixelpin-login'), $provider_name ) ?>
-						:<br />
-					<?php else: ?>
-							<p><?php echo sprintf( _wsl__('<b>Done.</b> Nothing more required for <b>%s</b>', 'wordpress-pixelpin-login'), $provider_name) ?>.</p>
-					<?php endif; ?>
 				</div>
 			</div>
 		</div>

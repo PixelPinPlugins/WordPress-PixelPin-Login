@@ -295,15 +295,16 @@ function wsl_component_loginwidget_setup_custom_css()
 
 		<pre class="prettyprint linenums" dir="ltr">
 		<?php ob_start() ?>
-		<div class="wp-pixelpin-login-widget">
-			<div class="wp-pixelpin-login-connect-with">{connect_with_caption}</div>
-			<div class="wp-pixelpin-login-provider-list">
-				<a class="wp-pixelpin-login-provider wp-pixelpin-login-provider-pixelpin">
-		            <img src="{provider_icon_pixelpin}" />
-		        </a>
-			</div>
-			<div class="wp-pixelpin-login-widget-clearing"></div>
+
+<div class="wp-pixelpin-login-widget">
+	<div class="wp-pixelpin-login-connect-with">{connect_with_caption}</div>
+		<div class="wp-pixelpin-login-provider-list">
+			<a class="wp-pixelpin-login-provider wp-pixelpin-login-provider-pixelpin">
+		        <img src="{provider_icon_pixelpin}" />
+		    </a>
 		</div>
+	<div class="wp-pixelpin-login-widget-clearing"></div>
+</div>
 
 		<?php $code = ob_get_clean();
 		echo htmlspecialchars($code);
