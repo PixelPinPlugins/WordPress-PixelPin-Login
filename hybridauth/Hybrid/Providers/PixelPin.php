@@ -24,7 +24,7 @@ class Hybrid_Providers_PixelPin extends Hybrid_Provider_Model_OAuth2
 		$this->api->token_url     = "https://login.pixelpin.io/connect/token"; 
 
 		$this->api->sign_token_name = "access_token";
-		$this->scope = "email openid profile address phone";
+		$this->scope = "openid email profile address phone";
 	}
 
 	public function request( $url, $params = array(), $type="GET", $http_headers = null )
@@ -102,7 +102,7 @@ class Hybrid_Providers_PixelPin extends Hybrid_Provider_Model_OAuth2
 		$parameters[$this->api->sign_token_name] = $this->api->access_token;
 		
 		$response = null;
-		$response = $this->request( "https://logincallum.pixelpin.co.uk/connect/userinfo", $parameters, "POST", $http_headers );
+		$response = $this->request( "https://login.pixelpin.io/connect/userinfo", $parameters, "POST", $http_headers );
 		if( $response && $this->api->decode_json ){
 			$response = json_decode( $response ); 
 		}
