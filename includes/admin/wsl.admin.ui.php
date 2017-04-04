@@ -390,7 +390,7 @@ function wsl_admin_welcome_panel()
 			<td width="260" valign="top">
 				<br />
 				<p>
-					<b><?php _wsl_e("WordPress PixelPin Login - Get Started", 'wordpress-pixelpin-login') ?></b>
+					<b><?php _wsl_e("WordPress Social Login - Get Started", 'wordpress-pixelpin-login') ?></b>
 				</p>
 				<ul style="margin-left:25px;">
 					<li><a href="http://miled.github.io/wordpress-pixelpin-login/overview.html" target="_blank"><?php _wsl_e('Plugin Overview', 'wordpress-pixelpin-login') ?></a></li>
