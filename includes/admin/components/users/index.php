@@ -15,27 +15,27 @@ if ( !defined( 'ABSPATH' ) ) exit;
 
 // --------------------------------------------------------------------
 
-function wsl_component_users()
+function wpl_component_users()
 {
 	// HOOKABLE: 
-	do_action( "wsl_component_users_start" );
+	do_action( "wpl_component_users_start" );
 
-	include "wsl.components.users.list.php";
-	include "wsl.components.users.profiles.php";
+	include "wpl.components.users.list.php";
+	include "wpl.components.users.profiles.php";
 
 	if( isset( $_REQUEST["uid"] ) && $_REQUEST["uid"] ){
 		$user_id = (int) $_REQUEST["uid"];
 
-		wsl_component_users_profiles( $user_id );
+		wpl_component_users_profiles( $user_id );
 	}
 	else{
-		wsl_component_users_list();
+		wpl_component_users_list();
 	}
 
 	// HOOKABLE: 
-	do_action( "wsl_component_users_end" );
+	do_action( "wpl_component_users_end" );
 }
 
-wsl_component_users();
+wpl_component_users();
 
 // --------------------------------------------------------------------	

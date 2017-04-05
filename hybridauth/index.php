@@ -2,7 +2,7 @@
 /*!
 * WordPress PixelPin Login
 *
-* http://hybridauth.sourceforge.net/wsl/index.html | http://github.com/hybridauth/WordPress-PixelPin-Login
+* http://hybridauth.sourceforge.net/wpl/index.html | http://github.com/hybridauth/WordPress-PixelPin-Login
 *    (c) 2011-2014 Mohamed Mrassi and contributors | http://wordpress.org/extend/plugins/wordpress-pixelpin-login/
 */
 
@@ -16,8 +16,8 @@
 * <code>
 *    include_once( '/path/to/file/wp-load.php' );
 *    define( 'WORDPRESS_PIXELPIN_LOGIN_DEBUG_API_CALLS', true );
-*    add_action( 'wsl_log_provider_api_call', 'wsl_watchdog_wsl_log_provider_api_call', 10, 8 );
-*    do_action( 'wsl_log_provider_api_call', 'ENDPOINT', 'Hybridauth://endpoint', null, null, null, null, $_SERVER["QUERY_STRING"] );
+*    add_action( 'wpl_log_provider_api_call', 'wpl_watchdog_wpl_log_provider_api_call', 10, 8 );
+*    do_action( 'wpl_log_provider_api_call', 'ENDPOINT', 'Hybridauth://endpoint', null, null, null, null, $_SERVER["QUERY_STRING"] );
 * </code>
 */
 

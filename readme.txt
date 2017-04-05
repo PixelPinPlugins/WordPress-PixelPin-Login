@@ -78,7 +78,7 @@ The user guide and frequently asked questions can be found at http://miled.githu
 * Widget shortcode arguments.
 * Added new translations.
 * Fix email confirmation in WSL.
-* Small fix for error when merging wsl users with wp users.
+* Small fix for error when merging wpl users with wp users.
 * Remove hardcoded plugin directories.
 * Reduice Twitch TV requested permissions.
 
@@ -112,13 +112,13 @@ http://miled.github.io/wordpress-pixelpin-login/developer-api-authentication.htm
 http://miled.github.io/wordpress-pixelpin-login/developer-api-widget.html
 http://miled.github.io/wordpress-pixelpin-login/developer-api-functions.html
 
-On this release we have reworked Steam provider to fully support their new Web API, and we decided to change Steam's users identifiers to SteamID64. When updated, WSL 2.2.3 will automatically convert all the existing steam users identifiers in wslusersprofiles to the new format.
+On this release we have reworked Steam provider to fully support their new Web API, and we decided to change Steam's users identifiers to SteamID64. When updated, WSL 2.2.3 will automatically convert all the existing steam users identifiers in wplusersprofiles to the new format.
 
 It's worth mentioning that in upcoming releases and before we hit WSL 3.0, we're planning to rework other parts of the codebase; for instance user database functions will be re-factored using an ORM, and profile completion will be replaced by new module.
 
 We explicitly discourage you from using, or hacking, any internal function (i.e., Not publicly documented on WSL dev API), as they are now subject to change in subsequent releases. If it wasn't possible to achieve some required functionality in a proper way through the already available and documented WSL hooks, please ask for support before resorting to hacks.
 
-Upon reaching WSL 3.0 as a major milestone, our priorities will flip to maintenance and stability (i.e, repair code health, enhance code coverage) rather than developing new features. This massive rewrite aims to make WSL more modular easily extended through plugins and add-ons (e.g., http://miled.github.io/wsl-users-converter/).
+Upon reaching WSL 3.0 as a major milestone, our priorities will flip to maintenance and stability (i.e, repair code health, enhance code coverage) rather than developing new features. This massive rewrite aims to make WSL more modular easily extended through plugins and add-ons (e.g., http://miled.github.io/wpl-users-converter/).
 
 <strong>List of changes</strong>
 
@@ -143,19 +143,19 @@ Upon reaching WSL 3.0 as a major milestone, our priorities will flip to maintena
 * Added "Uninstall" under Tools tab.
 * Added new hooks in the authentication widget and auth process.
 * Made WSL more RTL friendly.
-* Added 403 pages under wsl folders (silence is.. highly overrated).
-* PHP file wsl.auth.widget.php renamed to wsl.auth.widgets.php
-* Function wsl_render_login_form() renamed to wsl_render_auth_widget()
-* wsl_user_custom_avatar and wsl_bp_user_custom_avatar are now pluggable and can be redefined.
-* wsl_render_notice_page and wsl_render_error_page has slightly changed.
-* Fix a critical issue found on WSL 2.2.2 with wslusersprofiles.
+* Added 403 pages under wpl folders (silence is.. highly overrated).
+* PHP file wpl.auth.widget.php renamed to wpl.auth.widgets.php
+* Function wpl_render_login_form() renamed to wpl_render_auth_widget()
+* wpl_user_custom_avatar and wpl_bp_user_custom_avatar are now pluggable and can be redefined.
+* wpl_render_notice_page and wpl_render_error_page has slightly changed.
+* Fix a critical issue found on WSL 2.2.2 with wplusersprofiles.
 * Fix an issue where redirect_to get overwritten in some cases.
 * Fix an issue with redirect_to where the callback url was encoded twice.
 * Fix several stability issues.
 * Added testunit to the project (early version).
 * Deprecated hooks, prior to 2.2.2, have been removed.
 * Deprecated internal functions have been removed.
-* Deprecated css selectors, in wsl widget, have been removed.
+* Deprecated css selectors, in wpl widget, have been removed.
 * Updated the API documentation for WSL authentication process
 * Updated the API documentation for WSL widget generator
 * Updated the API documentation for pluggable WSL functions 
@@ -166,7 +166,7 @@ Upon reaching WSL 3.0 as a major milestone, our priorities will flip to maintena
 
 = 2.2.2 = 
 
-* Fix an issue where wsl did not display the right user avatar.
+* Fix an issue where wpl did not display the right user avatar.
 * Fix an issue where providers icons wasn't showing in sites using https.
 * Fix an issue with basic insights, where users counts by age wasn't showing.
 * Add WordPress to list of supported provider.
@@ -177,7 +177,7 @@ Upon reaching WSL 3.0 as a major milestone, our priorities will flip to maintena
 * WSL is now updated to work with the latest apis changes of the supported pixelpin networks.
 * WSL Widget is now more flexible than before and can be fully customized to fit you website theme.
 * Introducing new providers : Reddit, Disqus and PixelPin.
-* WSL Hooks has been reworked and few hooks have been depreciated in favour of new ones. For more information, see: http://hybridauth.sourceforge.net/wsl/developer.html
+* WSL Hooks has been reworked and few hooks have been depreciated in favour of new ones. For more information, see: http://hybridauth.sourceforge.net/wpl/developer.html
 * A number of bugfixes, small enhancements and visual updates.
 
 = 2.1.3 = 

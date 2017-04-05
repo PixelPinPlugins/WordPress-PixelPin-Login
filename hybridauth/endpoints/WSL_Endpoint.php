@@ -95,7 +95,7 @@ class WSL_Hybrid_Endpoint extends Hybrid_Endpoint
 		# This 7 LLOC should be executed only once every three millennium.
 		# It means either : 1. Php Sessions ain't working as expected. 2. A crawler got lost. 3. Someone is having fun forging urls.
 		# If wp-load.php does exists in another directory, change it manually. From now on, you're on your own. Goodbye.
-		display_wsl_error( $code, $message );
+		display_wpl_error( $code, $message );
 
 		$parse_uri = explode( 'wp-content', $_SERVER['SCRIPT_FILENAME'] );
 
@@ -103,9 +103,9 @@ class WSL_Hybrid_Endpoint extends Hybrid_Endpoint
 		{
 			require_once( $parse_uri[0] . 'wp-load.php' );
 
-			if( get_option( 'wsl_settings_development_mode_enabled' ) )
+			if( get_option( 'wpl_settings_development_mode_enabled' ) )
 			{
-				wsl_display_dev_mode_debugging_area();
+				wpl_display_dev_mode_debugging_area();
 			}
 		}
 
@@ -117,7 +117,7 @@ class WSL_Hybrid_Endpoint extends Hybrid_Endpoint
 /**
 * Display a nicer error page.
 */
-function display_wsl_error( $code, $message )
+function display_wpl_error( $code, $message )
 {
 	header( 'HTTP/1.0 '. $code );
 ?>

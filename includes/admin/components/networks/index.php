@@ -15,19 +15,19 @@ if ( !defined( 'ABSPATH' ) ) exit;
 
 // --------------------------------------------------------------------
 
-function wsl_component_networks()
+function wpl_component_networks()
 {
 	// HOOKABLE: 
-	do_action( "wsl_component_networks_start" );
+	do_action( "wpl_component_networks_start" );
 
-	include "wsl.components.networks.setup.php";
-	include "wsl.components.networks.sidebar.php"; 
+	include "wpl.components.networks.setup.php";
+	include "wpl.components.networks.sidebar.php"; 
 
-	wsl_admin_welcome_panel();
+	wpl_admin_welcome_panel();
 ?>
 
-<form method="post" id="wsl_setup_form" action="options.php"> 
-	<?php settings_fields( 'wsl-settings-group' ); ?>
+<form method="post" id="wpl_setup_form" action="options.php"> 
+	<?php settings_fields( 'wpl-settings-group' ); ?>
 
 	<div class="metabox-holder columns-2" id="post-body">
 		<table width="100%"> 
@@ -35,15 +35,15 @@ function wsl_component_networks()
 				<td> 
 					<div id="post-body-content">
 						<?php
-							wsl_component_networks_setup();
+							wpl_component_networks_setup();
 						?>
-						<a name="wslsettings"></a> 
+						<a name="wplsettings"></a> 
 					</div>
 				</td>
 				<td width="10"></td>
 				<td width="400">
 					<?php
-						wsl_component_networks_sidebar();
+						wpl_component_networks_sidebar();
 					?>
 				</td>
 			</tr>
@@ -52,9 +52,9 @@ function wsl_component_networks()
 </form>
 <?php
 	// HOOKABLE: 
-	do_action( "wsl_component_networks_end" );
+	do_action( "wpl_component_networks_end" );
 }
 
-wsl_component_networks();
+wpl_component_networks();
 
 // --------------------------------------------------------------------	

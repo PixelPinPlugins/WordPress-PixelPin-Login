@@ -1,6 +1,6 @@
 WordPress PixelPin Login
 =============
-PixelPin implementation of [Wordpress Social Login](https://github.com/miled/wordpress-social-login)
+PixelPin implementation of [Wordpress Social Login](https://github.com/miled/wordpress-pixelpin-login)
 
 Requirements
 ------------

@@ -18,12 +18,12 @@ class WSL_Test_URL extends WP_UnitTestCase
 		parent::tearDown();
 	}
 
-	function test_wsl_is_https_on()
+	function test_wpl_is_https_on()
 	{
 		$this->assertTrue( true ); // @fixme
 	}
 
-	function test_wsl_get_current_url()
+	function test_wpl_get_current_url()
 	{
 		$this->assertTrue( true ); // @fixme
 	}

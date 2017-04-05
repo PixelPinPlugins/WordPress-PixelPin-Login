@@ -15,26 +15,26 @@ if ( !defined( 'ABSPATH' ) ) exit;
 
 // --------------------------------------------------------------------
 
-function wsl_component_help()
+function wpl_component_help()
 {
 	// HOOKABLE: 
-	do_action( "wsl_component_help_start" ); 
+	do_action( "wpl_component_help_start" ); 
 
-	include "wsl.components.help.reference.php";
-	include "wsl.components.help.sidebar.php";
+	include "wpl.components.help.reference.php";
+	include "wpl.components.help.sidebar.php";
 ?>
 <div class="metabox-holder columns-2" id="post-body">
 	<table width="100%"> 
 		<tr valign="top">
 			<td>
 				<?php
-					wsl_component_help_reference();
+					wpl_component_help_reference();
 				?> 
 			</td>
 			<td width="10"></td>
 			<td width="400">
 				<?php 
-					wsl_component_help_sidebar();
+					wpl_component_help_sidebar();
 				?>
 			</td>
 		</tr>
@@ -42,9 +42,9 @@ function wsl_component_help()
 </div>
 <?php
 	// HOOKABLE: 
-	do_action( "wsl_component_help_end" );
+	do_action( "wpl_component_help_end" );
 }
 
-wsl_component_help();
+wpl_component_help();
 
 // --------------------------------------------------------------------	

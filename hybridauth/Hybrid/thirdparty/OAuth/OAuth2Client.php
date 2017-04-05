@@ -207,7 +207,7 @@ class OAuth2Client
 
 		if( defined( 'WORDPRESS_PIXELPIN_LOGIN_DEBUG_API_CALLS' ) )
 		{
-			do_action( 'wsl_log_provider_api_call', 'OAuth2', $url, $type, $params, $this->http_code, $this->http_info, $response );
+			do_action( 'wpl_log_provider_api_call', 'OAuth2', $url, $type, $params, $this->http_code, $this->http_info, $response );
 		}
 		//-
 

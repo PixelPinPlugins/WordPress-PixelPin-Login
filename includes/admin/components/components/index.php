@@ -15,22 +15,22 @@ if ( !defined( 'ABSPATH' ) ) exit;
 
 // --------------------------------------------------------------------
 
-function wsl_component_help()
+function wpl_component_help()
 {
 	// HOOKABLE: 
-	do_action( "wsl_component_help_start" );
+	do_action( "wpl_component_help_start" );
 
-	include "wsl.components.help.setup.php";
-	include "wsl.components.help.gallery.php";
+	include "wpl.components.help.setup.php";
+	include "wpl.components.help.gallery.php";
 
-	wsl_component_components_setup();
+	wpl_component_components_setup();
 	
-	wsl_component_components_gallery();
+	wpl_component_components_gallery();
 
 	// HOOKABLE: 
-	do_action( "wsl_component_help_end" );
+	do_action( "wpl_component_help_end" );
 }
 
-wsl_component_help();
+wpl_component_help();
 
 // --------------------------------------------------------------------	

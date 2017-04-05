@@ -9,7 +9,7 @@
 class WSL_Test_Users extends WP_UnitTestCase
 {
 	protected $someUserID      = null;
-	protected $someUserLogin   = 'wslusertest';
+	protected $someUserLogin   = 'wplusertest';
 	protected $someUserMail    = 'wp-user@domain.ltd';
 	protected $someUserIDP     = 'PixelPin';
 	protected $someUserProfile = null;
@@ -42,9 +42,9 @@ class WSL_Test_Users extends WP_UnitTestCase
 	/*
 	* make sure we can found a wordpress user by email
 	*/
-	function test_wsl_wp_email_exists()
+	function test_wpl_wp_email_exists()
 	{
-		$this->assertEquals( $this->someUserID, wsl_wp_email_exists( $this->someUserMail ) );
+		$this->assertEquals( $this->someUserID, wpl_wp_email_exists( $this->someUserMail ) );
 	}
 
 	/*
@@ -52,9 +52,9 @@ class WSL_Test_Users extends WP_UnitTestCase
 	*/
 	function test_store_user_pixelpin_profile()
 	{
-		$insert_id = wsl_store_hybridauth_user_profile( $this->someUserID, $this->someUserIDP, $this->someUserProfile );
+		$insert_id = wpl_store_hybridauth_user_profile( $this->someUserID, $this->someUserIDP, $this->someUserProfile );
 
-		$profile = (array) wsl_get_stored_hybridauth_user_profiles_by_user_id( $this->someUserID );
+		$profile = (array) wpl_get_stored_hybridauth_user_profiles_by_user_id( $this->someUserID );
 		$this->assertEquals( 1                                     , count( $profile ) );
 		$this->assertEquals( $this->someUserID                     , $profile[0]->user_id );
 		$this->assertEquals( $this->someUserIDP                    , $profile[0]->provider );
@@ -62,19 +62,19 @@ class WSL_Test_Users extends WP_UnitTestCase
 		$this->assertEquals( $this->someUserProfile->email         , $profile[0]->email );
 		$this->assertEquals( $this->someUserProfile->emailVerified , $profile[0]->emailverified );
 
-		$profile = (array) wsl_get_stored_hybridauth_user_id_by_email_verified( $this->someUserProfile->emailVerified );
+		$profile = (array) wpl_get_stored_hybridauth_user_id_by_email_verified( $this->someUserProfile->emailVerified );
 		$this->assertEquals( 1, count( $profile ) );
 
-		$profile = (array) wsl_get_stored_hybridauth_user_id_by_provider_and_provider_uid( $this->someUserIDP, $this->someUserProfile->identifier );
+		$profile = (array) wpl_get_stored_hybridauth_user_id_by_provider_and_provider_uid( $this->someUserIDP, $this->someUserProfile->identifier );
 		$this->assertEquals( 1, count( $profile ) );
 
-		$user_id = wsl_get_stored_hybridauth_user_id_by_provider_and_provider_uid( $this->someUserIDP, $this->someUserProfile->identifier );
+		$user_id = wpl_get_stored_hybridauth_user_id_by_provider_and_provider_uid( $this->someUserIDP, $this->someUserProfile->identifier );
 		$this->assertEquals( $this->someUserID, $user_id );
 
-		$count = wsl_get_wsl_users_count();
+		$count = wpl_get_wpl_users_count();
 		$this->assertEquals( 1, $count );
 
-		$count = wsl_get_stored_hybridauth_user_profiles_count();
+		$count = wpl_get_stored_hybridauth_user_profiles_count();
 		$this->assertEquals( 1, $count );
 	}
 
@@ -83,14 +83,14 @@ class WSL_Test_Users extends WP_UnitTestCase
 	*/
 	function test_delete_user_pixelpin_profile()
 	{
-		$insert_id = wsl_store_hybridauth_user_profile( $this->someUserID, $this->someUserIDP, $this->someUserProfile );
+		$insert_id = wpl_store_hybridauth_user_profile( $this->someUserID, $this->someUserIDP, $this->someUserProfile );
 
-		$profile = (array) wsl_get_stored_hybridauth_user_profiles_by_user_id( $this->someUserID );
+		$profile = (array) wpl_get_stored_hybridauth_user_profiles_by_user_id( $this->someUserID );
 		$this->assertEquals( 1, count( $profile ) );
 
 		wp_delete_user( $this->someUserID );
 
-		$profile = (array) wsl_get_stored_hybridauth_user_profiles_by_user_id( $this->someUserID );
+		$profile = (array) wpl_get_stored_hybridauth_user_profiles_by_user_id( $this->someUserID );
 		$this->assertEquals( 0, count( $profile ) );
 	}
 }

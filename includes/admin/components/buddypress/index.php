@@ -15,35 +15,35 @@ if ( !defined( 'ABSPATH' ) ) exit;
 
 // --------------------------------------------------------------------
 
-function wsl_component_buddypress()
+function wpl_component_buddypress()
 {
 	// HOOKABLE: 
-	do_action( "wsl_component_buddypress_start" ); 
+	do_action( "wpl_component_buddypress_start" ); 
 
-	include "wsl.components.buddypress.setup.php";
-	include "wsl.components.buddypress.sidebar.php";
+	include "wpl.components.buddypress.setup.php";
+	include "wpl.components.buddypress.sidebar.php";
 
 	if( ! function_exists( 'bp_has_profile' ) ){
-		include "wsl.components.buddypress.notfound.php";
+		include "wpl.components.buddypress.notfound.php";
 
-		return wsl_component_buddypress_notfound();
+		return wpl_component_buddypress_notfound();
 	}
 ?>
-<form method="post" id="wsl_setup_form" action="options.php"> 
-	<?php settings_fields( 'wsl-settings-group-buddypress' ); ?> 
+<form method="post" id="wpl_setup_form" action="options.php"> 
+	<?php settings_fields( 'wpl-settings-group-buddypress' ); ?> 
 
 	<div class="metabox-holder columns-2" id="post-body">
 		<table width="100%"> 
 			<tr valign="top">
 				<td>
 					<?php
-						wsl_component_buddypress_setup();
+						wpl_component_buddypress_setup();
 					?> 
 				</td>
 				<td width="10"></td>
 				<td width="400">
 					<?php 
-						wsl_component_buddypress_sidebar();
+						wpl_component_buddypress_sidebar();
 					?>
 				</td>
 			</tr>
@@ -52,9 +52,9 @@ function wsl_component_buddypress()
 </form>
 <?php
 	// HOOKABLE: 
-	do_action( "wsl_component_buddypress_end" );
+	do_action( "wpl_component_buddypress_end" );
 }
 
-wsl_component_buddypress();
+wpl_component_buddypress();
 
 // --------------------------------------------------------------------	

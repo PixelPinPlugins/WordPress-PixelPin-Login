@@ -244,7 +244,7 @@ class OAuth1Client{
 
 		if( defined( 'WORDPRESS_PIXELPIN_LOGIN_DEBUG_API_CALLS' ) )
 		{
-			do_action( 'wsl_log_provider_api_call', 'OAuth1', $url, $method, $postfields, $this->http_code, $this->http_info, $response );
+			do_action( 'wpl_log_provider_api_call', 'OAuth1', $url, $method, $postfields, $this->http_code, $this->http_info, $response );
 		}
 		//-
 

@@ -14,7 +14,7 @@
  */
 class Hybrid_Auth 
 {
-	public static $version = "2.4.1-wsl-fork";
+	public static $version = "2.4.1-wpl-fork";
 
 	public static $config  = array();
 
@@ -331,13 +331,13 @@ class Hybrid_Auth
 	/*
 	public static function getCurrentUrl( $request_uri = true ) 
 	{
-		$wsl_is_https_on = false;
+		$wpl_is_https_on = false;
 
 		if( ! empty ( $_SERVER ['SERVER_PORT'] ) )
 		{
 			if(trim ( $_SERVER ['SERVER_PORT'] ) == '443')
 			{
-				$wsl_is_https_on = true;
+				$wpl_is_https_on = true;
 			}
 		}
 
@@ -345,7 +345,7 @@ class Hybrid_Auth
 		{
 			if(strtolower (trim ($_SERVER ['HTTP_X_FORWARDED_PROTO'])) == 'https')
 			{
-				$wsl_is_https_on = true;
+				$wpl_is_https_on = true;
 			}
 		}
 
@@ -353,13 +353,13 @@ class Hybrid_Auth
 		{
 			if ( strtolower( trim($_SERVER ['HTTPS'] ) ) == 'on' OR trim ($_SERVER ['HTTPS']) == '1')
 			{
-				$wsl_is_https_on = true;
+				$wpl_is_https_on = true;
 			}
 		}
 
 		//Extract parts
 		$request_uri = (isset ($_SERVER ['REQUEST_URI']) ? $_SERVER ['REQUEST_URI'] : $_SERVER ['PHP_SELF']);
-		$request_protocol = ( $wsl_is_https_on ? 'https' : 'http');
+		$request_protocol = ( $wpl_is_https_on ? 'https' : 'http');
 		$request_host = (isset ($_SERVER ['HTTP_X_FORWARDED_HOST']) ? $_SERVER ['HTTP_X_FORWARDED_HOST'] : (isset ($_SERVER ['HTTP_HOST']) ? $_SERVER ['HTTP_HOST'] : $_SERVER ['SERVER_NAME']));
 
 		//Port of this request

@@ -21,10 +21,10 @@ if ( !defined( 'ABSPATH' ) ) exit;
 
 // --------------------------------------------------------------------
 
-function wsl_component_authtest()
+function wpl_component_authtest()
 {
 	// HOOKABLE:
-	do_action( "wsl_component_authtest_start" );
+	do_action( "wpl_component_authtest_start" );
 
 	$adapter      = null;
 	$provider_id  = isset( $_REQUEST["provider"] ) ? $_REQUEST["provider"] : null;
@@ -42,11 +42,11 @@ function wsl_component_authtest()
 		$provider = Hybrid_Auth::getAdapter( $provider_id );
 
 		// make as few call as possible
-		if( ! ( isset( $_SESSION['wsl::userprofile'] ) && $_SESSION['wsl::userprofile'] && $user_profile = json_decode( $_SESSION['wsl::userprofile'] ) ) )
+		if( ! ( isset( $_SESSION['wpl::userprofile'] ) && $_SESSION['wpl::userprofile'] && $user_profile = json_decode( $_SESSION['wpl::userprofile'] ) ) )
 		{
 			$user_profile = $provider->getUserProfile();
 
-			$_SESSION['wsl::userprofile'] = json_encode( $user_profile );
+			$_SESSION['wpl::userprofile'] = json_encode( $user_profile );
 		}
 
 		$adapter = $provider->adapter;
@@ -56,27 +56,27 @@ function wsl_component_authtest()
 	}
 
 	$ha_profile_fields = array(
-		array( 'field' => 'identifier'  , 'label' => _wsl__( "Provider user ID" , 'wordpress-pixelpin-login') ),
-		array( 'field' => 'profileURL'  , 'label' => _wsl__( "Profile URL"      , 'wordpress-pixelpin-login') ),
-		array( 'field' => 'webSiteURL'  , 'label' => _wsl__( "Website URL"      , 'wordpress-pixelpin-login') ),
-		array( 'field' => 'photoURL'    , 'label' => _wsl__( "Photo URL"        , 'wordpress-pixelpin-login') ),
-		array( 'field' => 'displayName' , 'label' => _wsl__( "Display name"     , 'wordpress-pixelpin-login') ),
-		array( 'field' => 'description' , 'label' => _wsl__( "Description"      , 'wordpress-pixelpin-login') ),
-		array( 'field' => 'firstName'   , 'label' => _wsl__( "First name"       , 'wordpress-pixelpin-login') ),
-		array( 'field' => 'lastName'    , 'label' => _wsl__( "Last name"        , 'wordpress-pixelpin-login') ),
-		array( 'field' => 'gender'      , 'label' => _wsl__( "Gender"           , 'wordpress-pixelpin-login') ),
-		array( 'field' => 'language'    , 'label' => _wsl__( "Language"         , 'wordpress-pixelpin-login') ),
-		array( 'field' => 'age'         , 'label' => _wsl__( "Age"              , 'wordpress-pixelpin-login') ),
-		array( 'field' => 'birthDay'    , 'label' => _wsl__( "Birth day"        , 'wordpress-pixelpin-login') ),
-		array( 'field' => 'birthMonth'  , 'label' => _wsl__( "Birth month"      , 'wordpress-pixelpin-login') ),
-		array( 'field' => 'birthYear'   , 'label' => _wsl__( "Birth year"       , 'wordpress-pixelpin-login') ),
-		array( 'field' => 'email'       , 'label' => _wsl__( "Email"            , 'wordpress-pixelpin-login') ),
-		array( 'field' => 'phone'       , 'label' => _wsl__( "Phone"            , 'wordpress-pixelpin-login') ),
-		array( 'field' => 'address'     , 'label' => _wsl__( "Address"          , 'wordpress-pixelpin-login') ),
-		array( 'field' => 'country'     , 'label' => _wsl__( "Country"          , 'wordpress-pixelpin-login') ),
-		array( 'field' => 'region'      , 'label' => _wsl__( "Region"           , 'wordpress-pixelpin-login') ),
-		array( 'field' => 'city'        , 'label' => _wsl__( "City"             , 'wordpress-pixelpin-login') ),
-		array( 'field' => 'zip'         , 'label' => _wsl__( "Zip"              , 'wordpress-pixelpin-login') ),
+		array( 'field' => 'identifier'  , 'label' => _wpl__( "Provider user ID" , 'wordpress-pixelpin-login') ),
+		array( 'field' => 'profileURL'  , 'label' => _wpl__( "Profile URL"      , 'wordpress-pixelpin-login') ),
+		array( 'field' => 'webSiteURL'  , 'label' => _wpl__( "Website URL"      , 'wordpress-pixelpin-login') ),
+		array( 'field' => 'photoURL'    , 'label' => _wpl__( "Photo URL"        , 'wordpress-pixelpin-login') ),
+		array( 'field' => 'displayName' , 'label' => _wpl__( "Display name"     , 'wordpress-pixelpin-login') ),
+		array( 'field' => 'description' , 'label' => _wpl__( "Description"      , 'wordpress-pixelpin-login') ),
+		array( 'field' => 'firstName'   , 'label' => _wpl__( "First name"       , 'wordpress-pixelpin-login') ),
+		array( 'field' => 'lastName'    , 'label' => _wpl__( "Last name"        , 'wordpress-pixelpin-login') ),
+		array( 'field' => 'gender'      , 'label' => _wpl__( "Gender"           , 'wordpress-pixelpin-login') ),
+		array( 'field' => 'language'    , 'label' => _wpl__( "Language"         , 'wordpress-pixelpin-login') ),
+		array( 'field' => 'age'         , 'label' => _wpl__( "Age"              , 'wordpress-pixelpin-login') ),
+		array( 'field' => 'birthDay'    , 'label' => _wpl__( "Birth day"        , 'wordpress-pixelpin-login') ),
+		array( 'field' => 'birthMonth'  , 'label' => _wpl__( "Birth month"      , 'wordpress-pixelpin-login') ),
+		array( 'field' => 'birthYear'   , 'label' => _wpl__( "Birth year"       , 'wordpress-pixelpin-login') ),
+		array( 'field' => 'email'       , 'label' => _wpl__( "Email"            , 'wordpress-pixelpin-login') ),
+		array( 'field' => 'phone'       , 'label' => _wpl__( "Phone"            , 'wordpress-pixelpin-login') ),
+		array( 'field' => 'address'     , 'label' => _wpl__( "Address"          , 'wordpress-pixelpin-login') ),
+		array( 'field' => 'country'     , 'label' => _wpl__( "Country"          , 'wordpress-pixelpin-login') ),
+		array( 'field' => 'region'      , 'label' => _wpl__( "Region"           , 'wordpress-pixelpin-login') ),
+		array( 'field' => 'city'        , 'label' => _wpl__( "City"             , 'wordpress-pixelpin-login') ),
+		array( 'field' => 'zip'         , 'label' => _wpl__( "Zip"              , 'wordpress-pixelpin-login') ),
 	);
 ?>
 <style>
@@ -94,65 +94,65 @@ function wsl_component_authtest()
 			<td>
 				<?php if( ! $adapter ): ?>
 					<div style="padding: 15px; margin-bottom: 8px; border: 1px solid #ddd; background-color: #fff;box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);">
-						<p><?php _wsl_e("Connect with a provider to get started", 'wordpress-pixelpin-login') ?>.</p>
+						<p><?php _wpl_e("Connect with PixelPin to get started", 'wordpress-pixelpin-login') ?>.</p>
 					</div>
 				<?php else: ?>
 					<div class="stuffbox">
 						<h3>
-							<label><?php _wsl_e("Connected adapter specs", 'wordpress-pixelpin-login') ?></label>
+							<label><?php _wpl_e("Connected adapter specs", 'wordpress-pixelpin-login') ?></label>
 						</h3>
 						<div class="inside">
 							<table class="wp-list-table widefat">
 								<tr>
-									<th width="200"><label><?php _wsl_e("Provider", 'wordpress-pixelpin-login') ?></label></th>
+									<th width="200"><label><?php _wpl_e("Provider", 'wordpress-pixelpin-login') ?></label></th>
 									<td><?php echo $adapter->providerId; ?></td>
 								</tr>
 
 								<?php if( isset( $adapter->openidIdentifier ) ): ?>
 									<tr>
-										<th width="200"><label><?php _wsl_e("OpenID Identifier", 'wordpress-pixelpin-login') ?></label></th>
+										<th width="200"><label><?php _wpl_e("OpenID Identifier", 'wordpress-pixelpin-login') ?></label></th>
 										<td><?php echo $adapter->openidIdentifier; ?></td>
 									</tr>
 								<?php endif; ?>
 
 								<?php if( isset( $adapter->scope ) ): ?>
 									<tr>
-										<th width="200"><label><?php _wsl_e("Scope", 'wordpress-pixelpin-login') ?></label></th>
+										<th width="200"><label><?php _wpl_e("Scope", 'wordpress-pixelpin-login') ?></label></th>
 										<td><?php echo $adapter->scope; ?></td>
 									</tr>
 								<?php endif; ?>
 
 								<?php if( isset( $adapter->config['keys'] ) ): ?>
 									<tr>
-										<th width="200"><label><?php _wsl_e("Application keys", 'wordpress-pixelpin-login') ?></label></th>
+										<th width="200"><label><?php _wpl_e("Application keys", 'wordpress-pixelpin-login') ?></label></th>
 										<td><div style="max-width:650px"><?php echo json_encode( $adapter->config['keys'] ); ?></div></td>
 									</tr>
 								<?php endif; ?>
 
 								<?php if( $adapter->token("access_token") ): ?>
 									<tr>
-										<th width="200"><label><?php _wsl_e("Access token", 'wordpress-pixelpin-login') ?></label></th>
+										<th width="200"><label><?php _wpl_e("Access token", 'wordpress-pixelpin-login') ?></label></th>
 										<td><div style="max-width:650px"><?php echo $adapter->token("access_token"); ?></div></td>
 									</tr>
 								<?php endif; ?>
 
 								<?php if( $adapter->token("access_token_secret") ): ?>
 									<tr>
-										<th width="200"><label><?php _wsl_e("Access token secret", 'wordpress-pixelpin-login') ?></label></th>
+										<th width="200"><label><?php _wpl_e("Access token secret", 'wordpress-pixelpin-login') ?></label></th>
 										<td><?php echo $adapter->token("access_token_secret"); ?></td>
 									</tr>
 								<?php endif; ?>
 
 								<?php if( $adapter->token("expires_in") ): ?>
 									<tr>
-										<th width="200"><label><?php _wsl_e("Access token expires in", 'wordpress-pixelpin-login') ?></label></th>
-										<td><?php echo (int) $adapter->token("expires_at") - time(); ?> <?php _wsl_e("second(s)", 'wordpress-pixelpin-login') ?></td>
+										<th width="200"><label><?php _wpl_e("Access token expires in", 'wordpress-pixelpin-login') ?></label></th>
+										<td><?php echo (int) $adapter->token("expires_at") - time(); ?> <?php _wpl_e("second(s)", 'wordpress-pixelpin-login') ?></td>
 									</tr>
 								<?php endif; ?>
 
 								<?php if( $adapter->token("expires_at") ): ?>
 									<tr>
-										<th width="200"><label><?php _wsl_e("Access token expires at", 'wordpress-pixelpin-login') ?></label></th>
+										<th width="200"><label><?php _wpl_e("Access token expires at", 'wordpress-pixelpin-login') ?></label></th>
 										<td><?php echo date( DATE_W3C, $adapter->token("expires_at" ) ); ?></td>
 									</tr>
 								<?php endif; ?>
@@ -167,7 +167,7 @@ function wsl_component_authtest()
 					?>
 						<div class="stuffbox">
 							<h3>
-								<label><?php _wsl_e("Connected adapter console", 'wordpress-pixelpin-login') ?></label>
+								<label><?php _wpl_e("Connected adapter console", 'wordpress-pixelpin-login') ?></label>
 							</h3>
 							<div class="inside">
 								<?php
@@ -204,22 +204,22 @@ function wsl_component_authtest()
 								<form action="" method="post"/>
 									<table class="wp-list-table widefat">
 										<tr>
-											<th width="200"><label><?php _wsl_e("Path", 'wordpress-pixelpin-login') ?></label></th>
+											<th width="200"><label><?php _wpl_e("Path", 'wordpress-pixelpin-login') ?></label></th>
 											<td><input type="text" style="width:96%" name="console-path" value="<?php echo htmlentities( $path ); ?>"><a href="https://apigee.com/providers" target="_blank"><img src="<?php echo $assets_base_url . 'question.png' ?>" style="vertical-align: text-top;" /></a></td>
 										</tr>
 										<tr>
-											<th width="200"><label><?php _wsl_e("Method", 'wordpress-pixelpin-login') ?></label></th>
+											<th width="200"><label><?php _wpl_e("Method", 'wordpress-pixelpin-login') ?></label></th>
 											<td><select style="width:100px" name="console-method"><option value="GET" <?php if( $method == 'GET' ) echo 'selected'; ?>>GET</option><!-- <option value="POST" <?php if( $method == 'POST' ) echo 'selected'; ?>>POST</option>--></select></td>
 										</tr>
 										<tr>
-											<th width="200"><label><?php _wsl_e("Query", 'wordpress-pixelpin-login') ?></label></th>
+											<th width="200"><label><?php _wpl_e("Query", 'wordpress-pixelpin-login') ?></label></th>
 											<td><textarea style="width:100%;height:60px;margin-top:6px;" name="console-query"><?php echo htmlentities( $query ); ?></textarea></td>
 										</tr>
 									</table>
 
 									<br />
 
-									<input type="submit" value="<?php _wsl_e("Submit", 'wordpress-pixelpin-login') ?>" class="button">
+									<input type="submit" value="<?php _wpl_e("Submit", 'wordpress-pixelpin-login') ?>" class="button">
 								</form>
 							</div>
 						</div>
@@ -227,7 +227,7 @@ function wsl_component_authtest()
 						<?php if( $console ): ?>
 							<div class="stuffbox">
 								<h3>
-									<label><?php _wsl_e("API Response", 'wordpress-pixelpin-login') ?></label>
+									<label><?php _wpl_e("API Response", 'wordpress-pixelpin-login') ?></label>
 								</h3>
 								<div class="inside">
 									<textarea rows="25" cols="70" wrap="off" style="width:100%;height:400px;margin-bottom:15px;font-family: monospace;font-size: 12px;"><?php echo htmlentities( print_r( $response, true ) ); ?></textarea>
@@ -236,7 +236,7 @@ function wsl_component_authtest()
 						<?php if( 0 ): ?>
 							<div class="stuffbox">
 								<h3>
-									<label><?php _wsl_e("Code PHP", 'wordpress-pixelpin-login') ?></label>
+									<label><?php _wpl_e("Code PHP", 'wordpress-pixelpin-login') ?></label>
 								</h3>
 								<div class="inside">
 <textarea rows="25" cols="70" wrap="off" style="width:100%;height:210px;margin-bottom:15px;font-family: monospace;font-size: 12px;"
@@ -266,7 +266,7 @@ catch( Exception $e )
 							</div>
 							<div class="stuffbox">
 								<h3>
-									<label><?php _wsl_e("Connected adapter debug", 'wordpress-pixelpin-login') ?></label>
+									<label><?php _wpl_e("Connected adapter debug", 'wordpress-pixelpin-login') ?></label>
 								</h3>
 								<div class="inside">
 									<textarea rows="25" cols="70" wrap="off" style="width:100%;height:400px;margin-bottom:15px;font-family: monospace;font-size: 12px;"><?php echo htmlentities( print_r( $adapter, true ) ); ?></textarea>
@@ -274,7 +274,7 @@ catch( Exception $e )
 							</div>
 							<div class="stuffbox">
 								<h3>
-									<label><?php _wsl_e("PHP Session", 'wordpress-pixelpin-login') ?></label>
+									<label><?php _wpl_e("PHP Session", 'wordpress-pixelpin-login') ?></label>
 								</h3>
 								<div class="inside">
 									<textarea rows="25" cols="70" wrap="off" style="width:100%;height:350px;margin-bottom:15px;font-family: monospace;font-size: 12px;"><?php echo htmlentities( print_r( $_SESSION, true ) ); ?></textarea>
@@ -287,7 +287,7 @@ catch( Exception $e )
 					<?php if( ! $console ): ?>
 						<div class="stuffbox">
 							<h3>
-								<label><?php _wsl_e("Connected user pixelpin profile", 'wordpress-pixelpin-login') ?></label>
+								<label><?php _wpl_e("Connected user pixelpin profile", 'wordpress-pixelpin-login') ?></label>
 							</h3>
 							<div class="inside">
 								<table class="wp-list-table widefat">
@@ -341,14 +341,14 @@ catch( Exception $e )
 			<td width="400">
 				<div class="postbox">
 					<div class="inside">
-						<h3><?php _wsl_e("Authentication Playground", 'wordpress-pixelpin-login') ?></h3>
+						<h3><?php _wpl_e("Authentication Playground", 'wordpress-pixelpin-login') ?></h3>
 
 						<div style="padding:0 20px;">
 							<p>
-								<?php _wsl_e('Authentication Playground will let you authenticate with the enabled pixelpin networks without creating any new user account', 'wordpress-pixelpin-login') ?>.
+								<?php _wpl_e('Authentication Playground will let you authenticate with the enabled pixelpin networks without creating any new user account', 'wordpress-pixelpin-login') ?>.
 							</p>
 							<p>
-								<?php _wsl_e('This tool will also give you a direct access to pixelpin networks apis via a lightweight console', 'wordpress-pixelpin-login') ?>.
+								<?php _wpl_e('This tool will also give you a direct access to pixelpin networks apis via a lightweight console', 'wordpress-pixelpin-login') ?>.
 							</p>
 						</div>
 					</div>
@@ -359,7 +359,7 @@ catch( Exception $e )
 					<div class="inside">
 						<div style="padding:0 20px;">
 							<p>
-								<?php _wsl_e("Connect with", 'wordpress-pixelpin-login') ?>:
+								<?php _wpl_e("Connect with PixelPin", 'wordpress-pixelpin-login') ?>:
 							</p>
 
 							<div style="width: 380px; padding: 10px; border: 1px solid #ddd; background-color: #fff;">
@@ -374,9 +374,9 @@ catch( Exception $e )
 </div>
 <?php
 	// HOOKABLE:
-	do_action( "wsl_component_authtest_end" );
+	do_action( "wpl_component_authtest_end" );
 }
 
-wsl_component_authtest();
+wpl_component_authtest();
 
 // --------------------------------------------------------------------

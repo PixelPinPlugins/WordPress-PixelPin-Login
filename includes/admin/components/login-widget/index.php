@@ -15,29 +15,29 @@ if ( !defined( 'ABSPATH' ) ) exit;
 
 // --------------------------------------------------------------------
 
-function wsl_component_loginwidget()
+function wpl_component_loginwidget()
 {
 	// HOOKABLE: 
-	do_action( "wsl_component_loginwidget_start" );
+	do_action( "wpl_component_loginwidget_start" );
 
-	include "wsl.components.loginwidget.setup.php";
-	include "wsl.components.loginwidget.sidebar.php";
+	include "wpl.components.loginwidget.setup.php";
+	include "wpl.components.loginwidget.sidebar.php";
 ?>
-<form method="post" id="wsl_setup_form" action="options.php"> 
-	<?php settings_fields( 'wsl-settings-group-customize' ); ?> 
+<form method="post" id="wpl_setup_form" action="options.php"> 
+	<?php settings_fields( 'wpl-settings-group-customize' ); ?> 
 
 	<div class="metabox-holder columns-2" id="post-body">
 		<table width="100%"> 
 			<tr valign="top">
 				<td>
 					<?php
-						wsl_component_loginwidget_setup();
+						wpl_component_loginwidget_setup();
 					?> 
 				</td>
 				<td width="10"></td>
 				<td width="400">
 					<?php 
-						wsl_component_loginwidget_sidebar();
+						wpl_component_loginwidget_sidebar();
 					?>
 				</td>
 			</tr>
@@ -46,9 +46,9 @@ function wsl_component_loginwidget()
 </form>
 <?php
 	// HOOKABLE: 
-	do_action( "wsl_component_loginwidget_end" );
+	do_action( "wpl_component_loginwidget_end" );
 }
 
-wsl_component_loginwidget();
+wpl_component_loginwidget();
 
 // --------------------------------------------------------------------	

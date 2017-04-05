@@ -15,29 +15,29 @@ if ( !defined( 'ABSPATH' ) ) exit;
 
 // --------------------------------------------------------------------
 
-function wsl_component_bouncer()
+function wpl_component_bouncer()
 {
 	// HOOKABLE: 
-	do_action( "wsl_component_bouncer_start" );
+	do_action( "wpl_component_bouncer_start" );
 
-	include "wsl.components.bouncer.setup.php";
-	include "wsl.components.bouncer.sidebar.php";
+	include "wpl.components.bouncer.setup.php";
+	include "wpl.components.bouncer.sidebar.php";
 ?>
-<form method="post" id="wsl_setup_form" action="options.php"> 
-	<?php settings_fields( 'wsl-settings-group-bouncer' ); ?> 
+<form method="post" id="wpl_setup_form" action="options.php"> 
+	<?php settings_fields( 'wpl-settings-group-bouncer' ); ?> 
 
 	<div class="metabox-holder columns-2" id="post-body">
 		<table width="100%">
 			<tr valign="top">
 				<td>
 					<?php
-						wsl_component_bouncer_setup();
+						wpl_component_bouncer_setup();
 					?>
 				</td>
 				<td width="10"></td>
 				<td width="400">
 					<?php
-						wsl_component_bouncer_sidebar();
+						wpl_component_bouncer_sidebar();
 					?>
 				</td>
 			</tr>
@@ -46,9 +46,9 @@ function wsl_component_bouncer()
 </form>
 <?php
 	// HOOKABLE: 
-	do_action( "wsl_component_bouncer_end" );
+	do_action( "wpl_component_bouncer_end" );
 }
 
-wsl_component_bouncer();
+wpl_component_bouncer();
 
 // --------------------------------------------------------------------	

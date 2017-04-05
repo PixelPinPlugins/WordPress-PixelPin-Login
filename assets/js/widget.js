@@ -17,7 +17,7 @@
 (function($){ 
 	$(function(){ 
 		$(document).on( 'click', 'a.wp-pixelpin-login-provider', function(){
-			popupurl = $( '#wsl_popup_base_url' ).val();
+			popupurl = $( '#wpl_popup_base_url' ).val();
 
 			provider = $(this).attr("data-provider");
 
@@ -34,7 +34,7 @@
 /**
 * generate login wp form
 */
-window.wsl_wordpress_pixelpin_login = function( config ){
+window.wpl_wordpress_pixelpin_login = function( config ){
 	jQuery( '#loginform' ).unbind( 'submit.simplemodal-login' );
 
 	var form_id = '#loginform';
@@ -47,7 +47,7 @@ window.wsl_wordpress_pixelpin_login = function( config ){
 		}
 
 		else {
-			var login_uri = jQuery( '#wsl_login_form_uri' ).val();
+			var login_uri = jQuery( '#wpl_login_form_uri' ).val();
 
 			jQuery('body').append( '<form id="loginform" method="post" action="' + login_uri + '"></form>' );
 

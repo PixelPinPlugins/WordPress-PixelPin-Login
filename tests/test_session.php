@@ -18,10 +18,10 @@ class WSL_Test_Session extends WP_UnitTestCase
 		parent::tearDown();
 	}
 
-	function test_wsl_version()
+	function test_wpl_version()
 	{
 		global $WORDPRESS_PIXELPIN_LOGIN_VERSION;
 
-		$this->assertEquals( $_SESSION["wsl::plugin"], "WordPress PixelPin Login " . $WORDPRESS_PIXELPIN_LOGIN_VERSION );
+		$this->assertEquals( $_SESSION["wpl::plugin"], "WordPress PixelPin Login " . $WORDPRESS_PIXELPIN_LOGIN_VERSION );
 	}
 }

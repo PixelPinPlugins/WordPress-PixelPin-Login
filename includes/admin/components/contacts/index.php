@@ -12,39 +12,39 @@
 
 // --------------------------------------------------------------------
 
-function wsl_component_contacts()
+function wpl_component_contacts()
 {
 	// HOOKABLE: 
-	do_action( 'wsl_component_contacts_start' );
+	do_action( 'wpl_component_contacts_start' );
 
-	include 'wsl.components.contacts.list.php';
-	include 'wsl.components.contacts.settings.setup.php';
-	include 'wsl.components.contacts.settings.sidebar.php';
+	include 'wpl.components.contacts.list.php';
+	include 'wpl.components.contacts.settings.setup.php';
+	include 'wpl.components.contacts.settings.sidebar.php';
 
 	if( isset( $_REQUEST['uid'] ) && $_REQUEST['uid'] )
 	{
 		$user_id = (int) $_REQUEST['uid'];
 
-		wsl_component_contacts_list( $user_id );
+		wpl_component_contacts_list( $user_id );
 	}
 	else
 	{
 ?>
-<form method="post" id="wsl_setup_form" action="options.php"> 
-	<?php settings_fields( 'wsl-settings-group-contacts-import' ); ?> 
+<form method="post" id="wpl_setup_form" action="options.php"> 
+	<?php settings_fields( 'wpl-settings-group-contacts-import' ); ?> 
 
 	<div class="metabox-holder columns-2" id="post-body">
 		<table width="100%"> 
 			<tr valign="top">
 				<td>
 					<?php
-						wsl_component_contacts_settings_setup();
+						wpl_component_contacts_settings_setup();
 					?> 
 				</td>
 				<td width="10"></td>
 				<td width="400">
 					<?php 
-						wsl_component_contacts_settings_sidebar();
+						wpl_component_contacts_settings_sidebar();
 					?>
 				</td>
 			</tr>
@@ -55,9 +55,9 @@ function wsl_component_contacts()
 	}
 
 	// HOOKABLE: 
-	do_action( 'wsl_component_contacts_end' );
+	do_action( 'wpl_component_contacts_end' );
 }
 
-wsl_component_contacts();
+wpl_component_contacts();
 
 // --------------------------------------------------------------------	

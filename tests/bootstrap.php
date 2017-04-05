@@ -43,14 +43,14 @@ activate_plugin( 'wordpress-pixelpin-login/wp-pixelpin-login.php' );
 
 echo "Uninstall WSL...\n";
 
-wsl_database_uninstall();
+wpl_database_uninstall();
 
 echo "Install WSL...\n";
 
-wsl_database_install();
+wpl_database_install();
 
 echo "ReInstall WSL...\n";
 
-wsl_install();
+wpl_install();
 
 echo "Testing WSL...\n";

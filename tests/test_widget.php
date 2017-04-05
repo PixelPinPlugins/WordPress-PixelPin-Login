@@ -20,7 +20,7 @@ class WSL_Test_Widget extends WP_UnitTestCase
 
 	function test_has_action()
 	{
-		$test = has_action( 'wordpress_pixelpin_login', 'wsl_action_wordpress_pixelpin_login' );
+		$test = has_action( 'wordpress_pixelpin_login', 'wpl_action_wordpress_pixelpin_login' );
 		$this->assertTrue( (bool) $test );
 	}
 
@@ -32,10 +32,10 @@ class WSL_Test_Widget extends WP_UnitTestCase
 
 	function test_did_actions()
 	{
-		wsl_render_auth_widget();
+		wpl_render_auth_widget();
 
-		$this->assertEquals( 1, did_action( 'wsl_render_auth_widget_start' ) );
-		$this->assertEquals( 1, did_action( 'wsl_render_auth_widget_end' ) );
+		$this->assertEquals( 1, did_action( 'wpl_render_auth_widget_start' ) );
+		$this->assertEquals( 1, did_action( 'wpl_render_auth_widget_end' ) );
 	}
 
 	/*
@@ -43,7 +43,7 @@ class WSL_Test_Widget extends WP_UnitTestCase
 	*/
 	function test_has_content()
 	{
-		$test = wsl_render_auth_widget();
+		$test = wpl_render_auth_widget();
 
 		$this->assertTrue( (bool) $test );
 
