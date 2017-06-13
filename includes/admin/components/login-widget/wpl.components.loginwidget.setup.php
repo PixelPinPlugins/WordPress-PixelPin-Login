@@ -1,9 +1,12 @@
 <?php
 /*!
 * WordPress PixelPin Login
+* 2017 PixelPin and contributors https://github.com/PixelPinPlugins/WordPress-PixelPin-Login
 *
-* http://miled.github.io/wordpress-pixelpin-login/ | https://github.com/miled/wordpress-pixelpin-login
-*  (c) 2011-2015 Mohamed Mrassi and contributors | http://wordpress.org/plugins/wordpress-pixelpin-login/
+* Original Authors of WSL
+* -----------------------
+* http://miled.github.io/wordpress-social-login/ | https://github.com/miled/wordpress-social-login
+*  (c) 2011-2015 Mohamed Mrassi and contributors | http://wordpress.org/plugins/wordpress-social-login/
 */
 
 /**
@@ -59,11 +62,11 @@ function wpl_component_loginwidget_setup_basic_settings()
 	</h3>
 	<div class="inside"> 
 		<p> 
-			<?php _wpl_e("<b>Connect with PixelPin caption :</b> Change the content of the label to display above WSL widget", 'wordpress-pixelpin-login') ?>. 
+			<?php _wpl_e("<b>Connect with PixelPin caption :</b> Change the content of the label to display above WPL widget", 'wordpress-pixelpin-login') ?>. 
 		</p>
 
 		<p> 
-			<?php _wpl_e("<b>PixelPin icon set :</b> WSL provides two set of icons to display on the widget", 'wordpress-pixelpin-login') ?>.
+			<?php _wpl_e("<b>PixelPin icon set :</b> WPL provides two set of icons to display on the widget", 'wordpress-pixelpin-login') ?>.
 			<?php _wpl_e("You can also display the providers names instead of icons. This allow the customization of the widget to a great extent", 'wordpress-pixelpin-login') ?>.
 		</p>
 
@@ -81,12 +84,11 @@ function wpl_component_loginwidget_setup_basic_settings()
 			</td>
 		  </tr>
 		  <tr>
-			<td align="right"><strong><?php _wpl_e("PixelPin icon set", 'wordpress-pixelpin-login') ?> :</strong></td>
+			<td align="right"><strong><?php _wpl_e("PixelPin SSO options", 'wordpress-pixelpin-login') ?> :</strong></td>
 			<td> 	
 				<?php
 					$icon_sets = array(
-						'wpzoom'   => "WPZOOM pixelpin networking icon set",
-						'icondock' => "Icondock vector pixelpin media icons",
+						'ssoicon' => "Use the PixelPin Icon as the SSO button",
 					);
 
 					$icon_sets = apply_filters( 'wpl_component_loginwidget_setup_alter_icon_sets', $icon_sets );
@@ -102,7 +104,7 @@ function wpl_component_loginwidget_setup_basic_settings()
 							<?php
 						}
 					?>
-					<option <?php if( $wpl_settings_pixelpin_icon_set == "none" ) echo "selected"; ?>     value="none"><?php _wpl_e("None, display providers names instead of icons", 'wordpress-pixelpin-login') ?></option> 
+					<option <?php if( $wpl_settings_pixelpin_icon_set == "none" ) echo "selected"; ?>     value="none"><?php _wpl_e("Display PixelPin as a word instead of an icon", 'wordpress-pixelpin-login') ?></option> 
 				</select> 
 			</td>
 		  </tr>
@@ -132,7 +134,7 @@ function wpl_component_loginwidget_setup_advanced_settings()
 	</h3>
 	<div class="inside"> 
 		<p> 
-			<?php _wpl_e("<b>Redirect URL :</b> By default and after they authenticate, users will be automatically redirected to the page where they come from. If WSL wasn't able to identify where they come from (or if they used wp-login page to connect), then they will be redirected to <code>Redirect URL</code> instead", 'wordpress-pixelpin-login') ?>.
+			<?php _wpl_e("<b>Redirect URL :</b> By default and after they authenticate, users will be automatically redirected to the page where they come from. If WPL wasn't able to identify where they come from (or if they used wp-login page to connect), then they will be redirected to <code>Redirect URL</code> instead", 'wordpress-pixelpin-login') ?>.
 		</p>
 
 		<p> 
@@ -140,7 +142,7 @@ function wpl_component_loginwidget_setup_advanced_settings()
 		</p>
 
 		<p> 
-			<?php _wpl_e("<b>Authentication display :</b> Determines how the authentication dialog is rendered. You can chose to open the dialog in a <b>popup</b> or to <b>in page</b>. If a user is visiting using a mobile device, WSL will fall back to more <b>in page</b>", 'wordpress-pixelpin-login') ?>.
+			<?php _wpl_e("<b>Authentication display :</b> Determines how the authentication dialog is rendered. You can chose to open the dialog in a <b>popup</b> or to <b>in page</b>. If a user is visiting using a mobile device, WPL will fall back to more <b>in page</b>", 'wordpress-pixelpin-login') ?>.
 		</p>
 
 		<p> 
@@ -148,7 +150,7 @@ function wpl_component_loginwidget_setup_advanced_settings()
 		</p>
 
 		<p> 
-			<?php _wpl_e("<b>Notification :</b> Determines whether you want to receive a notification by mail when a new user is logged in via WSL", 'wordpress-pixelpin-login') ?>. 
+			<?php _wpl_e("<b>Notification :</b> Determines whether you want to receive a notification by mail when a new user is logged in via WPL", 'wordpress-pixelpin-login') ?>. 
 		</p>
 
 		<table width="100%" border="0" cellpadding="5" cellspacing="2" style="border-top:1px solid #ccc;">
