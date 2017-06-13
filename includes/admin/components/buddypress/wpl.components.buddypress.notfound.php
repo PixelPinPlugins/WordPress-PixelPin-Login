@@ -1,9 +1,12 @@
 <?php
 /*!
 * WordPress PixelPin Login
-*
-* http://miled.github.io/wordpress-pixelpin-login/ | https://github.com/miled/wordpress-pixelpin-login
-*  (c) 2011-2015 Mohamed Mrassi and contributors | http://wordpress.org/plugins/wordpress-pixelpin-login/
+* 2017 PixelPin and contributors https://github.com/PixelPinPlugins/WordPress-PixelPin-Login
+* 
+* Original Authors of WSL
+* -----------------------
+* http://miled.github.io/wordpress-social-login/ | https://github.com/miled/wordpress-social-login
+*  (c) 2011-2015 Mohamed Mrassi and contributors | http://wordpress.org/plugins/wordpress-social-login/
 */
 
 /**
@@ -47,7 +50,7 @@ function wpl_component_buddypress_notfound()
 	<hr />
 
 	<div>
-		<a class="button-secondary" href="http://miled.github.io/wordpress-pixelpin-login/support.html" target="_blank"><?php _wpl_e( "Report as bug", 'wordpress-pixelpin-login' ) ?></a>
+		<a class="button-secondary" href="https://github.com/PixelPinPlugins/WordPress-Social-Login/issues" target="_blank"><?php _wpl_e( "Report as bug", 'wordpress-pixelpin-login' ) ?></a>
 		<a class="button-primary" href="options-general.php?page=wordpress-pixelpin-login&wplp=components" style="float:<?php if( is_rtl() ) echo 'left'; else echo 'right'; ?>"><?php _wpl_e( "Check enabled components", 'wordpress-pixelpin-login' ) ?></a>
 	</div> 
 </div>

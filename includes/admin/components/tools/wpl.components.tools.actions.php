@@ -1,9 +1,12 @@
 <?php
 /*!
 * WordPress PixelPin Login
+* 2017 PixelPin and contributors https://github.com/PixelPinPlugins/WordPress-PixelPin-Login
 *
-* http://miled.github.io/wordpress-pixelpin-login/ | https://github.com/miled/wordpress-pixelpin-login
-*  (c) 2011-2015 Mohamed Mrassi and contributors | http://wordpress.org/plugins/wordpress-pixelpin-login/
+* Original Authors of WSL
+* -----------------------
+* http://miled.github.io/wordpress-social-login/ | https://github.com/miled/wordpress-social-login
+*  (c) 2011-2015 Mohamed Mrassi and contributors | http://wordpress.org/plugins/wordpress-social-login/
 */
 
 // Exit if accessed directly
@@ -102,11 +105,11 @@ function wpl_component_tools_repair_wpl_tables()
 <a name="repair-tables"></a>
 <div class="stuffbox">
 	<h3>
-		<label><?php _wpl_e("Repair WSL tables", 'wordpress-pixelpin-login') ?></label>
+		<label><?php _wpl_e("Repair WPL tables", 'wordpress-pixelpin-login') ?></label>
 	</h3>
 	<div class="inside"> 
 		<p>
-			<?php _wpl_e('This will attempt recreate WSL databases tables if they do not exist and will also add any missing field', 'wordpress-pixelpin-login') ?>. 
+			<?php _wpl_e('This will attempt recreate WPL databases tables if they do not exist and will also add any missing field', 'wordpress-pixelpin-login') ?>. 
 		</p>
 
 		<a class="button-primary" href="<?php echo wp_nonce_url( 'options-general.php?page=wordpress-pixelpin-login&wplp=tools&do=repair'); ?>"><?php _wpl_e("Repair WordPress PixelPin Login databases tables", 'wordpress-pixelpin-login') ?></a>
@@ -128,11 +131,11 @@ function wpl_component_tools_debug_mode()
 	</h3>
 	<div class="inside">
 		<p>
-			<?php _wpl_e('The <b>Debug mode</b> is an internal development tool built to track every action made by WSL during the authentication proces, which can be useful when debugging this plugin but note that it is highly technical and not documented', 'wordpress-pixelpin-login') ?>.
+			<?php _wpl_e('The <b>Debug mode</b> is an internal development tool built to track every action made by WPL during the authentication proces, which can be useful when debugging this plugin but note that it is highly technical and not documented', 'wordpress-pixelpin-login') ?>.
 		</p>
 
 		<p>
-			<?php _wpl_e('When Debug mode is enabled and set to <code>Log actions in a file</code>, WSL will attempt to generate its log files under <em>/wp-content/uploads/wordpress-pixelpin-login</em>', 'wordpress-pixelpin-login') ?>.
+			<?php _wpl_e('When Debug mode is enabled and set to <code>Log actions in a file</code>, WPL will attempt to generate its log files under <em>/wp-content/uploads/wordpress-pixelpin-login</em>', 'wordpress-pixelpin-login') ?>.
 		</p>
 
 		<p>
@@ -140,7 +143,7 @@ function wpl_component_tools_debug_mode()
 		</p>
 
 		<p>
-			<?php _wpl_e('For more information, refer to WSL documentation under Advanced Troubleshooting &gt; <a href="http://miled.github.io/wordpress-pixelpin-login/troubleshooting-advanced.html" target="_blank">Debug Mode</a>', 'wordpress-pixelpin-login') ?>.
+			<?php _wpl_e('For more information, refer to WPL documentation under Advanced Troubleshooting &gt; <a href="http://miled.github.io/wordpress-social-login/troubleshooting-advanced.html" target="_blank">Debug Mode</a>', 'wordpress-pixelpin-login') ?>.
 		</p>
 
 		<form method="post" id="wpl_setup_form" action="options.php">  
@@ -155,7 +158,7 @@ function wpl_component_tools_debug_mode()
 			<input type="submit" class="button-primary" value="<?php _wpl_e("Save Settings", 'wordpress-pixelpin-login') ?>" />
 
 			<?php if( $wpl_settings_debug_mode_enabled ): ?>
-				<a class="button-secondary" href="options-general.php?page=wordpress-pixelpin-login&wplp=watchdog"><?php _wpl_e('View WSL logs', 'wordpress-pixelpin-login') ?></a>
+				<a class="button-secondary" href="options-general.php?page=wordpress-pixelpin-login&wplp=watchdog"><?php _wpl_e('View WPL logs', 'wordpress-pixelpin-login') ?></a>
 			<?php endif; ?>
 		</form>
 	</div>
@@ -192,7 +195,7 @@ function wpl_component_tools_development_mode()
 		</p>
 
 		<p>
-			<?php _wpl_e('For more information, refer to WSL documentation under Advanced Troubleshooting &gt; <a href="http://miled.github.io/wordpress-pixelpin-login/troubleshooting-advanced.html" target="_blank">Development Mode</a>', 'wordpress-pixelpin-login') ?>.
+			<?php _wpl_e('For more information, refer to WPL documentation under Advanced Troubleshooting &gt; <a href="http://miled.github.io/wordpress-social-login/troubleshooting-advanced.html" target="_blank">Development Mode</a>', 'wordpress-pixelpin-login') ?>.
 		</p>
 
 		<form method="post" id="wpl_setup_form" action="options.php" <?php if( ! $wpl_settings_development_mode_enabled ) { ?>onsubmit="return confirm('Do you really want to enable Development Mode?\n\nPlease confirm that you have read and understood the abovementioned by clicking OK.');"<?php } ?>>  
@@ -222,7 +225,7 @@ function wpl_component_tools_uninstall()
 	<div class="inside"> 
 		<p>
 			<?php _wpl_e('This will permanently delete all Wordpress PixelPin Login tables and stored options from your WordPress database', 'wordpress-pixelpin-login') ?>. 
-			<?php _wpl_e('Once you delete WSL database tables and stored options, there is NO going back. Please be certain', 'wordpress-pixelpin-login') ?>. 
+			<?php _wpl_e('Once you delete WPL database tables and stored options, there is NO going back. Please be certain', 'wordpress-pixelpin-login') ?>. 
 		</p>
 
 		<a class="button-danger" href="<?php echo wp_nonce_url( 'options-general.php?page=wordpress-pixelpin-login&wplp=tools&do=uninstall'); ?>" onClick="return confirm('Do you really want to Delete all Wordpress PixelPin Login tables and options?\n\nPlease confirm that you have read and understood the abovementioned by clicking OK.');"><?php _wpl_e("Delete all Wordpress PixelPin Login tables and options", 'wordpress-pixelpin-login') ?></a>

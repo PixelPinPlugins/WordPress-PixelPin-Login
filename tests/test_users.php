@@ -2,11 +2,11 @@
 /*!
 * WordPress PixelPin Login
 *
-* http://miled.github.io/wordpress-pixelpin-login/ | https://github.com/miled/wordpress-pixelpin-login
-*  (c) 2011-2014 Mohamed Mrassi and contributors | http://wordpress.org/plugins/wordpress-pixelpin-login/
+* http://miled.github.io/wordpress-social-login/ | https://github.com/miled/wordpress-social-login
+*  (c) 2011-2014 Mohamed Mrassi and contributors | http://wordpress.org/plugins/wordpress-social-login/
 */
 
-class WSL_Test_Users extends WP_UnitTestCase
+class WPL_Test_Users extends WP_UnitTestCase
 {
 	protected $someUserID      = null;
 	protected $someUserLogin   = 'wplusertest';

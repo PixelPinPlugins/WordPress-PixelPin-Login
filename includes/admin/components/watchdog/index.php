@@ -1,13 +1,16 @@
 <?php
 /*!
 * WordPress PixelPin Login
+* 2017 PixelPin and contributors https://github.com/PixelPinPlugins/WordPress-PixelPin-Login
 *
-* http://miled.github.io/wordpress-pixelpin-login/ | https://github.com/miled/wordpress-pixelpin-login
-*  (c) 2011-2015 Mohamed Mrassi and contributors | http://wordpress.org/plugins/wordpress-pixelpin-login/
+* Original Authors of WSL
+* -----------------------
+* http://miled.github.io/wordpress-social-login/ | https://github.com/miled/wordpress-social-login
+*  (c) 2011-2015 Mohamed Mrassi and contributors | http://wordpress.org/plugins/wordpress-social-login/
 */
 
 /**
-* WSL Watchdog - Log viewer.
+* WPL Watchdog - Log viewer.
 */
 
 // Exit if accessed directly
@@ -82,7 +85,7 @@ function wpl_component_watchdog_database()
 
 	global $wpdb;
 
-	// If action eq delete WSL user profiles
+	// If action eq delete WPL user profiles
 	if( isset( $_REQUEST['delete'] ) && isset( $_REQUEST['_wpnonce'] ) && wp_verify_nonce( $_REQUEST['_wpnonce'] ) )
 	{
 		if( $_REQUEST['delete'] == 'log' )
@@ -104,7 +107,7 @@ function wpl_component_watchdog_database()
 		<?php
 			$delete_url = wp_nonce_url( 'options-general.php?page=wordpress-pixelpin-login&wplp=watchdog&delete=log' );
 		?>
-		<a class="button button-secondary" style="background-color: #da4f49;border-color: #bd362f;text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);color: #ffffff;" href="<?php echo $delete_url ?>" onClick="return confirm('Are you sure?');"><?php _wpl_e("Delete WSL Log", 'wordpress-pixelpin-login'); ?></a>
+		<a class="button button-secondary" style="background-color: #da4f49;border-color: #bd362f;text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);color: #ffffff;" href="<?php echo $delete_url ?>" onClick="return confirm('Are you sure?');"><?php _wpl_e("Delete WPL Log", 'wordpress-pixelpin-login'); ?></a>
 	</p>
 
 	<hr />

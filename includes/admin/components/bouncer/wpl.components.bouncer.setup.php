@@ -2,8 +2,12 @@
 /*!
 * WordPress PixelPin Login
 *
-* http://miled.github.io/wordpress-pixelpin-login/ | https://github.com/miled/wordpress-pixelpin-login
-*  (c) 2011-2015 Mohamed Mrassi and contributors | http://wordpress.org/plugins/wordpress-pixelpin-login/
+* 2017 PixelPin and contributors https://github.com/PixelPinPlugins/WordPress-PixelPin-Login
+* 
+* Original Authors of WSL
+* -----------------------
+* http://miled.github.io/wordpress-social-login/ | https://github.com/miled/wordpress-social-login
+*  (c) 2011-2015 Mohamed Mrassi and contributors | http://wordpress.org/plugins/wordpress-social-login/
 */
 
 /**
@@ -57,11 +61,11 @@ function wpl_component_bouncer_setup_wpl_widget()
 ?>
 <div class="stuffbox">
 	<h3>
-		<label><?php _wpl_e("WSL Widget", 'wordpress-pixelpin-login') ?></label>
+		<label><?php _wpl_e("WPL Widget", 'wordpress-pixelpin-login') ?></label>
 	</h3>
 	<div class="inside"> 
 		<p> 
-			<?php _wpl_e("Here you can tell Bouncer if you are accepting new users registration and authentication into your website or not any more. Note that Bouncer only works for WSL and will not interfere with users authenticating through the regulars wordpress Login and Register pages with their usernames and passwords (to to achieve that kind of restrictions, you may need to use another plugin(s) in combination with WSL).", 'wordpress-pixelpin-login') ?>
+			<?php _wpl_e("Here you can tell Bouncer if you are accepting new users registration and authentication into your website or not any more. Note that Bouncer only works for WPL and will not interfere with users authenticating through the regulars wordpress Login and Register pages with their usernames and passwords (to to achieve that kind of restrictions, you may need to use another plugin(s) in combination with WPL).", 'wordpress-pixelpin-login') ?>
 		</p> 
 		<table width="100%" border="0" cellpadding="5" cellspacing="2" style="border-top:1px solid #ccc;">  
 		  <tr>
@@ -245,7 +249,7 @@ function wpl_component_bouncer_setup_membership_level()
 	</h3>
 	<div class="inside"> 
 		<p>
-			<?php _wpl_e("Here you can define the default role for new users authenticating through WSL", 'wordpress-pixelpin-login') ?>.
+			<?php _wpl_e("Here you can define the default role for new users authenticating through WPL", 'wordpress-pixelpin-login') ?>.
 			<?php _wpl_e("Please, be extra carefull with this option, you may be automatically giving someone elevated roles and capabilities", 'wordpress-pixelpin-login') ?>.
 			<?php _wpl_e('For more information about WordPress users roles and capabilities refer to <a href="http://codex.wordpress.org/Roles_and_Capabilities#Capability_vs._Role_Table" target="_blank">http://codex.wordpress.org/Roles_and_Capabilities</a>', 'wordpress-pixelpin-login') ?>.
 		</p>  
@@ -257,7 +261,7 @@ function wpl_component_bouncer_setup_membership_level()
 		</p> 
 		<table width="100%" border="0" cellpadding="5" cellspacing="2" style="border-top:1px solid #ccc;">
 		  <tr>
-			<td width="200" align="right" nowrap><strong><?php _wpl_e("New WSL users default role", 'wordpress-pixelpin-login') ?> :</strong></td>
+			<td width="200" align="right" nowrap><strong><?php _wpl_e("New WPL users default role", 'wordpress-pixelpin-login') ?> :</strong></td>
 			<td>
 				<select name="wpl_settings_bouncer_new_users_membership_default_role">
 					<optgroup label="<?php _wpl_e("Safe", 'wordpress-pixelpin-login') ?>:">
@@ -295,7 +299,7 @@ function wpl_component_bouncer_setup_membership_level()
 
 							if( $role )
 							{
-								echo sprintf( _wpl__( "<b>New WSL users default role</b> is currently set to <b>&ldquo;%s&rdquo;</b>, which gives these capabilities: ", 'wordpress-pixelpin-login' ), get_option( 'wpl_settings_bouncer_new_users_membership_default_role' ) );
+								echo sprintf( _wpl__( "<b>New WPL users default role</b> is currently set to <b>&ldquo;%s&rdquo;</b>, which gives these capabilities: ", 'wordpress-pixelpin-login' ), get_option( 'wpl_settings_bouncer_new_users_membership_default_role' ) );
 
 								$capabilities = array();
 
@@ -311,7 +315,7 @@ function wpl_component_bouncer_setup_membership_level()
 							}
 							else
 							{
-								echo sprintf( _wpl__( "<b>New WSL users default role</b> is currently set to <b>&ldquo;%s&rdquo;</b>, which gives NO capabilities", 'wordpress-pixelpin-login' ), get_option( 'wpl_settings_bouncer_new_users_membership_default_role' ) );
+								echo sprintf( _wpl__( "<b>New WPL users default role</b> is currently set to <b>&ldquo;%s&rdquo;</b>, which gives NO capabilities", 'wordpress-pixelpin-login' ), get_option( 'wpl_settings_bouncer_new_users_membership_default_role' ) );
 							}
 						?>.
 					</p>

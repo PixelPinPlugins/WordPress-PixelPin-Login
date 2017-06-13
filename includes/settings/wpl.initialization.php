@@ -1,13 +1,16 @@
 <?php
 /*!
 * WordPress PixelPin Login
+* 2017 PixelPin and contributors https://github.com/PixelPinPlugins/WordPress-PixelPin-Login
 *
-* http://miled.github.io/wordpress-pixelpin-login/ | https://github.com/miled/wordpress-pixelpin-login
-*  (c) 2011-2015 Mohamed Mrassi and contributors | http://wordpress.org/plugins/wordpress-pixelpin-login/
+* Original Authors of WSL
+* -----------------------
+* http://miled.github.io/wordpress-social-login/ | https://github.com/miled/wordpress-social-login
+*  (c) 2011-2015 Mohamed Mrassi and contributors | http://wordpress.org/plugins/wordpress-social-login/
 */
 
 /**
-* Check WSL requirements and register WSL settings 
+* Check WPL requirements and register WPL settings 
 */
 
 // Exit if accessed directly
@@ -16,7 +19,7 @@ if( !defined( 'ABSPATH' ) ) exit;
 // --------------------------------------------------------------------
 
 /**
-* Check WSL minimum requirements. Display fail page if they are not met.
+* Check WPL minimum requirements. Display fail page if they are not met.
 *
 * This function will only test the strict minimal
 */
@@ -45,16 +48,16 @@ function wpl_check_requirements()
 
 // --------------------------------------------------------------------
 
-/** list of WSL components */
+/** list of WPL components */
 $WORDPRESS_PIXELPIN_LOGIN_COMPONENTS = ARRAY(
-	"core"           => array( "type" => "core"  , "label" => _wpl__("WSL Core"   , 'wordpress-pixelpin-login'), "description" => _wpl__("WordPress PixelPin Login core."                   , 'wordpress-pixelpin-login') ),
+	"core"           => array( "type" => "core"  , "label" => _wpl__("WPL Core"   , 'wordpress-pixelpin-login'), "description" => _wpl__("WordPress PixelPin Login core."                   , 'wordpress-pixelpin-login') ),
 	"networks"       => array( "type" => "core"  , "label" => _wpl__("Networks"   , 'wordpress-pixelpin-login'), "description" => _wpl__("PixelPin networks setup."                         , 'wordpress-pixelpin-login') ),
 	"login-widget"   => array( "type" => "core"  , "label" => _wpl__("Widget"     , 'wordpress-pixelpin-login'), "description" => _wpl__("Authentication widget customization."           , 'wordpress-pixelpin-login') ),
 	"bouncer"        => array( "type" => "core"  , "label" => _wpl__("Bouncer"    , 'wordpress-pixelpin-login'), "description" => _wpl__("WordPress PixelPin Login advanced configuration." , 'wordpress-pixelpin-login') ),
 	"users"          => array( "type" => "addon" , "label" => _wpl__("Users"      , 'wordpress-pixelpin-login'), "description" => _wpl__("WordPress PixelPin Login users manager."          , 'wordpress-pixelpin-login') ),
 );
 
-/** list of WSL admin tabs */
+/** list of WPL admin tabs */
 $WORDPRESS_PIXELPIN_LOGIN_ADMIN_TABS = ARRAY(  
 	"networks"     => array( "label" => _wpl__("Networks"      , 'wordpress-pixelpin-login') , "visible" => true  , "component" => "networks"       , "default" => true ),
 	"login-widget" => array( "label" => _wpl__("Widget"        , 'wordpress-pixelpin-login') , "visible" => true  , "component" => "login-widget"   ),
@@ -72,7 +75,7 @@ $WORDPRESS_PIXELPIN_LOGIN_ADMIN_TABS = ARRAY(
 // --------------------------------------------------------------------
 
 /**
-* Register a new WSL component 
+* Register a new WPL component 
 */
 function wpl_register_component( $component, $label, $description, $version, $author, $author_url, $component_url )
 {
@@ -94,7 +97,7 @@ function wpl_register_component( $component, $label, $description, $version, $au
 // --------------------------------------------------------------------
 
 /**
-* Register new WSL admin tab
+* Register new WPL admin tab
 */
 function wpl_register_admin_tab( $component, $tab, $label, $action, $visible = false, $pull_right = false ) 
 { 
@@ -129,7 +132,7 @@ function wpl_is_component_enabled( $component )
 // --------------------------------------------------------------------
 
 /**
-* Register WSL components (Bulk action)
+* Register WPL components (Bulk action)
 */
 function wpl_register_components()
 {
@@ -180,7 +183,7 @@ function wpl_register_components()
 // --------------------------------------------------------------------
 
 /**
-* Register WSL core settings ( options; components )
+* Register WPL core settings ( options; components )
 */
 function wpl_register_setting()
 {

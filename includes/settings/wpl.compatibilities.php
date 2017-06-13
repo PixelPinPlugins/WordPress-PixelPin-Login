@@ -1,17 +1,20 @@
 <?php
 /*!
 * WordPress PixelPin Login
+* 2017 PixelPin and contributors https://github.com/PixelPinPlugins/WordPress-PixelPin-Login
 *
-* http://miled.github.io/wordpress-pixelpin-login/ | https://github.com/miled/wordpress-pixelpin-login
-*  (c) 2011-2015 Mohamed Mrassi and contributors | http://wordpress.org/plugins/wordpress-pixelpin-login/
+* Original Authors of WSL
+* -----------------------
+* http://miled.github.io/wordpress-social-login/ | https://github.com/miled/wordpress-social-login
+*  (c) 2011-2015 Mohamed Mrassi and contributors | http://wordpress.org/plugins/wordpress-social-login/
 */
 
 /**
-* Check and upgrade compatibilities from old WSL versions
+* Check and upgrade compatibilities from old WPL versions
 *
 * Here we attempt to:
-*	- set to default all settings when WSL is installed
-*	- make WSL compatible when updating from older versions, by registering new options
+*	- set to default all settings when WPL is installed
+*	- make WPL compatible when updating from older versions, by registering new options
 *
 * Side note: Over time, the number of options have become too long, and as you can notice
 *            things are not optimal. If you have any better idea on how to tackle this issue,
@@ -24,7 +27,7 @@ if ( !defined( 'ABSPATH' ) ) exit;
 // --------------------------------------------------------------------
 
 /**
-* Check and upgrade compatibilities from old WSL versions
+* Check and upgrade compatibilities from old WPL versions
 */
 function wpl_update_compatibilities()
 {
@@ -174,14 +177,6 @@ function wpl_update_compatibilities()
 			}
 		}
 	}
-
-	global $wpdb;
-
-	# migrate steam users id to id64. Prior to 2.2
-	$sql = "UPDATE {$wpdb->prefix}wplusersprofiles
-		SET identifier = REPLACE( identifier, 'http://steamcommunity.com/openid/id/', '' )
-		WHERE provider = 'Steam' AND identifier like 'http://steamcommunity.com/openid/id/%' ";
-	$wpdb->query( $sql );
 }
 
 // --------------------------------------------------------------------
@@ -189,14 +184,14 @@ function wpl_update_compatibilities()
 /**
 * Old junk
 *
-* Seems like some people are using WSL _internal_ functions for some reason...
+* Seems like some people are using WPL _internal_ functions for some reason...
 *
 * Here we keep few of those old/depreciated/undocumented/internal functions, so their websites
 * doesn't break when updating to newer versions.
 *
-* TO BE REMOVED AS OF WSL 3.0
+* TO BE REMOVED AS OF WPL 3.0
 **
-* Ref: http://miled.github.io/wordpress-pixelpin-login/developer-api-migrating-2.2.html
+* Ref: http://miled.github.io/wordpress-social-login/developer-api-migrating-2.2.html
 */
 
 // 2.1.6
@@ -220,7 +215,7 @@ function wpl_deprecated_function( $function, $version )
 	// user should be admin and logged in
 	if( current_user_can('manage_options') )
 	{
-		trigger_error( sprintf( __('%1$s is <strong>deprecated</strong> since WordPress PixelPin Login %2$s! For more information, check WSL Developer API - Migration.'), $function, $version ), E_USER_NOTICE );
+		trigger_error( sprintf( __('%1$s is <strong>deprecated</strong> since WordPress PixelPin Login %2$s! For more information, check WPL Developer API - Migration.'), $function, $version ), E_USER_NOTICE );
 	}
 }
 

@@ -1,13 +1,17 @@
 <?php
 /*!
 * WordPress PixelPin Login
-*
-* http://hybridauth.sourceforge.net/wpl/index.html | http://github.com/hybridauth/WordPress-PixelPin-Login
-*    (c) 2011-2014 Mohamed Mrassi and contributors | http://wordpress.org/extend/plugins/wordpress-pixelpin-login/
+* 
+* 2017 PixelPin and contributors https://github.com/PixelPinPlugins/WordPress-PixelPin-Login
+* 
+* Original Authors of WSL
+* -----------------------
+* http://hybridauth.sourceforge.net/wpl/index.html | http://github.com/hybridauth/WordPress-Social-Login
+*    (c) 2011-2014 Mohamed Mrassi and contributors | http://wordpress.org/extend/plugins/wordpress-social-login/
 */
 
 // ------------------------------------------------------------------------
-//	WSL End Point
+//	WPL End Point
 // ------------------------------------------------------------------------
 
 /**
@@ -37,9 +41,9 @@ require_once( "Hybrid/Exception.php" );
 require_once( "Hybrid/Endpoint.php"  );
 
 
-//- Custom WSL endpoint class
-require_once( "endpoints/WSL_Endpoint.php" );
+//- Custom WPL endpoint class
+require_once( "endpoints/WPL_Endpoint.php" );
 
 
 //- Entry point to the End point 
-WSL_Hybrid_Endpoint::process();
+WPL_Hybrid_Endpoint::process();

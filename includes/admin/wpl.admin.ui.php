@@ -1,13 +1,16 @@
 <?php
 /*!
 * WordPress PixelPin Login
+* 2017 PixelPin and contributors https://github.com/PixelPinPlugins/WordPress-PixelPin-Login
 *
-* http://miled.github.io/wordpress-pixelpin-login/ | https://github.com/miled/wordpress-pixelpin-login
-*  (c) 2011-2015 Mohamed Mrassi and contributors | http://wordpress.org/plugins/wordpress-pixelpin-login/
+* Original Authors of WSL
+* -----------------------
+* http://miled.github.io/wordpress-social-login/ | https://github.com/miled/wordpress-social-login
+*  (c) 2011-2015 Mohamed Mrassi and contributors | http://wordpress.org/plugins/wordpress-social-login/
 */
 
 /**
-* The LOC in charge of displaying WSL Admin GUInterfaces
+* The LOC in charge of displaying WPL Admin GUInterfaces
 */
 
 // Exit if accessed directly
@@ -133,7 +136,7 @@ function wpl_admin_ui_header( $wplp = null )
 				?>
 					<div class="fade updated" style="margin: 4px 0 20px;">
 						<p>
-							<?php _wpl_e("<b>Note:</b> WSL has detected that you are using a caching plugin. If the saved changes didn't take effect immediately then you might need to empty the cache", 'wordpress-pixelpin-login') ?>.
+							<?php _wpl_e("<b>Note:</b> WPL has detected that you are using a caching plugin. If the saved changes didn't take effect immediately then you might need to empty the cache", 'wordpress-pixelpin-login') ?>.
 						</p>
 					</div>
 				<?php
@@ -149,7 +152,7 @@ function wpl_admin_ui_header( $wplp = null )
 					</p>
 					<p>
 						<a class="button-secondary" href="options-general.php?page=wordpress-pixelpin-login&wplp=tools#dev-mode"><?php _wpl_e('Change this mode', 'wordpress-pixelpin-login') ?></a>
-						<a class="button-secondary" href="http://miled.github.io/wordpress-pixelpin-login/troubleshooting-advanced.html" target="_blank"><?php _wpl_e('Read about the development mode', 'wordpress-pixelpin-login') ?></a>
+						<a class="button-secondary" href="http://miled.github.io/wordpress-social-login/troubleshooting-advanced.html" target="_blank"><?php _wpl_e('Read about the development mode', 'wordpress-pixelpin-login') ?></a>
 					</p>
 				</div>
 			<?php
@@ -164,8 +167,8 @@ function wpl_admin_ui_header( $wplp = null )
 					</p>
 					<p>
 						<a class="button-secondary" href="options-general.php?page=wordpress-pixelpin-login&wplp=tools#debug-mode"><?php _wpl_e('Change this mode', 'wordpress-pixelpin-login') ?></a>
-						<a class="button-secondary" href="options-general.php?page=wordpress-pixelpin-login&wplp=watchdog"><?php _wpl_e('View WSL logs', 'wordpress-pixelpin-login') ?></a>
-						<a class="button-secondary" href="http://miled.github.io/wordpress-pixelpin-login/troubleshooting-advanced.html" target="_blank"><?php _wpl_e('Read about the debug mode', 'wordpress-pixelpin-login') ?></a>
+						<a class="button-secondary" href="options-general.php?page=wordpress-pixelpin-login&wplp=watchdog"><?php _wpl_e('View WPL logs', 'wordpress-pixelpin-login') ?></a>
+						<a class="button-secondary" href="http://miled.github.io/wordpress-social-login/troubleshooting-advanced.html" target="_blank"><?php _wpl_e('Read about the debug mode', 'wordpress-pixelpin-login') ?></a>
 					</p>
 				</div>
 			<?php
@@ -173,9 +176,9 @@ function wpl_admin_ui_header( $wplp = null )
 	?>
 
 	<div class="alignright">
-		<a style="font-size: 0.9em; text-decoration: none;" target="_blank" href="http://miled.github.io/wordpress-pixelpin-login/documentation.html"><?php _wpl_e('Docs', 'wordpress-pixelpin-login') ?></a> -
-		<a style="font-size: 0.9em; text-decoration: none;" target="_blank" href="http://miled.github.io/wordpress-pixelpin-login/support.html"><?php _wpl_e('Support', 'wordpress-pixelpin-login') ?></a> -
-		<a style="font-size: 0.9em; text-decoration: none;" target="_blank" href="https://github.com/miled/wordpress-pixelpin-login"><?php _wpl_e('Github', 'wordpress-pixelpin-login') ?></a>
+		<a style="font-size: 0.9em; text-decoration: none;" target="_blank" href="http://miled.github.io/wordpress-social-login/documentation.html"><?php _wpl_e('Docs', 'wordpress-pixelpin-login') ?></a> -
+		<a style="font-size: 0.9em; text-decoration: none;" target="_blank" href="http://miled.github.io/wordpress-social-login/support.html"><?php _wpl_e('Support', 'wordpress-pixelpin-login') ?></a> -
+		<a style="font-size: 0.9em; text-decoration: none;" target="_blank" href="https://github.com/PixelPinPlugins/WordPress-PixelPin-Login"><?php _wpl_e('Github', 'wordpress-pixelpin-login') ?></a>
 	</div>
 
 	<h1 <?php if( is_rtl() ) echo 'style="margin: 20px 0;"'; ?>>
@@ -269,7 +272,7 @@ function wpl_admin_ui_error()
 	<hr />
 
 	<div>
-		<a class="button-secondary" href="http://miled.github.io/wordpress-pixelpin-login/support.html" target="_blank"><?php _wpl_e( "Report as bug", 'wordpress-pixelpin-login' ) ?></a>
+		<a class="button-secondary" href="http://miled.github.io/wordpress-social-login/support.html" target="_blank"><?php _wpl_e( "Report as bug", 'wordpress-pixelpin-login' ) ?></a>
 		<a class="button-primary" href="options-general.php?page=wordpress-pixelpin-login&wplp=components" style="float:<?php if( is_rtl() ) echo 'left'; else echo 'right'; ?>"><?php _wpl_e( "Check enabled components", 'wordpress-pixelpin-login' ) ?></a>
 	</div>
 </div>
@@ -281,7 +284,7 @@ function wpl_admin_ui_error()
 // --------------------------------------------------------------------
 
 /**
-* Renders WSL #FAIL page
+* Renders WPL #FAIL page
 */
 function wpl_admin_ui_fail()
 {
@@ -309,7 +312,7 @@ function wpl_admin_ui_fail()
 
 			<ul style="margin-left:60px;">
 				<li><?php _wpl_e("PHP >= 5.2.0 installed", 'wordpress-pixelpin-login') ?></li>
-				<li><?php _wpl_e("WSL Endpoint URLs reachable", 'wordpress-pixelpin-login') ?></li>
+				<li><?php _wpl_e("WPL Endpoint URLs reachable", 'wordpress-pixelpin-login') ?></li>
 				<li><?php _wpl_e("PHP's default SESSION handling", 'wordpress-pixelpin-login') ?></li>
 				<li><?php _wpl_e("PHP/CURL/SSL Extension enabled", 'wordpress-pixelpin-login') ?></li>
 				<li><?php _wpl_e("PHP/JSON Extension enabled", 'wordpress-pixelpin-login') ?></li>
@@ -393,11 +396,11 @@ function wpl_admin_welcome_panel()
 					<b><?php _wpl_e("WordPress Social Login - Get Started", 'wordpress-pixelpin-login') ?></b>
 				</p>
 				<ul style="margin-left:25px;">
-					<li><a href="http://miled.github.io/wordpress-pixelpin-login/overview.html" target="_blank"><?php _wpl_e('Plugin Overview', 'wordpress-pixelpin-login') ?></a></li>
-					<li><a href="http://miled.github.io/wordpress-pixelpin-login/networks.html" target="_blank"><?php _wpl_e('Setup and Configuration', 'wordpress-pixelpin-login') ?></a></li>
-					<li><a href="http://miled.github.io/wordpress-pixelpin-login/widget.html" target="_blank"><?php _wpl_e('Customize WSL Widgets', 'wordpress-pixelpin-login') ?></a></li>
-					<li><a href="http://miled.github.io/wordpress-pixelpin-login/userdata.html" target="_blank"><?php _wpl_e('Manage users and contacts', 'wordpress-pixelpin-login') ?></a></li>
-					<li><a href="http://miled.github.io/wordpress-pixelpin-login/documentation.html" target="_blank"><?php _wpl_e('WSL Developer API', 'wordpress-pixelpin-login') ?></a></li>
+					<li><a href="http://miled.github.io/wordpress-social-login/overview.html" target="_blank"><?php _wpl_e('Plugin Overview', 'wordpress-pixelpin-login') ?></a></li>
+					<li><a href="http://miled.github.io/wordpress-social-login/networks.html" target="_blank"><?php _wpl_e('Setup and Configuration', 'wordpress-pixelpin-login') ?></a></li>
+					<li><a href="http://miled.github.io/wordpress-social-login/widget.html" target="_blank"><?php _wpl_e('Customize WPL Widgets', 'wordpress-pixelpin-login') ?></a></li>
+					<li><a href="http://miled.github.io/wordpress-social-login/userdata.html" target="_blank"><?php _wpl_e('Manage users and contacts', 'wordpress-pixelpin-login') ?></a></li>
+					<li><a href="http://miled.github.io/wordpress-social-login/documentation.html" target="_blank"><?php _wpl_e('WPL Developer API', 'wordpress-pixelpin-login') ?></a></li>
 				</ul>
 			</td>
 		</tr>
@@ -426,7 +429,7 @@ function wpl_admin_help_us_localize_note()
 		<div id="l10n-footer">
 			<br /><br />
 			<img src="<?php echo $assets_url ?>flags.png">
-			<a href="https://www.transifex.com/projects/p/wordpress-pixelpin-login/" target="_blank"><?php _wpl_e( "Help us translate WordPress PixelPin Login into your language", 'wordpress-pixelpin-login' ) ?></a>
+			<a href="https://www.transifex.com/projects/p/wordpress-social-login/" target="_blank"><?php _wpl_e( "Help us translate WordPress PixelPin Login into your language", 'wordpress-pixelpin-login' ) ?></a>
 		</div>
 	<?php
 }
@@ -479,7 +482,7 @@ add_action('admin_menu', 'wpl_admin_menu' );
 // --------------------------------------------------------------------
 
 /**
-* Enqueue WSL admin CSS file
+* Enqueue WPL admin CSS file
 */
 function wpl_add_admin_stylesheets()
 {

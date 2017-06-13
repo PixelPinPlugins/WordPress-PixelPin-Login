@@ -1,9 +1,12 @@
 <?php
 /*!
 * WordPress PixelPin Login
-*
-* http://miled.github.io/wordpress-pixelpin-login/ | https://github.com/miled/wordpress-pixelpin-login
-*  (c) 2011-2015 Mohamed Mrassi and contributors | http://wordpress.org/plugins/wordpress-pixelpin-login/
+* 2017 PixelPin and contributors https://github.com/PixelPinPlugins/WordPress-PixelPin-Login
+* 
+* Original Authors of WSL
+* -----------------------
+* http://miled.github.io/wordpress-social-login/ | https://github.com/miled/wordpress-social-login
+*  (c) 2011-2015 Mohamed Mrassi and contributors | http://wordpress.org/plugins/wordpress-social-login/
 */
 
 /**
@@ -89,13 +92,13 @@ function wpl_component_buddypress_setup_profile_mapping()
 		array( 'field' => 'profileURL'  , 'label' => _wpl__( "Profile URL"              , 'wordpress-pixelpin-login'), 'description' => _wpl__( "Link to the user profile on the provider web site"                                                                      , 'wordpress-pixelpin-login') ),
 		array( 'field' => 'webSiteURL'  , 'label' => _wpl__( "Website URL"              , 'wordpress-pixelpin-login'), 'description' => _wpl__( "User website, blog or web page"                                                                                         , 'wordpress-pixelpin-login') ),
 		array( 'field' => 'photoURL'    , 'label' => _wpl__( "Photo URL"                , 'wordpress-pixelpin-login'), 'description' => _wpl__( "Link to user picture or avatar on the provider web site"                                                                , 'wordpress-pixelpin-login') ),
-		array( 'field' => 'displayName' , 'label' => _wpl__( "Display name"             , 'wordpress-pixelpin-login'), 'description' => _wpl__( "User Display name. If not provided by pixelpin network, WSL will return a concatenation of the user first and last name"  , 'wordpress-pixelpin-login') ),
+		array( 'field' => 'displayName' , 'label' => _wpl__( "Display name"             , 'wordpress-pixelpin-login'), 'description' => _wpl__( "User Display name. If not provided by pixelpin network, WPL will return a concatenation of the user first and last name"  , 'wordpress-pixelpin-login') ),
 		array( 'field' => 'description' , 'label' => _wpl__( "Description"              , 'wordpress-pixelpin-login'), 'description' => _wpl__( "A short about me"                                                                                                       , 'wordpress-pixelpin-login') ),
 		array( 'field' => 'firstName'   , 'label' => _wpl__( "First name"               , 'wordpress-pixelpin-login'), 'description' => _wpl__( "User's first name"                                                                                                      , 'wordpress-pixelpin-login') ),
 		array( 'field' => 'lastName'    , 'label' => _wpl__( "Last name"                , 'wordpress-pixelpin-login'), 'description' => _wpl__( "User's last name"                                                                                                       , 'wordpress-pixelpin-login') ),
 		array( 'field' => 'gender'      , 'label' => _wpl__( "Gender"                   , 'wordpress-pixelpin-login'), 'description' => _wpl__( "User's gender. Values are 'female', 'male' or blank"                                                                    , 'wordpress-pixelpin-login') ),
 		array( 'field' => 'language'    , 'label' => _wpl__( "Language"                 , 'wordpress-pixelpin-login'), 'description' => _wpl__( "User's language"                                                                                                        , 'wordpress-pixelpin-login') ),
-		array( 'field' => 'age'         , 'label' => _wpl__( "Age"                      , 'wordpress-pixelpin-login'), 'description' => _wpl__( "User' age. Note that WSL do not calculate this field. We return it as it was provided"                                  , 'wordpress-pixelpin-login') ),
+		array( 'field' => 'age'         , 'label' => _wpl__( "Age"                      , 'wordpress-pixelpin-login'), 'description' => _wpl__( "User' age. Note that WPL do not calculate this field. We return it as it was provided"                                  , 'wordpress-pixelpin-login') ),
 		array( 'field' => 'birthDay'    , 'label' => _wpl__( "Birth day"                , 'wordpress-pixelpin-login'), 'description' => _wpl__( "The day in the month in which the person was born. Not to confuse it with 'Birth date'"                                 , 'wordpress-pixelpin-login') ),
 		array( 'field' => 'birthMonth'  , 'label' => _wpl__( "Birth month"              , 'wordpress-pixelpin-login'), 'description' => _wpl__( "The month in which the person was born"                                                                                 , 'wordpress-pixelpin-login') ),
 		array( 'field' => 'birthYear'   , 'label' => _wpl__( "Birth year"               , 'wordpress-pixelpin-login'), 'description' => _wpl__( "The year in which the person was born"                                                                                  , 'wordpress-pixelpin-login') ),
@@ -115,7 +118,7 @@ function wpl_component_buddypress_setup_profile_mapping()
 	</h3>
 	<div class="inside">
 		<p>
-			<?php _wpl_e("When <b>Profile mapping</b> is enabled, WSL will try to automatically fill in Buddypress users profiles from their pixelpin networks profiles", 'wordpress-pixelpin-login') ?>.
+			<?php _wpl_e("When <b>Profile mapping</b> is enabled, WPL will try to automatically fill in Buddypress users profiles from their pixelpin networks profiles", 'wordpress-pixelpin-login') ?>.
 		</p>
 
 		<p>
@@ -123,11 +126,11 @@ function wpl_component_buddypress_setup_profile_mapping()
 		</p>
 
 		<p class="description">
-			1. <?php _wpl_e('<b>Profile mapping</b> will only work for new users. Profile mapping for returning users will implemented in future version of WSL', 'wordpress-pixelpin-login') ?>.
+			1. <?php _wpl_e('<b>Profile mapping</b> will only work for new users. Profile mapping for returning users will implemented in future version of WPL', 'wordpress-pixelpin-login') ?>.
 			<br />
 			2. <?php _wpl_e('Not all the mapped fields will be filled. Some providers and pixelpin networks do not give away many information about their users', 'wordpress-pixelpin-login') ?>.
 			<br />
-			3. <?php _wpl_e('WSL can only map <b>Single Fields</b>. Supported fields types are: Multi-line Text Areax, Text Box, URL, Date Selector and Number', 'wordpress-pixelpin-login') ?>.
+			3. <?php _wpl_e('WPL can only map <b>Single Fields</b>. Supported fields types are: Multi-line Text Areax, Text Box, URL, Date Selector and Number', 'wordpress-pixelpin-login') ?>.
 		</p>
 
 		<table width="100%" border="0" cellpadding="5" cellspacing="2" style="border-top:1px solid #ccc;">
@@ -152,8 +155,8 @@ function wpl_component_buddypress_setup_profile_mapping()
 
 	<div class="inside">
 		<p>
-			<?php _wpl_e("Here you can create a new map by placing WSL users profiles fields to the appropriate destination fields", 'wordpress-pixelpin-login') ?>.
-			<?php _wpl_e('The left column shows the available <b>WSL users profiles fields</b>: These select boxes are called <b>source</b> fields', 'wordpress-pixelpin-login') ?>.
+			<?php _wpl_e("Here you can create a new map by placing WPL users profiles fields to the appropriate destination fields", 'wordpress-pixelpin-login') ?>.
+			<?php _wpl_e('The left column shows the available <b>WPL users profiles fields</b>: These select boxes are called <b>source</b> fields', 'wordpress-pixelpin-login') ?>.
 			<?php _wpl_e('The right column shows the list of <b>Buddypress profiles fields</b>: Those are the <b>destination</b> fields', 'wordpress-pixelpin-login') ?>.
 			<?php _wpl_e('If you don\'t want to map a particular Buddypress field, then leave the source for that field blank', 'wordpress-pixelpin-login') ?>.
 		</p>
@@ -211,7 +214,7 @@ function wpl_component_buddypress_setup_profile_mapping()
 													if( ! $can_map_it ){
 													?>
 														<p class="description">
-															<?php _wpl_e("<b>WSL</b> can not map this field. Supported field types are: <em>Multi-line Text Areax, Text Box, URL, Date Selector and Number</em>", 'wordpress-pixelpin-login'); ?>.
+															<?php _wpl_e("<b>WPL</b> can not map this field. Supported field types are: <em>Multi-line Text Areax, Text Box, URL, Date Selector and Number</em>", 'wordpress-pixelpin-login'); ?>.
 														</p>
 													<?php
 													}
@@ -221,7 +224,7 @@ function wpl_component_buddypress_setup_profile_mapping()
 															foreach( $ha_profile_fields as $item ){
 														?>
 															<p class="description bb_profile_mapping_confirm_<?php echo $field->id; ?>" style="margin-left:0;<?php if( $item['field'] != $map ) echo "display:none;"; ?>" id="bb_profile_mapping_confirm_<?php echo $field->id; ?>_<?php echo $item['field']; ?>">
-																<?php echo sprintf( _wpl__( "WSL <b>%s</b> is mapped to Buddypress <b>%s</b> field", 'wordpress-pixelpin-login' ), $item['label'], $field->name ); ?>.
+																<?php echo sprintf( _wpl__( "WPL <b>%s</b> is mapped to Buddypress <b>%s</b> field", 'wordpress-pixelpin-login' ), $item['label'], $field->name ); ?>.
 																<br />
 																<em><b><?php echo $item['label']; ?>:</b> <?php echo $item['description']; ?>.</em>
 															</p>

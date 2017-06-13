@@ -2,8 +2,8 @@
 /*!
 * WordPress PixelPin Login
 *
-* http://miled.github.io/wordpress-pixelpin-login/ | https://github.com/miled/wordpress-pixelpin-login
-*  (c) 2011-2014 Mohamed Mrassi and contributors | http://wordpress.org/plugins/wordpress-pixelpin-login/
+* http://miled.github.io/wordpress-social-login/ | https://github.com/miled/wordpress-social-login
+*  (c) 2011-2014 Mohamed Mrassi and contributors | http://wordpress.org/plugins/wordpress-social-login/
 */
 
 session_start();
@@ -24,7 +24,7 @@ if ( ! $_tests_dir )
 echo "Booting...\n";
 echo "PHP:session_id()=" . session_id() . "\n";
 echo "WPT:WP_TESTS_DIR=" . $_tests_dir . "\n";
-echo "WSL:WORDPRESS_PIXELPIN_LOGIN_ABS_PATH=" . realpath( WORDPRESS_PIXELPIN_LOGIN_ABS_PATH ) . "\n";
+echo "WPL:WORDPRESS_PIXELPIN_LOGIN_ABS_PATH=" . realpath( WORDPRESS_PIXELPIN_LOGIN_ABS_PATH ) . "\n";
 
 require_once $_tests_dir . '/includes/functions.php';
 
@@ -37,20 +37,20 @@ tests_add_filter( 'muplugins_loaded', '_manually_load_plugin' );
 
 require $_tests_dir . '/includes/bootstrap.php';
 
-echo "Activate WSL...\n";
+echo "Activate WPL...\n";
 
 activate_plugin( 'wordpress-pixelpin-login/wp-pixelpin-login.php' );
 
-echo "Uninstall WSL...\n";
+echo "Uninstall WPL...\n";
 
 wpl_database_uninstall();
 
-echo "Install WSL...\n";
+echo "Install WPL...\n";
 
 wpl_database_install();
 
-echo "ReInstall WSL...\n";
+echo "ReInstall WPL...\n";
 
 wpl_install();
 
-echo "Testing WSL...\n";
+echo "Testing WPL...\n";

@@ -263,17 +263,17 @@ msgid "Save Settings"
 msgstr ""
 
 #: admin/components/bouncer/wpl.components.bouncer.setup.php:60
-msgid "WSL Widget"
+msgid "WPL Widget"
 msgstr ""
 
 #: admin/components/bouncer/wpl.components.bouncer.setup.php:64
 msgid ""
 "Here you can tell Bouncer if you are accepting new users registration and "
 "authentication into your website or not any more. Note that Bouncer only "
-"works for WSL and will not interfere with users authenticating through the "
+"works for WPL and will not interfere with users authenticating through the "
 "regulars wordpress Login and Register pages with their usernames and "
 "passwords (to to achieve that kind of restrictions, you may need to use "
-"another plugin(s) in combination with WSL)."
+"another plugin(s) in combination with WPL)."
 msgstr ""
 
 #: admin/components/bouncer/wpl.components.bouncer.setup.php:68
@@ -436,7 +436,7 @@ msgstr ""
 
 #: admin/components/bouncer/wpl.components.bouncer.setup.php:248
 msgid ""
-"Here you can define the default role for new users authenticating through WSL"
+"Here you can define the default role for new users authenticating through WPL"
 msgstr ""
 
 #: admin/components/bouncer/wpl.components.bouncer.setup.php:249
@@ -472,7 +472,7 @@ msgid ""
 msgstr ""
 
 #: admin/components/bouncer/wpl.components.bouncer.setup.php:260
-msgid "New WSL users default role"
+msgid "New WPL users default role"
 msgstr ""
 
 #: admin/components/bouncer/wpl.components.bouncer.setup.php:263
@@ -494,14 +494,14 @@ msgstr ""
 #: admin/components/bouncer/wpl.components.bouncer.setup.php:298
 #, php-format
 msgid ""
-"<b>New WSL users default role</b> is currently set to <b>&ldquo;%s&rdquo;</"
+"<b>New WPL users default role</b> is currently set to <b>&ldquo;%s&rdquo;</"
 "b>, which gives these capabilities: "
 msgstr ""
 
 #: admin/components/bouncer/wpl.components.bouncer.setup.php:314
 #, php-format
 msgid ""
-"<b>New WSL users default role</b> is currently set to <b>&ldquo;%s&rdquo;</"
+"<b>New WPL users default role</b> is currently set to <b>&ldquo;%s&rdquo;</"
 "b>, which gives NO capabilities"
 msgstr ""
 
@@ -715,7 +715,7 @@ msgstr ""
 #: admin/components/buddypress/wpl.components.buddypress.setup.php:92
 #: admin/components/users/wpl.components.users.profiles.php:40
 msgid ""
-"User Display name. If not provided by pixelpin network, WSL will return a "
+"User Display name. If not provided by pixelpin network, WPL will return a "
 "concatenation of the user first and last name"
 msgstr ""
 
@@ -747,7 +747,7 @@ msgstr ""
 #: admin/components/buddypress/wpl.components.buddypress.setup.php:98
 #: admin/components/users/wpl.components.users.profiles.php:46
 msgid ""
-"User' age. Note that WSL do not calculate this field. We return it as it was "
+"User' age. Note that WPL do not calculate this field. We return it as it was "
 "provided"
 msgstr ""
 
@@ -817,14 +817,14 @@ msgstr ""
 
 #: admin/components/buddypress/wpl.components.buddypress.setup.php:118
 msgid ""
-"When <b>Profile mapping</b> is enabled, WSL will try to automatically fill "
+"When <b>Profile mapping</b> is enabled, WPL will try to automatically fill "
 "in Buddypress users profiles from their pixelpin networks profiles"
 msgstr ""
 
 #: admin/components/buddypress/wpl.components.buddypress.setup.php:126
 msgid ""
 "<b>Profile mapping</b> will only work for new users. Profile mapping for "
-"returning users will implemented in future version of WSL"
+"returning users will implemented in future version of WPL"
 msgstr ""
 
 #: admin/components/buddypress/wpl.components.buddypress.setup.php:128
@@ -835,7 +835,7 @@ msgstr ""
 
 #: admin/components/buddypress/wpl.components.buddypress.setup.php:130
 msgid ""
-"WSL can only map <b>Single Fields</b>. Supported fields types are: Multi-"
+"WPL can only map <b>Single Fields</b>. Supported fields types are: Multi-"
 "line Text Areax, Text Box, URL, Date Selector and Number"
 msgstr ""
 
@@ -849,13 +849,13 @@ msgstr ""
 
 #: admin/components/buddypress/wpl.components.buddypress.setup.php:155
 msgid ""
-"Here you can create a new map by placing WSL users profiles fields to the "
+"Here you can create a new map by placing WPL users profiles fields to the "
 "appropriate destination fields"
 msgstr ""
 
 #: admin/components/buddypress/wpl.components.buddypress.setup.php:156
 msgid ""
-"The left column shows the available <b>WSL users profiles fields</b>: These "
+"The left column shows the available <b>WPL users profiles fields</b>: These "
 "select boxes are called <b>source</b> fields"
 msgstr ""
 
@@ -878,13 +878,13 @@ msgstr ""
 
 #: admin/components/buddypress/wpl.components.buddypress.setup.php:214
 msgid ""
-"<b>WSL</b> can not map this field. Supported field types are: <em>Multi-line "
+"<b>WPL</b> can not map this field. Supported field types are: <em>Multi-line "
 "Text Areax, Text Box, URL, Date Selector and Number</em>"
 msgstr ""
 
 #: admin/components/buddypress/wpl.components.buddypress.setup.php:224
 #, php-format
-msgid "WSL <b>%s</b> is mapped to Buddypress <b>%s</b> field"
+msgid "WPL <b>%s</b> is mapped to Buddypress <b>%s</b> field"
 msgstr ""
 
 #: admin/components/buddypress/wpl.components.buddypress.sidebar.php:42
@@ -893,7 +893,7 @@ msgstr ""
 
 #: admin/components/buddypress/wpl.components.buddypress.sidebar.php:46
 msgid ""
-"WSL can be now fully integrated with your <a href=\"https://buddypress.org\" "
+"WPL can be now fully integrated with your <a href=\"https://buddypress.org\" "
 "target=\"_blank\">BuddyPress</a> installation. When enabled, user avatars "
 "display should work right out of the box with most WordPress themes and your "
 "BuddyPress installation"
@@ -901,8 +901,8 @@ msgstr ""
 
 #: admin/components/buddypress/wpl.components.buddypress.sidebar.php:50
 msgid ""
-"WSL also comes with BuddyPress xProfiles mappings. When this feature is "
-"enabled, WSL will try to automatically fill in Buddypress users profiles "
+"WPL also comes with BuddyPress xProfiles mappings. When this feature is "
+"enabled, WPL will try to automatically fill in Buddypress users profiles "
 "from their pixelpin networks profiles"
 msgstr ""
 
@@ -937,18 +937,18 @@ msgstr ""
 
 #: admin/components/components/wpl.components.help.gallery.php:71
 #: admin/wpl.admin.ui.php:390
-msgid "WSL Developer API"
+msgid "WPL Developer API"
 msgstr ""
 
 #: admin/components/components/wpl.components.help.gallery.php:72
-msgid "Submit your WSL Component"
+msgid "Submit your WPL Component"
 msgstr ""
 
 #: admin/components/components/wpl.components.help.setup.php:26
 msgid ""
-"By default, only the three WSL core components are enabled. You can "
+"By default, only the three WPL core components are enabled. You can "
 "selectively enable or disable any of the non-core components by using the "
-"form below. Your WSL installation will continue to function. However, the "
+"form below. Your WPL installation will continue to function. However, the "
 "features of the disabled components will no longer be accessible"
 msgstr ""
 
@@ -1056,7 +1056,7 @@ msgstr ""
 
 #: admin/components/contacts/wpl.components.contacts.settings.sidebar.php:59
 msgid ""
-"<b>WSL</b> will try to import as much information about a user contacts as "
+"<b>WPL</b> will try to import as much information about a user contacts as "
 "he was able to pull from the pixelpin networks APIs."
 msgstr ""
 
@@ -1073,7 +1073,7 @@ msgstr ""
 #: admin/components/help/wpl.components.help.reference.php:26
 msgid ""
 "The complete <b>User Guide</b> can be found at\n"
-"\t\t<a href=\"http://miled.github.io/wordpress-pixelpin-login/index.html\" "
+"\t\t<a href=\"http://miled.github.io/wordpress-social-login/index.html\" "
 "target=\"_blank\">miled.github.io/wordpress-pixelpin-login/index.html</a>"
 msgstr ""
 
@@ -1084,7 +1084,7 @@ msgstr ""
 #: admin/components/help/wpl.components.help.reference.php:34
 msgid ""
 "A list of <b>Frequently asked questions</b> can be found at\n"
-"\t\t<a href=\"http://miled.github.io/wordpress-pixelpin-login/faq.html\" "
+"\t\t<a href=\"http://miled.github.io/wordpress-social-login/faq.html\" "
 "target=\"_blank\">miled.github.io/wordpress-pixelpin-login/faq.html</a>"
 msgstr ""
 
@@ -1181,12 +1181,12 @@ msgstr ""
 #: admin/components/login-widget/wpl.components.loginwidget.setup.php:62
 msgid ""
 "<b>Connect with PixelPin caption :</b> Change the content of the label to display "
-"above WSL widget"
+"above WPL widget"
 msgstr ""
 
 #: admin/components/login-widget/wpl.components.loginwidget.setup.php:66
 msgid ""
-"<b>PixelPin icon set :</b> WSL provides two set of icons to display on the "
+"<b>PixelPin icon set :</b> WPL provides two set of icons to display on the "
 "widget"
 msgstr ""
 
@@ -1235,7 +1235,7 @@ msgstr ""
 #: admin/components/login-widget/wpl.components.loginwidget.setup.php:135
 msgid ""
 "<b>Redirect URL :</b> By default and after they authenticate, users will be "
-"automatically redirected to the page where they come from. If WSL wasn't "
+"automatically redirected to the page where they come from. If WPL wasn't "
 "able to identify where they come from (or if they used wp-login page to "
 "connect), then they will be redirected to <code>Redirect URL</code> instead"
 msgstr ""
@@ -1250,7 +1250,7 @@ msgstr ""
 msgid ""
 "<b>Authentication display :</b> Determines how the authentication dialog is "
 "rendered. You can chose to open the dialog in a <b>popup</b> or to <b>in "
-"page</b>. If a user is visiting using a mobile device, WSL will fall back to "
+"page</b>. If a user is visiting using a mobile device, WPL will fall back to "
 "more <b>in page</b>"
 msgstr ""
 
@@ -1263,7 +1263,7 @@ msgstr ""
 #: admin/components/login-widget/wpl.components.loginwidget.setup.php:151
 msgid ""
 "<b>Notification :</b> Determines whether you want to receive a notification "
-"by mail when a new user is logged in via WSL"
+"by mail when a new user is logged in via WPL"
 msgstr ""
 
 #: admin/components/login-widget/wpl.components.loginwidget.setup.php:156
@@ -1326,8 +1326,8 @@ msgstr ""
 
 #: admin/components/login-widget/wpl.components.loginwidget.sidebar.php:56
 msgid ""
-"For more information about the WSL Widget, refer to the online userguide "
-"<b><a href=\"http://miled.github.io/wordpress-pixelpin-login/widget.html\" "
+"For more information about the WPL Widget, refer to the online userguide "
+"<b><a href=\"http://miled.github.io/wordpress-social-login/widget.html\" "
 "target=\"_blank\">Widget Customization</a></b> and <b><a href=\"http://miled."
 "github.io/wordpress-pixelpin-login/themes.html\" target=\"_blank\">Widget "
 "Themes</a></b>"
@@ -1356,7 +1356,7 @@ msgid "For posts and pages, you may use this shortcode"
 msgstr ""
 
 #: admin/components/login-widget/wpl.components.loginwidget.sidebar.php:112
-msgid "WSL Widget will only show up for non connected users"
+msgid "WPL Widget will only show up for non connected users"
 msgstr ""
 
 #: admin/components/login-widget/wpl.components.loginwidget.sidebar.php:114
@@ -1368,7 +1368,7 @@ msgstr ""
 #: admin/components/login-widget/wpl.components.loginwidget.sidebar.php:116
 msgid ""
 "Adblock Plus users with &ldquo;<a href=\"https://adblockplus.org/en/"
-"features#pixelpinmedia\" target=\"_blank\">antipixelpin filter</a>&rdquo; "
+"features#pixelpinmedia\" target=\"_blank\">antisocial filter</a>&rdquo; "
 "enabled may not see the providers icons"
 msgstr ""
 
@@ -1380,7 +1380,7 @@ msgstr ""
 msgid ""
 "You can use <a href=\"http://wordpress.org/extend/plugins/html-javascript-"
 "adder/\" target=\"_blank\">HTML Javascript Adder</a> plugin in combination "
-"with WSL to display the Widget in your website sidebar by using the "
+"with WPL to display the Widget in your website sidebar by using the "
 "shortcode [wordpress_pixelpin_login]"
 msgstr ""
 
@@ -1414,7 +1414,7 @@ msgstr ""
 #, php-format
 msgid ""
 "<b>%s</b> do not require an external application, however if the Web API Key "
-"is provided, then WSL will be able to get more information about the "
+"is provided, then WPL will be able to get more information about the "
 "connected %s users"
 msgstr ""
 
@@ -1626,11 +1626,11 @@ msgstr ""
 #: admin/components/networks/wpl.components.networks.sidebar.php:53
 msgid ""
 "If you are still new to things, we recommend that you read the <b><a href="
-"\"http://miled.github.io/wordpress-pixelpin-login/documentation.html\" target="
-"\"_blank\">WSL Documentation</a></b> and to make sure your server meet the "
+"\"http://miled.github.io/wordpress-social-login/documentation.html\" target="
+"\"_blank\">WPL Documentation</a></b> and to make sure your server meet the "
 "minimum system requirements by running <b><a href=\"http://hybridauth.com/"
 "hawp4/wp-admin/options-general.php?page=wordpress-pixelpin-login&wplp=tools"
-"\">WSL Diagnostics</a></b>"
+"\">WPL Diagnostics</a></b>"
 msgstr ""
 
 #: admin/components/networks/wpl.components.networks.sidebar.php:56
@@ -1659,7 +1659,7 @@ msgstr ""
 
 #: admin/components/networks/wpl.components.networks.sidebar.php:149
 #: admin/components/networks/wpl.components.networks.sidebar.php:183
-msgid "WSL users"
+msgid "WPL users"
 msgstr ""
 
 #: admin/components/networks/wpl.components.networks.sidebar.php:160
@@ -1667,7 +1667,7 @@ msgid "By provider"
 msgstr ""
 
 #: admin/components/networks/wpl.components.networks.sidebar.php:180
-msgid "WSL profiles"
+msgid "WPL profiles"
 msgstr ""
 
 #: admin/components/networks/wpl.components.networks.sidebar.php:191
@@ -1779,12 +1779,12 @@ msgid "Display your system information"
 msgstr ""
 
 #: admin/components/tools/wpl.components.tools.actions.php:105
-msgid "Repair WSL tables"
+msgid "Repair WPL tables"
 msgstr ""
 
 #: admin/components/tools/wpl.components.tools.actions.php:109
 msgid ""
-"This will attempt recreate WSL databases tables if they do not exist and "
+"This will attempt recreate WPL databases tables if they do not exist and "
 "will also add any missing field"
 msgstr ""
 
@@ -1799,7 +1799,7 @@ msgstr ""
 #: admin/components/tools/wpl.components.tools.actions.php:131
 msgid ""
 "The <b>Debug mode</b> is an internal development tool built to track every "
-"action made by WSL during the authentication proces, which can be useful "
+"action made by WPL during the authentication proces, which can be useful "
 "when debugging this plugin but note that it is highly technical and not "
 "documented"
 msgstr ""
@@ -1807,7 +1807,7 @@ msgstr ""
 #: admin/components/tools/wpl.components.tools.actions.php:135
 msgid ""
 "When Debug mode is enabled and set to <code>Log actions in a file</code>, "
-"WSL will attempt to generate its log files under <em>/wp-content/uploads/"
+"WPL will attempt to generate its log files under <em>/wp-content/uploads/"
 "wordpress-pixelpin-login</em>"
 msgstr ""
 
@@ -1820,8 +1820,8 @@ msgstr ""
 
 #: admin/components/tools/wpl.components.tools.actions.php:143
 msgid ""
-"For more information, refer to WSL documentation under Advanced "
-"Troubleshooting &gt; <a href=\"http://miled.github.io/wordpress-pixelpin-login/"
+"For more information, refer to WPL documentation under Advanced "
+"Troubleshooting &gt; <a href=\"http://miled.github.io/wordpress-social-login/"
 "troubleshooting-advanced.html\" target=\"_blank\">Debug Mode</a>"
 msgstr ""
 
@@ -1835,7 +1835,7 @@ msgstr ""
 
 #: admin/components/tools/wpl.components.tools.actions.php:158
 #: admin/wpl.admin.ui.php:167
-msgid "View WSL logs"
+msgid "View WPL logs"
 msgstr ""
 
 #: admin/components/tools/wpl.components.tools.actions.php:175
@@ -1871,8 +1871,8 @@ msgstr ""
 
 #: admin/components/tools/wpl.components.tools.actions.php:195
 msgid ""
-"For more information, refer to WSL documentation under Advanced "
-"Troubleshooting &gt; <a href=\"http://miled.github.io/wordpress-pixelpin-login/"
+"For more information, refer to WPL documentation under Advanced "
+"Troubleshooting &gt; <a href=\"http://miled.github.io/wordpress-social-login/"
 "troubleshooting-advanced.html\" target=\"_blank\">Development Mode</a>"
 msgstr ""
 
@@ -1884,7 +1884,7 @@ msgstr ""
 
 #: admin/components/tools/wpl.components.tools.actions.php:225
 msgid ""
-"Once you delete WSL database tables and stored options, there is NO going "
+"Once you delete WPL database tables and stored options, there is NO going "
 "back. Please be certain"
 msgstr ""
 
@@ -1978,12 +1978,12 @@ msgstr ""
 #: admin/components/users/wpl.components.users.list.php:238
 #, php-format
 msgid ""
-"WSL user ID #%d: <b>%s</b>  profiles and contacts has been deleted. Note "
+"WPL user ID #%d: <b>%s</b>  profiles and contacts has been deleted. Note "
 "that the associated WordPress user wasn't deleted"
 msgstr ""
 
 #: admin/components/users/wpl.components.users.profiles.php:28
-msgid "This's not a WSL user!"
+msgid "This's not a WPL user!"
 msgstr ""
 
 
@@ -2038,7 +2038,7 @@ msgid "Authentication log viewer - latest activity"
 msgstr ""
 
 #: admin/components/watchdog/index.php:107
-msgid "Delete WSL Log"
+msgid "Delete WPL Log"
 msgstr ""
 
 #: admin/components/watchdog/index.php:117
@@ -2052,7 +2052,7 @@ msgstr ""
 
 #: admin/wpl.admin.ui.php:136
 msgid ""
-"<b>Note:</b> WSL has detected that you are using a caching plugin. If the "
+"<b>Note:</b> WPL has detected that you are using a caching plugin. If the "
 "saved changes didn't take effect immediately then you might need to empty "
 "the cache"
 msgstr ""
@@ -2114,7 +2114,7 @@ msgid "PHP >= 5.2.0 installed"
 msgstr ""
 
 #: admin/wpl.admin.ui.php:312
-msgid "WSL Endpoint URLs reachable"
+msgid "WPL Endpoint URLs reachable"
 msgstr ""
 
 #: admin/wpl.admin.ui.php:313
@@ -2164,7 +2164,7 @@ msgid "Setup and Configuration"
 msgstr ""
 
 #: admin/wpl.admin.ui.php:388
-msgid "Customize WSL Widgets"
+msgid "Customize WPL Widgets"
 msgstr ""
 
 #: admin/wpl.admin.ui.php:389
@@ -2173,7 +2173,7 @@ msgstr ""
 
 #: admin/wpl.admin.ui.php:396
 #, php-format
-msgid "What's new on WSL %s"
+msgid "What's new on WPL %s"
 msgstr ""
 
 #: admin/wpl.admin.ui.php:400
@@ -2207,8 +2207,8 @@ msgstr ""
 
 #: services/wpl.authentication.php:165
 msgid ""
-"The session identifier is missing.<br />For more information refer to WSL <a "
-"href=\"http://miled.github.io/wordpress-pixelpin-login/troubleshooting."
+"The session identifier is missing.<br />For more information refer to WPL <a "
+"href=\"http://miled.github.io/wordpress-social-login/troubleshooting."
 "html#session-error\" target=\"_blank\">Troubleshooting</a>."
 msgstr ""
 
@@ -2328,7 +2328,7 @@ msgid ""
 msgstr ""
 
 #: settings/wpl.initialization.php:50
-msgid "WSL Core"
+msgid "WPL Core"
 msgstr ""
 
 #: settings/wpl.initialization.php:50

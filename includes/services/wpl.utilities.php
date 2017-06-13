@@ -1,9 +1,12 @@
 <?php
 /*!
 * WordPress PixelPin Login
+* 2017 PixelPin and contributors https://github.com/PixelPinPlugins/WordPress-PixelPin-Login
 *
-* http://miled.github.io/wordpress-pixelpin-login/ | https://github.com/miled/wordpress-pixelpin-login
-*  (c) 2011-2015 Mohamed Mrassi and contributors | http://wordpress.org/plugins/wordpress-pixelpin-login/
+* Original Authors of WSL
+* -----------------------
+* http://miled.github.io/wordpress-social-login/ | https://github.com/miled/wordpress-social-login
+*  (c) 2011-2015 Mohamed Mrassi and contributors | http://wordpress.org/plugins/wordpress-social-login/
 */
 
 /**
@@ -16,7 +19,7 @@ if ( !defined( 'ABSPATH' ) ) exit;
 // --------------------------------------------------------------------
 
 /**
-* Return the current used WSL version
+* Return the current used WPL version
 */
 function wpl_get_version()
 {
@@ -30,7 +33,7 @@ function wpl_get_version()
 /**
 * Check if the current connection is being made over https
 *
-* Borrowed from http://wordpress.org/extend/plugins/oa-pixelpin-login/
+* Borrowed from http://wordpress.org/extend/plugins/oa-social-login/
 */
 function wpl_is_https_on()
 {
@@ -66,7 +69,7 @@ function wpl_is_https_on()
 /**
 * Return the current url
 *
-* Borrowed from http://wordpress.org/extend/plugins/oa-pixelpin-login/
+* Borrowed from http://wordpress.org/extend/plugins/oa-social-login/
 */
 function wpl_get_current_url()
 {
@@ -224,7 +227,7 @@ function wpl_display_dev_mode_debugging_area( $keyword = 'wpl_' )
 							<tr>
 								<td valign="top" width="450">
 									<?php if( stristr( $caller_name, $keyword ) ): ?>
-										<a href="https://github.com/hybridauth/WordPress-PixelPin-Login/search?q=<?php echo $caller_name ; ?>" target="_blank" class="wpl-dev-wplfunc"><?php echo $caller_name; ?></a>
+										<a href="https://github.com/hybridauth/WordPress-Social-Login/search?q=<?php echo $caller_name ; ?>" target="_blank" class="wpl-dev-wplfunc"><?php echo $caller_name; ?></a>
 									<?php else: ?>
 										<a href="https://developer.wordpress.org/?s=<?php echo $caller_name ; ?>" target="_blank" class="wpl-dev-nonwplfunc<?php if( stristr( $caller_name, '_option' ) ) echo "- wpl-dev-optionfunc"; ?>"><?php echo $caller_name; ?></a>
 									<?php endif; ?>
@@ -257,7 +260,7 @@ function wpl_display_dev_mode_debugging_area( $keyword = 'wpl_' )
 			}
 		?>
 		<tr>
-			<td colspan="2">Total SQL Queries by WSL : <?php echo $total_wpl_queries; ?></td>
+			<td colspan="2">Total SQL Queries by WPL : <?php echo $total_wpl_queries; ?></td>
 			<td width="50" nowrap><?php echo number_format( $total_wpl_queries_time, 4, '.', '' ); ?></td>
 		</tr>
 	</table>
@@ -290,7 +293,7 @@ function wpl_display_dev_mode_debugging_area( $keyword = 'wpl_' )
 															if( stristr( $name, $keyword ) )
 															{
 																?>
-																	<a class="wpl-dev-usedwplhook" href="https://github.com/hybridauth/WordPress-PixelPin-Login/search?q=<?php echo $name ; ?>" target="_blank"><?php echo $name ; ?></a>
+																	<a class="wpl-dev-usedwplhook" href="https://github.com/hybridauth/WordPress-Social-Login/search?q=<?php echo $name ; ?>" target="_blank"><?php echo $name ; ?></a>
 																<?php
 															}
 															else
@@ -304,7 +307,7 @@ function wpl_display_dev_mode_debugging_area( $keyword = 'wpl_' )
 															if( stristr( $callback['function'], $keyword ) )
 															{
 																?>
-																	<a href="https://github.com/hybridauth/WordPress-PixelPin-Login/search?q=<?php echo $callback['function'] ; ?>" target="_blank"><?php echo $callback['function'] ; ?></a>
+																	<a href="https://github.com/hybridauth/WordPress-Social-Login/search?q=<?php echo $callback['function'] ; ?>" target="_blank"><?php echo $callback['function'] ; ?></a>
 																<?php
 															}
 															else
@@ -332,7 +335,7 @@ function wpl_display_dev_mode_debugging_area( $keyword = 'wpl_' )
 						?>
 							<tr>
 								<td valign="top" width="270" nowrap class="wpl-dev-unusedhook">
-									<a href="https://github.com/hybridauth/WordPress-PixelPin-Login/search?q=<?php echo $name ; ?>" target="_blank"><?php echo $name ; ?></a>
+									<a href="https://github.com/hybridauth/WordPress-Social-Login/search?q=<?php echo $name ; ?>" target="_blank"><?php echo $name ; ?></a>
 								</td>
 								<td></td>
 								<td></td>
@@ -369,7 +372,7 @@ function wpl_display_dev_mode_debugging_area( $keyword = 'wpl_' )
 		</tbody>
 	</table>
 
-	<h4>WSL</h4>
+	<h4>WPL</h4>
 	<table class="wpl-dev-table">
 		<tbody>
 			<tr><th width="270"><label>Version</label></th><td><?php echo wpl_get_version(); ?></td></tr>

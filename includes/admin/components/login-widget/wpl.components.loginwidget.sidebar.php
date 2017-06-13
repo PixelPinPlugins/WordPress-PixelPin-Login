@@ -1,9 +1,12 @@
 <?php
 /*!
 * WordPress PixelPin Login
+* 2017 PixelPin and contributors https://github.com/PixelPinPlugins/WordPress-PixelPin-Login
 *
-* http://miled.github.io/wordpress-pixelpin-login/ | https://github.com/miled/wordpress-pixelpin-login
-*  (c) 2011-2015 Mohamed Mrassi and contributors | http://wordpress.org/plugins/wordpress-pixelpin-login/
+* Original Authors of WSL
+* -----------------------
+* http://miled.github.io/wordpress-social-login/ | https://github.com/miled/wordpress-social-login
+*  (c) 2011-2015 Mohamed Mrassi and contributors | http://wordpress.org/plugins/wordpress-social-login/
 */
 
 /**
@@ -53,7 +56,7 @@ function wpl_component_loginwidget_sidebar_what_is_this()
 			</p>
 
 			<p>
-				<?php _wpl_e('For more information about the WSL Widget, refer to the online userguide <b><a href="http://miled.github.io/wordpress-pixelpin-login/widget.html" target="_blank">Widget Customization</a></b> and <b><a href="http://miled.github.io/wordpress-pixelpin-login/themes.html" target="_blank">Widget Themes</a></b>', 'wordpress-pixelpin-login') ?>. 
+				<?php _wpl_e('For more information about the WPL Widget, refer to the online userguide <b><a href="http://miled.github.io/wordpress-social-login/widget.html" target="_blank">Widget Customization</a></b> and <b><a href="http://miled.github.io/wordpress-social-login/themes.html" target="_blank">Widget Themes</a></b>', 'wordpress-pixelpin-login') ?>. 
 			</p>
 		</div>
 	</div> 
@@ -109,17 +112,17 @@ function wpl_component_loginwidget_sidebar_custom_integration()
 			<p>
 				<b><?php _wpl_e('Notes', 'wordpress-pixelpin-login') ?>:</b>
 				<br />
-				1. <?php _wpl_e('WSL Widget will only show up for non connected users', 'wordpress-pixelpin-login') ?>.
+				1. <?php _wpl_e('WPL Widget will only show up for non connected users', 'wordpress-pixelpin-login') ?>.
 				<br />
 				2. <?php _wpl_e('In case you are using a caching plugin on your website, you might need to empty the cache for any change to take effect', 'wordpress-pixelpin-login') ?>.
 				<br />
-				3. <?php _wpl_e('Adblock Plus users with &ldquo;<a href="https://adblockplus.org/en/features#pixelpinmedia" target="_blank">antipixelpin filter</a>&rdquo; enabled may not see the providers icons', 'wordpress-pixelpin-login') ?>.
+				3. <?php _wpl_e('Adblock Plus users with &ldquo;<a href="https://adblockplus.org/en/features#pixelpinmedia" target="_blank">antisocial filter</a>&rdquo; enabled may not see the providers icons', 'wordpress-pixelpin-login') ?>.
 			</p>
 
 			<p>
 				<b><?php _wpl_e('Tip', 'wordpress-pixelpin-login') ?>:</b>
 				<br />
-				<?php _wpl_e('You can use <a href="http://wordpress.org/extend/plugins/html-javascript-adder/" target="_blank">HTML Javascript Adder</a> plugin in combination with WSL to display the Widget in your website sidebar by using the shortcode [wordpress_pixelpin_login]', 'wordpress-pixelpin-login') ?>.
+				<?php _wpl_e('You can use <a href="http://wordpress.org/extend/plugins/html-javascript-adder/" target="_blank">HTML Javascript Adder</a> plugin in combination with WPL to display the Widget in your website sidebar by using the shortcode [wordpress_pixelpin_login]', 'wordpress-pixelpin-login') ?>.
 			</p>
 		</div>
 	</div> 
