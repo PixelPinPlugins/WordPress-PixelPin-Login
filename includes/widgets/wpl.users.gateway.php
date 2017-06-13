@@ -1,9 +1,12 @@
 <?php
 /*!
 * WordPress PixelPin Login
+* 2017 PixelPin and contributors https://github.com/PixelPinPlugins/WordPress-PixelPin-Login
 *
-* http://miled.github.io/wordpress-pixelpin-login/ | https://github.com/miled/wordpress-pixelpin-login
-*  (c) 2011-2015 Mohamed Mrassi and contributors | http://wordpress.org/plugins/wordpress-pixelpin-login/
+* Original Authors of WSL
+* -----------------------
+* http://miled.github.io/wordpress-social-login/ | https://github.com/miled/wordpress-social-login
+*  (c) 2011-2015 Mohamed Mrassi and contributors | http://wordpress.org/plugins/wordpress-social-login/
 */
 
 /**
@@ -238,25 +241,10 @@ function wpl_process_login_new_users_gateway( $provider, $redirect_to, $hybridau
 				margin: 2em auto;
 				box-sizing: border-box;
 				display: inline-block;
-				padding: 70px 0 15px;
+				padding: 15px 0 15px;
 				position: relative;
 				text-align: center;
 				width: 100%;
-			}
-			#avatar {
-				margin-left: -76px;
-				top: -80px;
-				left: 50%;
-				padding: 4px;
-				position: absolute;
-			}
-			#avatar img {
-				background: none repeat scroll 0 0 #fff;
-				border: 3px solid #f1f1f1;
-				border-radius: 75px !important;
-				box-shadow: 0 1px 3px rgba(0, 0, 0, 0.13);
-				height: 145px;
-				width: 145px;
 			}
 			#welcome {
 				height: 55px;
@@ -300,7 +288,8 @@ function wpl_process_login_new_users_gateway( $provider, $redirect_to, $hybridau
 				box-shadow:inset 0 1px 0 rgba(120,200,230,.6);
 				color:#fff
 			}
-			input[type="text"]{
+			input[type="text"],
+			input[type="password"]{
 				border: 1px solid #e5e5e5;
 				box-shadow: 1px 1px 2px rgba(200, 200, 200, 0.2) inset;
 				color: #555;
@@ -314,7 +303,8 @@ function wpl_process_login_new_users_gateway( $provider, $redirect_to, $hybridau
 				padding: 3px;
 				width: 100%;
 			}
-			input[type="text"]:focus{
+			input[type="text"]:focus,
+			input[type="password"]{
 				border-color:#5b9dd9;
 				-webkit-box-shadow:0 0 2px rgba(30,140,190,.8);
 				box-shadow:0 0 2px rgba(30,140,190,.8)
@@ -455,10 +445,6 @@ function wpl_process_login_new_users_gateway( $provider, $redirect_to, $hybridau
 	<body>
 		<div id="login">
 			<div id="login-panel">
-				<div id="avatar">
-					<img src="<?php echo $hybridauth_user_avatar; ?>">
-				</div>
-
 				<div id="welcome">
 					<img id="idp-icon" src="<?php echo $assets_base_url . strtolower($provider); ?>.png" >
 					<b><?php printf( _wpl__( "Hi %s", 'wordpress-pixelpin-login' ), htmlentities( $hybridauth_user_profile->displayName ) ); ?></b>
