@@ -298,7 +298,7 @@ function wpl_admin_ui_fail()
 			<hr />
 
 			<p>
-				<?php _e('Despite the efforts, put into <b>WordPress PixelPin Login</b> in terms of reliability, portability, and maintenance by the plugin <a href="http://profiles.wordpress.org/miled/" target="_blank">author</a> and <a href="https://github.com/hybridauth/WordPress-PixelPin-Login/graphs/contributors" target="_blank">contributors</a>', 'wordpress-pixelpin-login') ?>.
+				<?php _e('Despite the efforts, put into <b>WordPress PixelPin Login</b> in terms of reliability, portability, and maintenance by the plugin <a href="http://profiles.wordpress.org/miled/" target="_blank">author</a> and <a href="https://github.com/hybridauth/WordPress-Social-Login/graphs/contributors" target="_blank">contributors</a>', 'wordpress-pixelpin-login') ?>.
 				<b style="color:red;"><?php _e('Your server failed the requirements check for this plugin', 'wordpress-pixelpin-login') ?>:</b>
 			</p>
 
