@@ -27,7 +27,7 @@ function wpl_component_help_reference()
 	<h3 style="padding-left:0px"><?php _wpl_e("Documentation", 'wordpress-pixelpin-login') ?></h3>
 	<p>
 		<?php _wpl_e('The complete <b>User Guide</b> can be found at
-		<a href="http://miled.github.io/wordpress-social-login/index.html" target="_blank">miled.github.io/wordpress-pixelpin-login/index.html</a>', 'wordpress-pixelpin-login') ?>
+		<a href="http://miled.github.io/wordpress-social-login/index.html" target="_blank">miled.github.io/wordpress-social-login/index.html</a>', 'wordpress-pixelpin-login') ?>
 	</p>
 
 	<hr />
@@ -35,7 +35,7 @@ function wpl_component_help_reference()
 	<h3 style="padding-left:0px"><?php _wpl_e("FAQs", 'wordpress-pixelpin-login') ?></h3>
 	<p>
 		<?php _wpl_e('A list of <b>Frequently asked questions</b> can be found at
-		<a href="http://miled.github.io/wordpress-social-login/faq.html" target="_blank">miled.github.io/wordpress-pixelpin-login/faq.html</a>', 'wordpress-pixelpin-login') ?>
+		<a href="http://miled.github.io/wordpress-social-login/faq.html" target="_blank">miled.github.io/wordpress-social-login/faq.html</a>', 'wordpress-pixelpin-login') ?>
 	</p>
 
 	<hr />
@@ -45,7 +45,7 @@ function wpl_component_help_reference()
 		<?php _wpl_e('To get help and support from PixelPin, raise an issue on PixelPin\'s WordPress PixelPin Login\'s <a href="https://github.com/PixelPinPlugins/WordPress-PixelPin-Login/issues" target="_blank">Github page</a>', 'wordpress-pixelpin-login') ?>
 	</p>
 	<p>
-		<?php _wpl_e('To get help and support, here is how you can reach me <a href="http://miled.github.io/wordpress-social-login/support.html" target="_blank">miled.github.io/wordpress-pixelpin-login/support.html</a>', 'wordpress-pixelpin-login') ?>
+		<?php _wpl_e('To get help and support, here is how you can reach me <a href="http://miled.github.io/wordpress-social-login/support.html" target="_blank">miled.github.io/wordpress-social-login/support.html</a>', 'wordpress-pixelpin-login') ?>
 	</p>
  
 	<hr />
@@ -55,7 +55,7 @@ function wpl_component_help_reference()
 		<?php _wpl_e('WordPress Social Login was modified by <a href="https://www.pixelpin.co.uk" target="_blank">PixelPin</a> to create WordPress PixelPin Login.', 'wordpress-pixelpin-login') ?>.
 	</p>
 	<p>
-		<?php _wpl_e('The Original WordPress Social Login was created by <a href="http://profiles.wordpress.org/miled/" target="_blank">Mohamed Mrassi</a> (a.k.a Miled) and <a href="https://miled.github.io/wordpress-pixelpin-login/graphs/contributors" target="_blank">contributors</a>', 'wordpress-pixelpin-login') ?>.
+		<?php _wpl_e('The Original WordPress Social Login was created by <a href="http://profiles.wordpress.org/miled/" target="_blank">Mohamed Mrassi</a> (a.k.a Miled) and <a href="https://miled.github.io/wordpress-social-login/graphs/contributors" target="_blank">contributors</a>', 'wordpress-pixelpin-login') ?>.
 	</p>
  
 	<hr />
