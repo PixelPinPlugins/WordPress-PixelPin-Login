@@ -1,17 +1,20 @@
 <?php
 /*!
 * WordPress PixelPin Login
+* 2017 PixelPin and contributors https://github.com/PixelPinPlugins/WordPress-PixelPin-Login
 *
-* http://miled.github.io/wordpress-pixelpin-login/ | https://github.com/miled/wordpress-pixelpin-login
-*  (c) 2011-2015 Mohamed Mrassi and contributors | http://wordpress.org/plugins/wordpress-pixelpin-login/
+* Original Authors of WSL
+* -----------------------
+* http://miled.github.io/wordpress-social-login/ | https://github.com/miled/wordpress-social-login
+*  (c) 2011-2015 Mohamed Mrassi and contributors | http://wordpress.org/plugins/wordpress-social-login/
 */
 
 /**
 * Authentication widgets generator
 *
-* http://miled.github.io/wordpress-pixelpin-login/widget.html
-* http://miled.github.io/wordpress-pixelpin-login/themes.html
-* http://miled.github.io/wordpress-pixelpin-login/developer-api-widget.html
+* http://miled.github.io/wordpress-social-login/widget.html
+* http://miled.github.io/wordpress-social-login/themes.html
+* http://miled.github.io/wordpress-social-login/developer-api-widget.html
 */
 
 // Exit if accessed directly
@@ -20,10 +23,10 @@ if( !defined( 'ABSPATH' ) ) exit;
 // --------------------------------------------------------------------
 
 /**
-* Generate the HTML content of WSL Widget
+* Generate the HTML content of WPL Widget
 *
 * Note:
-*   WSL shortcode arguments are still experimental and might change in future versions.
+*   WPL shortcode arguments are still experimental and might change in future versions.
 *
 *   [wordpress_pixelpin_login
 *        auth_mode="login"
@@ -33,7 +36,7 @@ if( !defined( 'ABSPATH' ) ) exit;
 *        assets_base_url="http://example.com/wp-content/uploads/2022/01/"
 *   ]
 *
-*   Overall, WSL widget work with these simple rules :
+*   Overall, WPL widget work with these simple rules :
 *      1. Shortcode arguments rule over the defaults
 *      2. Filters hooks rule over shortcode arguments
 *      3. Bouncer rules over everything
@@ -63,7 +66,7 @@ function wpl_render_auth_widget( $args = array() )
 	}
 
 	// auth-mode eq 'test' => display wpl widget only for LOGGED IN users only on dashboard
-	// > used in Authentication Playground on WSL admin dashboard
+	// > used in Authentication Playground on WPL admin dashboard
 	if( $auth_mode == 'test' && ! is_user_logged_in() && ! is_admin() )
 	{
 		return;
@@ -75,7 +78,7 @@ function wpl_render_auth_widget( $args = array() )
 		return;
 	}
 
-	// HOOKABLE: This action runs just before generating the WSL Widget.
+	// HOOKABLE: This action runs just before generating the WPL Widget.
 	do_action( 'wpl_render_auth_widget_start' );
 
 	GLOBAL $WORDPRESS_PIXELPIN_LOGIN_PROVIDERS_CONFIG;
@@ -88,7 +91,7 @@ function wpl_render_auth_widget( $args = array() )
 	// wpzoom icons set, is shown by default
 	if( empty( $pixelpin_icon_set ) )
 	{
-		$pixelpin_icon_set = "wpzoom/";
+		$pixelpin_icon_set = "ssoicon/";
 	}
 
 	$assets_base_url  = WORDPRESS_PIXELPIN_LOGIN_PLUGIN_URL . 'assets/img/32x32/' . $pixelpin_icon_set . '/';
@@ -138,7 +141,7 @@ function wpl_render_auth_widget( $args = array() )
 <!--
 	wpl_render_auth_widget
 	WordPress PixelPin Login <?php echo wpl_get_version(); ?>.
-	http://wordpress.org/plugins/wordpress-pixelpin-login/
+	http://wordpress.org/plugins/wordpress-social-login/
 -->
 <?php
 	// Widget::Custom CSS
@@ -174,7 +177,7 @@ function wpl_render_auth_widget( $args = array() )
 	// Widget::Authentication display
 	$wpl_settings_use_popup = get_option( 'wpl_settings_use_popup' );
 
-	// if a user is visiting using a mobile device, WSL will fall back to more in page
+	// if a user is visiting using a mobile device, WPL will fall back to more in page
 	$wpl_settings_use_popup = function_exists( 'wp_is_mobile' ) ? wp_is_mobile() ? 2 : $wpl_settings_use_popup : $wpl_settings_use_popup;
 
 	$no_idp_used = true;
@@ -266,13 +269,13 @@ function wpl_render_auth_widget( $args = array() )
 <?php
 	}
 
-	// HOOKABLE: This action runs just after generating the WSL Widget.
+	// HOOKABLE: This action runs just after generating the WPL Widget.
 	do_action( 'wpl_render_auth_widget_end' );
 ?>
 <!-- wpl_render_auth_widget -->
 
 <?php
-	// Display WSL debugging area bellow the widget.
+	// Display WPL debugging area bellow the widget.
 	// wpl_display_dev_mode_debugging_area(); // ! keep this line commented unless you know what you are doing :)
 
 	return ob_get_clean();
@@ -281,7 +284,7 @@ function wpl_render_auth_widget( $args = array() )
 // --------------------------------------------------------------------
 
 /**
-* WSL wordpress_pixelpin_login action
+* WPL wordpress_pixelpin_login action
 *
 * Ref: http://codex.wordpress.org/Function_Reference/add_action
 */
@@ -295,10 +298,10 @@ add_action( 'wordpress_pixelpin_login', 'wpl_action_wordpress_pixelpin_login' );
 // --------------------------------------------------------------------
 
 /**
-* WSL wordpress_pixelpin_login shortcode
+* WPL wordpress_pixelpin_login shortcode
 *
 * Note:
-*   WSL shortcode arguments are still experimental and might change in future versions.
+*   WPL shortcode arguments are still experimental and might change in future versions.
 *
 * Ref: http://codex.wordpress.org/Function_Reference/add_shortcode
 */
@@ -324,7 +327,7 @@ add_shortcode( 'wordpress_pixelpin_login', 'wpl_shortcode_wordpress_pixelpin_log
 // --------------------------------------------------------------------
 
 /**
-* WSL wordpress_pixelpin_login_meta shortcode
+* WPL wordpress_pixelpin_login_meta shortcode
 *
 * Note:
 *   This shortcode is experimental and might change in future versions.
@@ -500,7 +503,7 @@ add_action( 'after_signup_form', 'wpl_render_auth_widget_in_wp_register_form' );
 // --------------------------------------------------------------------
 
 /**
-* Enqueue WSL CSS file
+* Enqueue WPL CSS file
 */
 function wpl_add_stylesheets()
 {
@@ -518,7 +521,7 @@ add_action( 'login_enqueue_scripts', 'wpl_add_stylesheets' );
 // --------------------------------------------------------------------
 
 /**
-* Enqueue WSL Javascript, only if we use popup
+* Enqueue WPL Javascript, only if we use popup
 */
 function wpl_add_javascripts()
 {

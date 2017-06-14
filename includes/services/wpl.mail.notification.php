@@ -1,9 +1,12 @@
 <?php
 /*!
 * WordPress PixelPin Login
+* 2017 PixelPin and contributors https://github.com/PixelPinPlugins/WordPress-PixelPin-Login
 *
-* http://miled.github.io/wordpress-pixelpin-login/ | https://github.com/miled/wordpress-pixelpin-login
-*  (c) 2011-2015 Mohamed Mrassi and contributors | http://wordpress.org/plugins/wordpress-pixelpin-login/
+* Original Authors of WSL
+* -----------------------
+* http://miled.github.io/wordpress-social-login/ | https://github.com/miled/wordpress-social-login
+*  (c) 2011-2015 Mohamed Mrassi and contributors | http://wordpress.org/plugins/wordpress-social-login/
 */
 
 /** 
@@ -16,9 +19,9 @@ if ( !defined( 'ABSPATH' ) ) exit;
 // --------------------------------------------------------------------
 
 /**
-* Send a notification to blog administrator when a new user register using WSL 
+* Send a notification to blog administrator when a new user register using WPL 
 *
-* also borrowed from http://wordpress.org/extend/plugins/oa-pixelpin-login/
+* also borrowed from http://wordpress.org/extend/plugins/oa-social-login/
 * 
 * Note: 
 *   You may redefine this function
@@ -42,7 +45,7 @@ if( ! function_exists( 'wpl_admin_notification' ) )
 		$message .= sprintf(__('Email: %s'                             , 'wordpress-pixelpin-login'), $user->user_email) . "\r\n";
 		$message .= "\r\n--\r\n";
 		$message .= "WordPress PixelPin Login\r\n";
-		$message .= "http://wordpress.org/extend/plugins/wordpress-pixelpin-login/\r\n";
+		$message .= "http://wordpress.org/extend/plugins/wordpress-social-login/\r\n";
 
 		@ wp_mail(get_option('admin_email'), '[WordPress PixelPin Login] '.sprintf(__('[%s] New User Registration', 'wordpress-pixelpin-login'), $blogname), $message);
 	}

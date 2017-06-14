@@ -1,9 +1,12 @@
 <?php
 /*!
 * WordPress PixelPin Login
+* 2017 PixelPin and contributors https://github.com/PixelPinPlugins/WordPress-PixelPin-Login
 *
-* http://miled.github.io/wordpress-pixelpin-login/ | https://github.com/miled/wordpress-pixelpin-login
-*  (c) 2011-2015 Mohamed Mrassi and contributors | http://wordpress.org/plugins/wordpress-pixelpin-login/
+* Original Authors of WSL
+* -----------------------
+* http://miled.github.io/wordpress-social-login/ | https://github.com/miled/wordpress-social-login
+*  (c) 2011-2015 Mohamed Mrassi and contributors | http://wordpress.org/plugins/wordpress-social-login/
 */
 
 // Exit if accessed directly
@@ -87,7 +90,7 @@ function wpl_component_tools_do_diagnostics()
 										1. PHP session are either disabled, renamed or there is files permissions issues.
 									</p>
 									<p>
-										2. When using a reverse proxy like Varnish or a caching engine that might strip cookies. On this case, WSL will requires these two urls to be white-listed:
+										2. When using a reverse proxy like Varnish or a caching engine that might strip cookies. On this case, WPL will requires these two urls to be white-listed:
 									</p>
 									<div style="background-color: #FFFFE0;border:1px solid #E6DB55; border-radius: 3px;padding: 10px;margin:2px;">
 										<?php
@@ -107,7 +110,7 @@ function wpl_component_tools_do_diagnostics()
 							<p>
 								1. If you're hosting your website on <b>WP Engine</b>, refer this topic: <a href="https://wordpress.org/support/topic/500-internal-server-error-when-redirecting" target="_blank">https://wordpress.org/support/topic/500-internal-server-error-when-redirecting</a>
 							</p>
-							<p>2. In case you're using a reverse proxy like Varnish or a caching engine that might strip cookies, WSL will requires these two urls to be white-listed:</p>
+							<p>2. In case you're using a reverse proxy like Varnish or a caching engine that might strip cookies, WPL will requires these two urls to be white-listed:</p>
 							<div style="background-color: #FFFFE0;border:1px solid #E6DB55; border-radius: 3px;padding: 10px;margin:2px;">
 								<?php
 									echo '<a href="' . site_url( 'wp-login.php', 'login_post' ) . '" target="_blank">' . site_url( 'wp-login.php', 'login_post' ) . '</a>';
@@ -195,7 +198,7 @@ function wpl_component_tools_do_diagnostics()
 							?>
 								<div class="fade error" style="margin: 20px  0;">
 									<p><b>Error</b>: REGISTER_GLOBALS are On.</p>
-									<p>This will prevent WSL from working properly and will result on an infinite loop on the authentication page.</p>
+									<p>This will prevent WPL from working properly and will result on an infinite loop on the authentication page.</p>
 									<p>The solution is to make a trouble ticket with your web host to disable it, Or, if you have a dedicated server and you know what are you doing then edit php.ini file and turn it Off.</p>
 								</div>
 							<?php
@@ -219,19 +222,19 @@ function wpl_component_tools_do_diagnostics()
 				<!-- this should keep Mika happy -->
 				<tr>
 					<th width="200">
-						<label>WSL end-points</label>
+						<label>WPL end-points</label>
 					</th>
 					<td>
-						<p>Check if WSL end-points urls are reachable.</p>
+						<p>Check if WPL end-points urls are reachable.</p>
 
 						<div id="end_points_warn" class="fade error" style="margin: 20px  0;display:none;">
-							<p><b>Error</b>: Your web server returned <span id="end_points_error"></span> when checking WSL end-points.</p>
+							<p><b>Error</b>: Your web server returned <span id="end_points_error"></span> when checking WPL end-points.</p>
 
 							<p>This issue usually happen when :</p>
-							<p>1. Your web host uses <code>mod_security</code> to block requests containing URLs (eg. hosts like HostGator, GoDaddy and The Planet). On this case, you should contact your provider to have WSL end-points urls white-listed.</p>
+							<p>1. Your web host uses <code>mod_security</code> to block requests containing URLs (eg. hosts like HostGator, GoDaddy and The Planet). On this case, you should contact your provider to have WPL end-points urls white-listed.</p>
 							<p>2. There is a <code>.htaccess</code> file that prevent direct access to the WordPress plugins directory.</p>
 
-							<p>In any case, WSL requires this url to be white-listed:</p>
+							<p>In any case, WPL requires this url to be white-listed:</p>
 
 							<div style="background-color: #FFFFE0;border:1px solid #E6DB55; border-radius: 3px;padding: 10px;margin:2px;">
 								<?php
@@ -243,7 +246,7 @@ function wpl_component_tools_do_diagnostics()
 						<div id="end_points_note" style="margin: 20px  0;">
 							<hr />
 
-							<p><b>Note</b>: In case you're using <code>mod_security</code> to block requests containing URLs or a <code>.htaccess</code> file to protect the WordPress plugins directory, WSL will requires this url to be white-listed:</p>
+							<p><b>Note</b>: In case you're using <code>mod_security</code> to block requests containing URLs or a <code>.htaccess</code> file to protect the WordPress plugins directory, WPL will requires this url to be white-listed:</p>
 
 							<div style="background-color: #FFFFE0;border:1px solid #E6DB55; border-radius: 3px;padding: 10px;margin:2px;">
 								<?php
@@ -287,17 +290,17 @@ function wpl_component_tools_do_diagnostics()
 				?>
 				<tr>
 					<th width="200">
-						<label>WSL database tables</label>
+						<label>WPL database tables</label>
 					</th>
 					<td>
-						<p>Check if WSL database tables (<code>wplusersprofiles</code> and <code>wpluserscontacts</code>) exist.</p>
+						<p>Check if WPL database tables (<code>wplusersprofiles</code> and <code>wpluserscontacts</code>) exist.</p>
 						<?php
 							if( ! $test )
 							{
 								?>
 									<div class="fade error" style="margin: 20px  0;">
 										<p><b>Error:</b> One or more of WordPress PixelPin Login tables do not exist.</p>
-										<p>This may prevent this plugin form working correctly. To fix this, navigate to <b>Tools</b> tab then <b><a href="options-general.php?page=wordpress-pixelpin-login&wplp=tools#repair-tables">Repair WSL tables</a></b>.</p>
+										<p>This may prevent this plugin form working correctly. To fix this, navigate to <b>Tools</b> tab then <b><a href="options-general.php?page=wordpress-pixelpin-login&wplp=tools#repair-tables">Repair WPL tables</a></b>.</p>
 									</div>
 								<?php
 							}
@@ -332,7 +335,7 @@ function wpl_component_tools_do_diagnostics()
 								?>
 									<div class="fade error" style="margin: 20px  0;">
 										<p>Hybridauth Library is auto-included by another plugin.</p>
-										<p>This is not critical but it may prevent WSL from working.</p>
+										<p>This is not critical but it may prevent WPL from working.</p>
 										<p>Please, inform the developer of that plugin not to auto-include the file below and to use Hybridauth Library only when required.</p>
 										<div style="background-color: #FFFFE0;border:1px solid #E6DB55; border-radius: 3px;padding: 10px;margin:2px;">
 										<?php try{$reflector = new ReflectionClass( 'Hybrid_Auth' ); echo $reflector->getFileName(); } catch( Exception $e ){} ?>
@@ -422,7 +425,7 @@ function wpl_component_tools_do_diagnostics()
 							{
 								?>
 									<div class="fade error" style="margin: 20px  0;">
-										<p>WSL has detected that you are using a proxy in your website. The URL shown below should match the URL on your browser address bar.</p>
+										<p>WPL has detected that you are using a proxy in your website. The URL shown below should match the URL on your browser address bar.</p>
 										<div style="background-color: #FFFFE0;border:1px solid #E6DB55; border-radius: 3px;padding: 10px;margin:2px;">
 											<?php
 												echo $curl;
@@ -510,17 +513,17 @@ function wpl_component_tools_do_diagnostics()
 				?>
 				<tr>
 					<th width="200">
-						<label>WSL depreciated hooks</label>
+						<label>WPL depreciated hooks</label>
 					</th>
 					<td>
-						<p>Check for depreciated WSL actions and filters in use.</p>
+						<p>Check for depreciated WPL actions and filters in use.</p>
 						<?php
 							if( ! $test )
 							{
 								?>
 									<div class="fade error" style="margin: 20px  0;">
-										<p>WSL has detected that you are using depreciated WSL: <code><?php echo implode( '</code>, <code>', $used ); ?></code></p>
-										<p>Please update the WSL hooks you were using accordingly to the new developer API at <a href="http://miled.github.io/wordpress-pixelpin-login/documentation.html" target="_blank">http://miled.github.io/wordpress-pixelpin-login/documentation.html</a></p>
+										<p>WPL has detected that you are using depreciated WPL: <code><?php echo implode( '</code>, <code>', $used ); ?></code></p>
+										<p>Please update the WPL hooks you were using accordingly to the new developer API at <a href="http://miled.github.io/wordpress-social-login/documentation.html" target="_blank">http://miled.github.io/wordpress-social-login/documentation.html</a></p>
 									</div>
 								<?php
 							}
@@ -651,14 +654,14 @@ PLUGIN_URL:               <?php echo plugins_url() . "\n"; ?>
 
 # WORDPRESS PIXELPIN LOGIN
 
-WSL VERSION:              <?php echo $WORDPRESS_PIXELPIN_LOGIN_VERSION . "\n"; ?>
-WSL PROFILES TABLE:       <?php echo $wpdb->get_var( "SHOW TABLES LIKE '{$wpdb->prefix}wplusersprofiles'" ) . ' (' . $wpdb->get_var( "SELECT COUNT( * ) FROM {$wpdb->prefix}wplusersprofiles" ) . ")\n"; ?>
-WSL CONTACTS TABLE:       <?php echo $wpdb->get_var( "SHOW TABLES LIKE '{$wpdb->prefix}wpluserscontacts'" ) . ' (' . $wpdb->get_var( "SELECT COUNT( * ) FROM {$wpdb->prefix}wpluserscontacts" ) . ")\n"; ?>
-WSL COMPONENTS:           <?php foreach( $WORDPRESS_PIXELPIN_LOGIN_COMPONENTS as $name => $settings ){ if( $settings["enabled"] ){ echo strtoupper( $name ) . ' '; } } echo "\n"; ?>
-WSL TABS:                 <?php foreach( $WORDPRESS_PIXELPIN_LOGIN_ADMIN_TABS as $name => $settings ){ if( $settings["enabled"] && $settings["visible"] ){ echo strtoupper( $name ) . ' '; } } echo "\n"; ?>
-WSL NETWORKS:             <?php foreach( $WORDPRESS_PIXELPIN_LOGIN_PROVIDERS_CONFIG as $provider ){ if( get_option( 'wpl_settings_' . $provider['provider_id'] . '_enabled' ) ){ echo strtoupper( $provider['provider_id'] ) . ' '; } } echo "\n"; ?>
-WSL ABS URL:              <?php echo WORDPRESS_PIXELPIN_LOGIN_PLUGIN_URL . "\n"; ?>
-WSL ENDPOINT:             <?php echo WORDPRESS_PIXELPIN_LOGIN_HYBRIDAUTH_ENDPOINT_URL . "\n"; ?>
+WPL VERSION:              <?php echo $WORDPRESS_PIXELPIN_LOGIN_VERSION . "\n"; ?>
+WPL PROFILES TABLE:       <?php echo $wpdb->get_var( "SHOW TABLES LIKE '{$wpdb->prefix}wplusersprofiles'" ) . ' (' . $wpdb->get_var( "SELECT COUNT( * ) FROM {$wpdb->prefix}wplusersprofiles" ) . ")\n"; ?>
+WPL CONTACTS TABLE:       <?php echo $wpdb->get_var( "SHOW TABLES LIKE '{$wpdb->prefix}wpluserscontacts'" ) . ' (' . $wpdb->get_var( "SELECT COUNT( * ) FROM {$wpdb->prefix}wpluserscontacts" ) . ")\n"; ?>
+WPL COMPONENTS:           <?php foreach( $WORDPRESS_PIXELPIN_LOGIN_COMPONENTS as $name => $settings ){ if( $settings["enabled"] ){ echo strtoupper( $name ) . ' '; } } echo "\n"; ?>
+WPL TABS:                 <?php foreach( $WORDPRESS_PIXELPIN_LOGIN_ADMIN_TABS as $name => $settings ){ if( $settings["enabled"] && $settings["visible"] ){ echo strtoupper( $name ) . ' '; } } echo "\n"; ?>
+WPL NETWORKS:             <?php foreach( $WORDPRESS_PIXELPIN_LOGIN_PROVIDERS_CONFIG as $provider ){ if( get_option( 'wpl_settings_' . $provider['provider_id'] . '_enabled' ) ){ echo strtoupper( $provider['provider_id'] ) . ' '; } } echo "\n"; ?>
+WPL ABS URL:              <?php echo WORDPRESS_PIXELPIN_LOGIN_PLUGIN_URL . "\n"; ?>
+WPL ENDPOINT:             <?php echo WORDPRESS_PIXELPIN_LOGIN_HYBRIDAUTH_ENDPOINT_URL . "\n"; ?>
 
 # WORDPRESS
 
@@ -677,7 +680,7 @@ MYSQL VERSION:            <?php echo $wpdb->db_version() . "\n"; ?>
 
 SESSION:                  <?php echo isset( $_SESSION ) ? 'Enabled' : 'Disabled'; echo "\n"; ?>
 SESSION:NAME:             <?php echo esc_html( ini_get( 'session.name' ) ); echo "\n"; ?>
-SESSION:WSL               <?php echo $_SESSION["wpl::plugin"]; echo "\n"; ?>
+SESSION:WPL               <?php echo $_SESSION["wpl::plugin"]; echo "\n"; ?>
 
 COOKIE PATH:              <?php echo esc_html( ini_get( 'session.cookie_path' ) ); echo "\n"; ?>
 SAVE PATH:                <?php echo esc_html( ini_get( 'session.save_path' ) ); echo "\n"; ?>

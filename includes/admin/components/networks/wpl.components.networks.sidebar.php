@@ -1,9 +1,12 @@
 <?php
 /*!
 * WordPress PixelPin Login
+* 2017 PixelPin and contributors https://github.com/PixelPinPlugins/WordPress-PixelPin-Login
 *
-* http://miled.github.io/wordpress-pixelpin-login/ | https://github.com/miled/wordpress-pixelpin-login
-*  (c) 2011-2015 Mohamed Mrassi and contributors | http://wordpress.org/plugins/wordpress-pixelpin-login/
+* Original Authors of WSL
+* -----------------------
+* http://miled.github.io/wordpress-social-login/ | https://github.com/miled/wordpress-social-login
+*  (c) 2011-2015 Mohamed Mrassi and contributors | http://wordpress.org/plugins/wordpress-social-login/
 */
 
 // Exit if accessed directly
@@ -53,10 +56,10 @@ function wpl_component_networks_sidebar_what_is_this()
 				<?php _wpl_e('<b>WordPress PixelPin Login</b> come with a number of useful <b><a href="options-general.php?page=wordpress-pixelpin-login&wplp=components">Components</a></b> or add-ons that can be essential for your needs', 'wordpress-pixelpin-login') ?>.
 			</p>
 			<p style="padding:0;margin:0 0 12px;">
-				<?php _wpl_e('If you are still new to things, we recommend that you read the <b><a href="http://miled.github.io/wordpress-pixelpin-login/documentation.html" target="_blank">WSL Documentation</a></b> and to make sure your server meet the minimum system requirements by running <b><a href="http://hybridauth.com/hawp4/wp-admin/options-general.php?page=wordpress-pixelpin-login&wplp=tools">WSL Diagnostics</a></b>', 'wordpress-pixelpin-login') ?>.
+				<?php _wpl_e('If you are still new to things, we recommend that you read the <b><a href="http://miled.github.io/wordpress-social-login/documentation.html" target="_blank">WPL Documentation</a></b> and to make sure your server meet the minimum system requirements by running <b><a href="http://hybridauth.com/hawp4/wp-admin/options-general.php?page=wordpress-pixelpin-login&wplp=tools">WPL Diagnostics</a></b>', 'wordpress-pixelpin-login') ?>.
 			</p>
 			<p style="padding:0;margin:0 0 12px;">
-				<?php _wpl_e('If you run into any issue, then refer to <b><a href="http://miled.github.io/wordpress-pixelpin-login/support.html" target="_blank">Help &amp; Support</a></b>', 'wordpress-pixelpin-login') ?>.
+				<?php _wpl_e('If you run into any issue, then refer to <b><a href="http://miled.github.io/wordpress-social-login/support.html" target="_blank">Help &amp; Support</a></b>. If you find a bug, raise it on WordPress PixelPin Login\'s <b><a href="https://github.com/PixelPinPlugins/WordPress-PixelPin-Login/issues" target="_blank">Github issue tracker</a></b>', 'wordpress-pixelpin-login') ?>.
 			</p>
 		</div>
 	</div>
@@ -72,7 +75,7 @@ function wpl_component_networks_sidebar_add_more_idps()
 {
 	GLOBAL $WORDPRESS_PIXELPIN_LOGIN_PROVIDERS_CONFIG;
 
-	$assets_base_url = WORDPRESS_PIXELPIN_LOGIN_PLUGIN_URL . 'assets/img/32x32/icondock/';
+	$assets_base_url = WORDPRESS_PIXELPIN_LOGIN_PLUGIN_URL . 'assets/img/32x32/ssoicon/';
 ?>
 
 <div class="postbox" id="ppenable">
@@ -112,10 +115,6 @@ function wpl_component_networks_sidebar_add_more_idps()
 					{
 						_wpl_e("PixelPin is Enabled", 'wordpress-pixelpin-login');
 					}
-					else
-					{
-
-					}
 				?>
 			</div>
 		</div>
@@ -133,7 +132,7 @@ function wpl_component_networks_sidebar_basic_insights()
 {
 	GLOBAL $WORDPRESS_PIXELPIN_LOGIN_PROVIDERS_CONFIG;
 
-	$assets_base_url = WORDPRESS_PIXELPIN_LOGIN_PLUGIN_URL . 'assets/img/32x32/icondock/';
+	$assets_base_url = WORDPRESS_PIXELPIN_LOGIN_PLUGIN_URL . 'assets/img/32x32/ssoicon/';
 ?>
 <div class="postbox">
 	<div class="inside">
@@ -155,7 +154,7 @@ function wpl_component_networks_sidebar_basic_insights()
 								<td width="60%"><?php _wpl_e("WP users", 'wordpress-pixelpin-login') ?></td><td><?php echo $total_users; ?></td>
 							</tr>
 							<tr>
-								<td><?php _wpl_e("WSL users", 'wordpress-pixelpin-login') ?></td><td><?php echo $total_users_wpl; ?></td>
+								<td><?php _wpl_e("WPL users", 'wordpress-pixelpin-login') ?></td><td><?php echo $total_users_wpl; ?></td>
 							</tr>
 							<tr>
 								<td><?php _wpl_e("Conversions", 'wordpress-pixelpin-login') ?></td><td style="border-top:1px solid #ccc">+<b><?php echo number_format($users_conversion, 2, '.', ''); ?></b> %</td>
@@ -186,10 +185,10 @@ function wpl_component_networks_sidebar_basic_insights()
 								}
 							?>
 							<tr>
-								<td align="right">&nbsp;</td><td style="border-top:1px solid #ccc"><b><?php echo $total_profiles_wpl; ?></b> <?php _wpl_e("WSL profiles", 'wordpress-pixelpin-login') ?></td>
+								<td align="right">&nbsp;</td><td style="border-top:1px solid #ccc"><b><?php echo $total_profiles_wpl; ?></b> <?php _wpl_e("WPL profiles", 'wordpress-pixelpin-login') ?></td>
 							</tr>
 							<tr>
-								<td align="right">&nbsp;</td><td><b><?php echo $total_users_wpl; ?></b> <?php _wpl_e("WSL users", 'wordpress-pixelpin-login') ?></td>
+								<td align="right">&nbsp;</td><td><b><?php echo $total_users_wpl; ?></b> <?php _wpl_e("WPL users", 'wordpress-pixelpin-login') ?></td>
 							</tr>
 						</table>
 

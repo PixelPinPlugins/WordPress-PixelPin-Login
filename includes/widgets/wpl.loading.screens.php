@@ -1,13 +1,16 @@
 <?php
 /*!
 * WordPress PixelPin Login
+* 2017 PixelPin and contributors https://github.com/PixelPinPlugins/WordPress-PixelPin-Login
 *
-* http://miled.github.io/wordpress-pixelpin-login/ | https://github.com/miled/wordpress-pixelpin-login
-*  (c) 2011-2015 Mohamed Mrassi and contributors | http://wordpress.org/plugins/wordpress-pixelpin-login/
+* Original Authors of WSL
+* -----------------------
+* http://miled.github.io/wordpress-social-login/ | https://github.com/miled/wordpress-social-login
+*  (c) 2011-2015 Mohamed Mrassi and contributors | http://wordpress.org/plugins/wordpress-social-login/
 */
 
 /**
-* Generate WSL loading screens.
+* Generate WPL loading screens.
 */
 
 // Exit if accessed directly
@@ -16,7 +19,7 @@ if( !defined( 'ABSPATH' ) ) exit;
 // --------------------------------------------------------------------
 
 /**
-* Display a loading screen while the WSL is redirecting the user to a given provider for authentication
+* Display a loading screen while the WPL is redirecting the user to a given provider for authentication
 *
 * Note:
 *   In case you want to customize the content generated, you may redefine this function
@@ -92,7 +95,7 @@ if( ! function_exists( 'wpl_render_redirect_to_provider_loading_screen' ) )
 }
 
 /**
-* Display a loading screen after a user come back from provider and while WSL is procession his profile, contacts, etc.
+* Display a loading screen after a user come back from provider and while WPL is procession his profile, contacts, etc.
 *
 * Note:
 *   In case you want to customize the content generated, you may redefine this function

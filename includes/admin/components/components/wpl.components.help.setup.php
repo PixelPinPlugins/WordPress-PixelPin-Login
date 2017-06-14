@@ -2,8 +2,12 @@
 /*!
 * WordPress PixelPin Login
 *
-* http://miled.github.io/wordpress-pixelpin-login/ | https://github.com/miled/wordpress-pixelpin-login
-*  (c) 2011-2015 Mohamed Mrassi and contributors | http://wordpress.org/plugins/wordpress-pixelpin-login/
+* 2017 PixelPin and contributors https://github.com/PixelPinPlugins/WordPress-PixelPin-Login
+* 
+* Original Authors of WSL
+* -----------------------
+* http://miled.github.io/wordpress-social-login/ | https://github.com/miled/wordpress-social-login
+*  (c) 2011-2015 Mohamed Mrassi and contributors | http://wordpress.org/plugins/wordpress-social-login/
 */
 
 /**
@@ -23,7 +27,7 @@ function wpl_component_components_setup()
 	GLOBAL $WORDPRESS_PIXELPIN_LOGIN_COMPONENTS;
 ?>
 <div style="padding: 15px; margin-bottom: 8px; border: 1px solid #ddd; background-color: #fff;box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);">
-	<?php _wpl_e( "By default, only the three WSL core components are enabled. You can selectively enable or disable any of the non-core components by using the form below. Your WSL installation will continue to function. However, the features of the disabled components will no longer be accessible", 'wordpress-pixelpin-login' ) ?>.
+	<?php _wpl_e( "By default, only the three WPL core components are enabled. You can selectively enable or disable any of the non-core components by using the form below. Your WPL installation will continue to function. However, the features of the disabled components will no longer be accessible", 'wordpress-pixelpin-login' ) ?>.
 </div>
 
 <form action="" method="post">

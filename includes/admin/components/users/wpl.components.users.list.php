@@ -1,9 +1,12 @@
 <?php
 /*!
 * WordPress PixelPin Login
+* 2017 PixelPin and contributors https://github.com/PixelPinPlugins/WordPress-PixelPin-Login
 *
-* http://miled.github.io/wordpress-pixelpin-login/ | https://github.com/miled/wordpress-pixelpin-login
-*  (c) 2011-2015 Mohamed Mrassi and contributors | http://wordpress.org/plugins/wordpress-pixelpin-login/
+* Original Authors of WSL
+* -----------------------
+* http://miled.github.io/wordpress-social-login/ | https://github.com/miled/wordpress-social-login
+*  (c) 2011-2015 Mohamed Mrassi and contributors | http://wordpress.org/plugins/wordpress-social-login/
 */
 
 // Exit if accessed directly
@@ -149,7 +152,7 @@ function wpl_component_users_list()
 								<?php
 									$delete_url = wp_nonce_url( 'options-general.php?page=wordpress-pixelpin-login&wplp=users&delete=' . $user_id );
 								?>
-								<a style="color: #a00;" href="<?php echo $delete_url ?>" onClick="return confirmDeleteWSLUser();"><?php _wpl_e("Delete", 'wordpress-pixelpin-login') ?></a>
+								<a style="color: #a00;" href="<?php echo $delete_url ?>" onClick="return confirmDeleteWPLUser();"><?php _wpl_e("Delete", 'wordpress-pixelpin-login') ?></a>
 							</span>
 						</div>
 					</td>
@@ -206,7 +209,7 @@ function wpl_component_users_list()
 	}
 ?>
 <script>
-	function confirmDeleteWSLUser()
+	function confirmDeleteWPLUser()
 	{
 		return confirm( <?php echo json_encode( _wpl__("Are you sure you want to delete the user's pixelpin profiles and contacts?\n\nNote: The associated WordPress user won't be deleted.", 'wordpress-pixelpin-login') ) ?> );
 	}
@@ -221,7 +224,7 @@ function wpl_component_users_list()
 
 function wpl_component_users_delete_pixelpin_profiles()
 {
-	// If action eq delete WSL user profiles
+	// If action eq delete WPL user profiles
 	if( isset( $_REQUEST['delete'] ) && isset( $_REQUEST['_wpnonce'] ) && wp_verify_nonce( $_REQUEST['_wpnonce'] ) )
 	{
 		$uid = (int) $_REQUEST['delete'];
@@ -235,7 +238,7 @@ function wpl_component_users_delete_pixelpin_profiles()
 			?>
 				<div class="fade updated" style="margin: 0px 0px 10px;">
 					<p>
-						<?php echo sprintf( _wpl__( "WSL user ID #%d: <b>%s</b>  profiles and contacts has been deleted. Note that the associated WordPress user wasn't deleted", 'wordpress-pixelpin-login'), $uid, $user_data->user_login ) ?>.
+						<?php echo sprintf( _wpl__( "WPL user ID #%d: <b>%s</b>  profiles and contacts has been deleted. Note that the associated WordPress user wasn't deleted", 'wordpress-pixelpin-login'), $uid, $user_data->user_login ) ?>.
 					</p>
 				</div>
 			<?php

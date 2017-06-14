@@ -1,13 +1,16 @@
 <?php
 /*!
 * WordPress PixelPin Login
+* 2017 PixelPin and contributors https://github.com/PixelPinPlugins/WordPress-PixelPin-Login
 *
-* http://miled.github.io/wordpress-pixelpin-login/ | https://github.com/miled/wordpress-pixelpin-login
-*  (c) 2011-2015 Mohamed Mrassi and contributors | http://wordpress.org/plugins/wordpress-pixelpin-login/
+* Original Authors of WSL
+* -----------------------
+* http://miled.github.io/wordpress-social-login/ | https://github.com/miled/wordpress-social-login
+*  (c) 2011-2015 Mohamed Mrassi and contributors | http://wordpress.org/plugins/wordpress-social-login/
 */
 
 /**
-* Generate WSL notices end errors pages.
+* Generate WPL notices end errors pages.
 */
 
 // Exit if accessed directly
@@ -123,7 +126,7 @@ if( ! function_exists( 'wpl_render_notice_page' ) )
 *
 * This function differ than wpl_render_notice_page as it have some extra parameters and also should allow debugging
 *
-* This function is used when WSL fails to authenticated a user with pixelpin networks
+* This function is used when WPL fails to authenticated a user with pixelpin networks
 *
 * Note:
 *   In case you want to customize the content generated, you may redefine this function

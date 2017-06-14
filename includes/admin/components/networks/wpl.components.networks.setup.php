@@ -1,9 +1,12 @@
 <?php
 /*!
 * WordPress PixelPin Login
+* 2017 PixelPin and contributors https://github.com/PixelPinPlugins/WordPress-PixelPin-Login
 *
-* http://miled.github.io/wordpress-pixelpin-login/ | https://github.com/miled/wordpress-pixelpin-login
-*  (c) 2011-2015 Mohamed Mrassi and contributors | http://wordpress.org/plugins/wordpress-pixelpin-login/
+* Original Authors of WSL
+* -----------------------
+* http://miled.github.io/wordpress-social-login/ | https://github.com/miled/wordpress-social-login
+*  (c) 2011-2015 Mohamed Mrassi and contributors | http://wordpress.org/plugins/wordpress-social-login/
 */
 
 /**
@@ -188,15 +191,13 @@ function wpl_component_networks_setup()
 								<b><?php _wpl_e("Notes", 'wordpress-pixelpin-login') ?>:</b>
 							</p>
 							<p>
-								      1. <?php echo sprintf( _wpl__("<b>%s</b> do not require an external application, however if the Web API Key is provided, then WSL will be able to get more information about the connected %s users", 'wordpress-pixelpin-login'), $provider_name , $provider_name ) ?>.
+								      1. <?php echo sprintf( _wpl__("<b>%s</b> do not require an external application, however if the Web API Key is provided, then WPL will be able to get more information about the connected %s users", 'wordpress-pixelpin-login'), $provider_name , $provider_name ) ?>.
 								<br />2. <?php echo sprintf( _wpl__("<b>%s</b> do not provide their user's email address and by default a random email will then be generated for them instead", 'wordpress-pixelpin-login'), $provider_name ) ?>.
 
 								<?php _wpl_e('To change this behaviour and to force new registered users to provide their emails before they get in, goto <b><a href="options-general.php?page=wordpress-pixelpin-login&wplp=bouncer">Bouncer</a></b> and enable <b>Profile Completion</b>', 'wordpress-pixelpin-login') ?>.
 							</p>
 						</div>
 					<?php elseif ( $provider_new_app_link && strlen( trim( get_option( 'wpl_settings_' . $provider_id . '_app_secret' ) ) ) == 0 ) : ?>
-						<div class="fade error">
-						</div>
 					<?php elseif ( in_array( $provider_id, array( "Twitter", "Identica", "Tumblr", "Goodreads", "500px", "Vkontakte", "Gowalla", "Steam" ) ) ) : ?>
 						<div class="fade updated">
 							<p>

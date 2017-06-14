@@ -1,4 +1,4 @@
-#### WSL Test unit
+#### WPL Test unit
 
 This is still a work in progress.
 
@@ -24,7 +24,7 @@ $ wget https://phar.phpunit.de/phpunit.phar
 $ php phpunit.phar
 ```
 
-.4 Setup and run WSL tests
+.4 Setup and run WPL tests
 
 ```
 $ export WP_TESTS_DIR=/tmp/wordpress-tests 

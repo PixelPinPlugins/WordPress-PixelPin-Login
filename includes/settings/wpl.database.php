@@ -1,18 +1,21 @@
 <?php
 /*!
 * WordPress PixelPin Login
+* 2017 PixelPin and contributors https://github.com/PixelPinPlugins/WordPress-PixelPin-Login
 *
-* http://miled.github.io/wordpress-pixelpin-login/ | https://github.com/miled/wordpress-pixelpin-login
-*  (c) 2011-2015 Mohamed Mrassi and contributors | http://wordpress.org/plugins/wordpress-pixelpin-login/
+* Original Authors of WSL
+* -----------------------
+* http://miled.github.io/wordpress-social-login/ | https://github.com/miled/wordpress-social-login
+*  (c) 2011-2015 Mohamed Mrassi and contributors | http://wordpress.org/plugins/wordpress-social-login/
 */
 
 /**
-* Create WSL database tables upon installation
+* Create WPL database tables upon installation
 *
 * When WSl is activated, wpl_database_migration_process() will attempt to create or upgrade the required database
 * tables.
 *
-* Currently there is 2 tables used by WSL :
+* Currently there is 2 tables used by WPL :
 *	- wplusersprofiles:  where we store users profiles
 *	- wpluserscontacts:  where we store users contact lists
 */

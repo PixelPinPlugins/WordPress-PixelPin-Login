@@ -1,32 +1,35 @@
 <?php
 /*!
 * WordPress PixelPin Login
+* 2017 PixelPin and contributors https://github.com/PixelPinPlugins/WordPress-PixelPin-Login
 *
-* http://miled.github.io/wordpress-pixelpin-login/ | https://github.com/miled/wordpress-pixelpin-login
-*  (c) 2011-2015 Mohamed Mrassi and contributors | http://wordpress.org/plugins/wordpress-pixelpin-login/
+* Original Authors of WSL
+* -----------------------
+* http://miled.github.io/wordpress-social-login/ | https://github.com/miled/wordpress-social-login
+*  (c) 2011-2015 Mohamed Mrassi and contributors | http://wordpress.org/plugins/wordpress-social-login/
 */
 
 /**
 * Authenticate users via pixelpin networks.
 *
-* Ref: http://miled.github.io/wordpress-pixelpin-login/developer-api-authentication.html
+* Ref: http://miled.github.io/wordpress-social-login/developer-api-authentication.html
 **
-* Side note: I don't usually over-comment codes, but this is the main WSL script and I had to since
+* Side note: I don't usually over-comment codes, but this is the main WPL script and I had to since
 *            many users with diffrent "skill levels" may want to understand how this piece of code works.
 **
-* To sum things up, here is how WSL works (bit hard to explain, so bare with me):
+* To sum things up, here is how WPL works (bit hard to explain, so bare with me):
 *
 * Let assume a user come to page at our website and he click on of the providers icons in order connect.
 *
-*  - If &action=wordpress_pixelpin_authenticate is found in the current url, then WSL will display a loading screen,
+*  - If &action=wordpress_pixelpin_authenticate is found in the current url, then WPL will display a loading screen,
 *  - That loading screen will refresh it self adding &redirect_to_provider=ture to the url, which will trigger the next step,
-*  - Next, WSL will instantiate Hybridauth main class, build the required provider config then initiate the auth protocol /hybridauth/?hauth.start=PROVIDER_ID,
+*  - Next, WPL will instantiate Hybridauth main class, build the required provider config then initiate the auth protocol /hybridauth/?hauth.start=PROVIDER_ID,
 *  - Hybridauth will redirect the user to the selected provider site to ask for his consent (authorisation to access his profile),
 *  - If the user gives his authorisation for your application, the provider will redirect the user back to Hybridauth entry point /hybridauth/?hauth.done=PROVIDER_ID,
 *  - Hybridauth will redirect the user to the given callback url.
-*  - In that callback url, WSL will display a second loading screen This loading screen will generate and submit a form with a hidden input &action= wordpress_pixelpin_authenticated to the current url which will trigger the second part of the auth process,
-*  - WSL will grab the user profile from the provider, attempt to identify him and create a new WordPress user if he doesn't exist. In this step, and when enabled, WSL will also import the user contacts and map his profile data to Buddypress xporfiles tables,
-*  - Finally, WSL will authenticate the user within WordPress (give him a sweet cookie) and redirect him back to Redirect URL
+*  - In that callback url, WPL will display a second loading screen This loading screen will generate and submit a form with a hidden input &action= wordpress_pixelpin_authenticated to the current url which will trigger the second part of the auth process,
+*  - WPL will grab the user profile from the provider, attempt to identify him and create a new WordPress user if he doesn't exist. In this step, and when enabled, WPL will also import the user contacts and map his profile data to Buddypress xporfiles tables,
+*  - Finally, WPL will authenticate the user within WordPress (give him a sweet cookie) and redirect him back to Redirect URL
 **
 * Functions execution order is the following:
 *
@@ -64,7 +67,7 @@ if( !defined( 'ABSPATH' ) ) exit;
 *
 * This function runs after WordPress has finished loading but before any headers are sent.
 * This function will analyse the current URL parameters and start the login process whenever an
-* WSL action is found: $_REQUEST['action'] eq wordpress_pixelpin_*
+* WPL action is found: $_REQUEST['action'] eq wordpress_pixelpin_*
 *
 * Example of valid origin url:
 *    wp-login.php
@@ -162,7 +165,7 @@ function wpl_process_login_begin()
 	// check if php session are working as expected by wpl
 	if( ! wpl_process_login_check_php_session() )
 	{
-		return wpl_process_login_render_notice_page( sprintf( _wpl__( 'The session identifier is missing.<br />For more information refer to WSL <a href="http://miled.github.io/wordpress-pixelpin-login/troubleshooting.html#session-error" target="_blank">Troubleshooting</a>.', 'wordpress-pixelpin-login' ), home_url() ) );
+		return wpl_process_login_render_notice_page( sprintf( _wpl__( 'The session identifier is missing.<br />For more information refer to WPL <a href="http://miled.github.io/wordpress-social-login/troubleshooting.html#session-error" target="_blank">Troubleshooting</a>.', 'wordpress-pixelpin-login' ), home_url() ) );
 	}
 
 	// HOOKABLE: selected provider name
@@ -450,7 +453,7 @@ function wpl_process_login_get_user_data( $provider, $redirect_to )
                 }
 
                 // Bouncer::Accounts linking/mapping
-                // > > not implemented yet! Planned for WSL 2.3
+                // > > not implemented yet! Planned for WPL 2.3
                 if( get_option( 'wpl_settings_bouncer_accounts_linking_enabled' ) == 1 )
                 {
                         do
@@ -469,7 +472,7 @@ function wpl_process_login_get_user_data( $provider, $redirect_to )
                 }
 
                 // Bouncer::Profile Completion
-                // > > in WSL 2.3 Profile Completion will be reworked and merged with Accounts linking
+                // > > in WPL 2.3 Profile Completion will be reworked and merged with Accounts linking
                 elseif(
                                 ( get_option( 'wpl_settings_bouncer_profile_completion_require_email' ) == 1 && empty( $hybridauth_user_email ) )
                         ||
@@ -771,7 +774,7 @@ function wpl_process_login_create_wp_user( $provider, $hybridauth_user_profile, 
 // --------------------------------------------------------------------
 
 /**
-* Store WSL user data
+* Store WPL user data
 *
 * Steps:
 *     1. Store Hybridauth user profile
@@ -788,7 +791,7 @@ function wpl_process_login_update_wpl_user_data( $is_new_user, $user_id, $provid
 	wpl_store_hybridauth_user_profile( $user_id, $provider, $hybridauth_user_profile );
 
 	// map hybridauth user profile to buddypress xprofile table, if enabled
-	// > Profile mapping will only work with new users. Profile mapping for returning users will implemented in future version of WSL.
+	// > Profile mapping will only work with new users. Profile mapping for returning users will implemented in future version of WPL.
 	if( $is_new_user )
 	{
 		wpl_buddypress_xprofile_mapping( $user_id, $provider, $hybridauth_user_profile );
@@ -821,7 +824,7 @@ function wpl_process_login_authenticate_wp_user( $user_id, $provider, $redirect_
 	}
 
 	// Bouncer::User Moderation
-	// > When Bouncer::User Moderation is enabled, WSL will check for the current user role. If equal to 'pending', then Bouncer will do the following :
+	// > When Bouncer::User Moderation is enabled, WPL will check for the current user role. If equal to 'pending', then Bouncer will do the following :
 	// 	1. Halt the authentication process,
 	// 	2. Skip setting the authentication cookies for the user,
 	// 	3. Reset the Redirect URL to the appropriate Theme My Login page.
@@ -838,7 +841,7 @@ function wpl_process_login_authenticate_wp_user( $user_id, $provider, $redirect_
 		{
 			$redirect_to = site_url( 'wp-login.php', 'login_post' ) . ( strpos( site_url( 'wp-login.php', 'login_post' ), '?' ) ? '&' : '?' ) . "pending=activation";
 
-			// send a new e-mail/activation notification - if TML not enabled, we ensure WSL to keep it quiet
+			// send a new e-mail/activation notification - if TML not enabled, we ensure WPL to keep it quiet
 			$errors = new WP_Error();
 			do_action( 'register_post', $wp_user->user_nicename, $wp_user->$user_email, $errors );
 			@ Theme_My_Login_User_Moderation::new_user_activation_notification( $user_id );
@@ -878,7 +881,7 @@ function wpl_process_login_authenticate_wp_user( $user_id, $provider, $redirect_
 
 	do_action( 'wpl_clear_user_php_session' );
 
-	// Display WSL debugging instead of redirecting the user
+	// Display WPL debugging instead of redirecting the user
 	// > this will give a complete report on what wpl did : database queries and fired hooks
 	// wpl_display_dev_mode_debugging_area(); die(); // ! keep this line commented unless you know what you are doing :)
 
@@ -1006,7 +1009,7 @@ function wpl_process_login_get_provider_adapter( $provider )
 * Returns redirect_to (callback url)
 *
 * By default, once a user  authenticate, he will be automatically redirected to the page where he come from (referer).
-* If WSL wasn't able to identify the referer url (or if the user come wp-login.php), then they will be redirected to
+* If WPL wasn't able to identify the referer url (or if the user come wp-login.php), then they will be redirected to
 * Widget::Redirect URL instead.
 *
 * When Widget::Force redirection is set to Yes, users will be always redirected to Widget::Redirect URL.
@@ -1087,7 +1090,7 @@ function wpl_process_login_render_error_page( $e, $config = null, $provider = nu
 		case 2 : $message = sprintf( __wpl__("WordPress PixelPin Login is not properly configured.<br /> <b>%s</b> need to be properly configured.", 'wordpress-pixelpin-login'), $provider ); break;
 		case 3 : $message = _wpl__("Unknown or disabled provider.", 'wordpress-pixelpin-login'); break;
 		case 4 : $message = sprintf( _wpl__("WordPress PixelPin Login is not properly configured.<br /> <b>%s</b> requires your application credentials.", 'wordpress-pixelpin-login'), $provider );
-			 $notes   = sprintf( _wpl__("<b>What does this error mean ?</b><br />Most likely, you didn't setup the correct application credentials for this provider. These credentials are required in order for <b>%s</b> users to access your website and for WordPress PixelPin Login to work.", 'wordpress-pixelpin-login'), $provider ) . _wpl__('<br />Instructions for use can be found in the <a href="http://miled.github.io/wordpress-pixelpin-login/networks.html" target="_blank">User Manual</a>.', 'wordpress-pixelpin-login');
+			 $notes   = sprintf( _wpl__("<b>What does this error mean ?</b><br />Most likely, you didn't setup the correct application credentials for this provider. These credentials are required in order for <b>%s</b> users to access your website and for WordPress PixelPin Login to work.", 'wordpress-pixelpin-login'), $provider ) . _wpl__('<br />Instructions for use can be found in the <a href="http://miled.github.io/wordpress-social-login/networks.html" target="_blank">User Manual</a>.', 'wordpress-pixelpin-login');
 			 break;
 		case 5 : $message = sprintf( _wpl__("Authentication failed. Either you have cancelled the authentication or <b>%s</b> refused the connection.", 'wordpress-pixelpin-login'), $provider ); break;
 		case 6 : $message = sprintf( _wpl__("Request failed. Either you have cancelled the authentication or <b>%s</b> refused the connection.", 'wordpress-pixelpin-login'), $provider ); break;

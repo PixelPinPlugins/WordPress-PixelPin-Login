@@ -42,7 +42,7 @@ class Hybrid_Providers_PixelPin extends Hybrid_Provider_Model_OAuth2
 		curl_setopt($ch, CURLOPT_USERAGENT      , $this->api->curl_useragent );
 		curl_setopt($ch, CURLOPT_CONNECTTIMEOUT , $this->api->curl_connect_time_out );
 		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER , $this->api->curl_ssl_verifypeer );
-		curl_setopt($ch, CURLOPT_SSL_VERIFYHOST , $this->curl_ssl_verifyhost );
+		curl_setopt($ch, CURLOPT_SSL_VERIFYHOST , $this->api->curl_ssl_verifyhost );
 
 	        if (is_array($http_headers)) {
         	    $header = array();
