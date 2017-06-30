@@ -34,6 +34,25 @@ if( ! function_exists( 'wpl_render_notice_page' ) )
 	function wpl_render_notice_page( $message )
 	{
 		$assets_base_url = WORDPRESS_PIXELPIN_LOGIN_PLUGIN_URL . 'assets/img/';
+		
+		$provider = 'pixelpin';
+		// get idp adapter
+		$adapter = wpl_process_login_get_provider_adapter( $provider );
+
+		$config = $adapter->config;
+
+		// if user authenticated successfully with pixelpin network
+		if( $adapter->isUserConnected() )
+		{
+			// grab user profile via hybridauth api
+			$hybridauth_user_profile = $adapter->getUserProfile();
+		}
+
+		$hybridauth_user_email       = sanitize_email( $hybridauth_user_profile->email );
+		$assets_base_url = WORDPRESS_PIXELPIN_LOGIN_PLUGIN_URL . 'assets/img/';
+		$requested_user_email        = isset( $_REQUEST["user_email"] ) ? trim( $_REQUEST["user_email"] ) : $hybridauth_user_email;
+		$requested_user_email        = apply_filters( 'wpl_new_users_gateway_alter_requested_email', $requested_user_email );
+		$hybridauth_user_email       = sanitize_email( $hybridauth_user_profile->email );
 ?>
 <!DOCTYPE html>
 	<head>
@@ -99,6 +118,11 @@ if( ! function_exists( 'wpl_render_notice_page' ) )
 					<td align="center">
 						<div class="notice-message">
 							<?php echo nl2br( $message ); ?>
+							<?php if ( wpl_wp_email_exists( $requested_user_email ) )
+								{
+									echo _wpl__( 'If you\'ve signed up to this website using PixelPin but have no password, <a href="/wp-login.php?action=lostpassword">you\'ll need to obtain a new password.</a>', 'wordpress-pixelpin-login' );
+								}
+							?>
 						</div>
 					</td>
 				</tr>

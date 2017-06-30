@@ -67,7 +67,6 @@ class OAuth2Client
 
 	public function authenticate( $code )
 	{
-           error_log("OAuth2Client::authenticate called".PHP_EOL, 3, "/home/luke/mylog.log");
 		$params = array(
 			"client_id"     => $this->client_id,
 			"client_secret" => $this->client_secret,

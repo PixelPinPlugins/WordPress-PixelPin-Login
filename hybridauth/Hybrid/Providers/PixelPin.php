@@ -10,6 +10,26 @@
  * 
  * http://hybridauth.sourceforge.net/userguide/IDProvider_info_PixelPin.html
  */
+
+define( 'WP_USE_THEMES', false );
+
+/** Absolute path to the WordPress directory. */
+/** Sets up WordPress vars and included files. */
+/** Absolute path to the WordPress directory. */
+
+$route = getcwd();
+
+$remove = strstr($route, 'wp-content/plugins/');
+
+$pluginName1 = str_replace("wp-content/plugins/", "", $remove);
+
+$pluginName2 = str_replace("/hybridauth", "", $pluginName1);
+
+$root = str_replace("wp-content/plugins/" . $pluginName2 . "/hybridauth", "", getcwd() . "/wp-load.php");
+
+/** Sets up WordPress vars and included files. */
+require_once($root);
+
 class Hybrid_Providers_PixelPin extends Hybrid_Provider_Model_OAuth2
 { 
     /**
@@ -24,7 +44,51 @@ class Hybrid_Providers_PixelPin extends Hybrid_Provider_Model_OAuth2
 		$this->api->token_url     = "https://login.pixelpin.io/connect/token"; 
 
 		$this->api->sign_token_name = "access_token";
-		$this->scope = "openid email profile address phone";
+		
+		$addressEnabled = get_option('wpl_settings_pixelpin_address_enabled');
+		
+		$phoneEnabled = get_option('wpl_settings_pixelpin_phone_enabled');
+
+		if ($addressEnabled == '1' && $phoneEnabled == '1')
+		{
+			$scope = "openid email profile phone address";
+		}
+		else
+		{
+			if ($addressEnabled == '1')
+			{
+				$scope = "openid email profile address";
+			}
+			else
+			{
+				if ($phoneEnabled == '1')
+				{
+					$scope = "openid email profile phone";
+				}
+				else
+				{
+					$scope = "openid email profile";
+				}
+			}
+			if ($phoneEnabled == '1')
+			{
+				$scope = "openid email profile phone";
+			}
+			else
+			{
+				if ($addressEnabled == '1')
+				{
+					$scope = "openid email profile address";
+				}
+				else
+				{
+					$scope = "openid email profile";
+				}
+			}
+		}
+
+		$this->scope = $scope;
+		
 	}
 
 	public function request( $url, $params = array(), $type="GET", $http_headers = null )

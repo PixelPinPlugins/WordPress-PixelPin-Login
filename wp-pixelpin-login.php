@@ -198,6 +198,7 @@ require_once( WORDPRESS_PIXELPIN_LOGIN_ABS_PATH . 'includes/services/wpl.authent
 require_once( WORDPRESS_PIXELPIN_LOGIN_ABS_PATH . 'includes/services/wpl.mail.notification.php'    ); // Emails and notifications
 require_once( WORDPRESS_PIXELPIN_LOGIN_ABS_PATH . 'includes/services/wpl.user.avatar.php'          ); // Display users avatar
 require_once( WORDPRESS_PIXELPIN_LOGIN_ABS_PATH . 'includes/services/wpl.user.data.php'            ); // User data functions (database related)
+require_once( WORDPRESS_PIXELPIN_LOGIN_ABS_PATH . 'includes/services/wpl.user.fields.php'		   );
 require_once( WORDPRESS_PIXELPIN_LOGIN_ABS_PATH . 'includes/services/wpl.utilities.php'            ); // Unclassified functions & utilities
 require_once( WORDPRESS_PIXELPIN_LOGIN_ABS_PATH . 'includes/services/wpl.watchdog.php'             ); // WPL logging agent
 
