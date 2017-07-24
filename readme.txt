@@ -1,9 +1,9 @@
 === WordPress PixelPin Login ===
-Contributors: miled, pixelpin
-Tags: login, register, comment, pixelpin
+Contributors: pixelpinplugins, callumbrankin, miled
+Tags: login, register, pixelpin
 Requires at least: 3.0
 Tested up to: 4.3
-Stable tag: 1.0.0
+Stable tag: 1.0.3
 License: MIT License
 License URI: http://opensource.org/licenses/MIT
 
@@ -25,4 +25,4 @@ Features
 
 Installation Instructions
 ------------
-Step-by-step Installation instructions can be found on our dedicated developer site.
+Step-by-step Installation instructions can be found on our [dedicated developer site](http://developer.pixelpin.io/wordpress.php).

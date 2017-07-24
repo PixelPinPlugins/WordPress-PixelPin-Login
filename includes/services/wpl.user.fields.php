@@ -7,7 +7,7 @@ add_action( 'edit_user_profile', 'wpl_extra_user_profile_fields' );
 */
 function wpl_add_stylesheet()
 {
-	wp_register_style( "wpl-fields", WORDPRESS_PIXELPIN_LOGIN_ABS_PATH . "assets/css/fields.css" );
+	wp_register_style( "wpl-fields", WORDPRESS_PIXELPIN_LOGIN_PLUGIN_URL . "assets/css/fields.css" );
 	wp_enqueue_style( "wpl-fields" );
 }
 
