@@ -17,7 +17,6 @@ if( !defined( 'ABSPATH' ) ) exit;
 
 // --------------------------------------------------------------------
 
-session_id() or session_start();
 
 global $WORDPRESS_PIXELPIN_LOGIN_VERSION;
 global $WORDPRESS_PIXELPIN_LOGIN_PROVIDERS_CONFIG;
@@ -26,7 +25,13 @@ global $WORDPRESS_PIXELPIN_LOGIN_ADMIN_TABS;
 
 $WORDPRESS_PIXELPIN_LOGIN_VERSION = "1.0.0";
 
-$_SESSION["wpl::plugin"] = "WordPress PixelPin Login " . $WORDPRESS_PIXELPIN_LOGIN_VERSION;
+
+function wpl_plugin_version() {
+	$WORDPRESS_PIXELPIN_LOGIN_VERSION = "1.0.0";
+	$wplPluginVersion = "WordPress PixelPin Login " . $WORDPRESS_PIXELPIN_LOGIN_VERSION;
+	
+	return $wplPluginVersion;
+}
 
 // --------------------------------------------------------------------
 
