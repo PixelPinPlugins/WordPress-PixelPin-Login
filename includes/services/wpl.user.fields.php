@@ -2,6 +2,18 @@
 add_action( 'show_user_profile', 'wpl_extra_user_profile_fields' );
 add_action( 'edit_user_profile', 'wpl_extra_user_profile_fields' );
 
+/**
+* Enqueue WPL CSS file
+*/
+function wpl_add_stylesheet()
+{
+	wp_register_style( "wpl-fields", WORDPRESS_PIXELPIN_LOGIN_ABS_PATH . "assets/css/fields.css" );
+	wp_enqueue_style( "wpl-fields" );
+}
+
+add_action( 'admin_init'   , 'wpl_add_stylesheet' );
+//add_action( 'login_enqueue_scripts', 'wpl_add_stylesheets' );
+
 function wpl_extra_user_profile_fields( $user ) { ?>
 <?php
 global $wpdb;

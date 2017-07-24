@@ -19,7 +19,7 @@ if ( !defined( 'ABSPATH' ) ) exit;
 // --------------------------------------------------------------------
 
 /**
-* This should be reworked somehow.. the code has become spaghettis
+* 
 */
 function wpl_component_networks_setup()
 {
