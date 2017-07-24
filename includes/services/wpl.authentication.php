@@ -57,6 +57,8 @@
 *     .       .       .       wpl_process_login_authenticate_wp_user()
 */
 
+require_once( WORDPRESS_PIXELPIN_LOGIN_ABS_PATH . 'wp-pixelpin-login.php' );
+
 // Exit if accessed directly
 if( !defined( 'ABSPATH' ) ) exit;
 
@@ -1194,7 +1196,9 @@ function wpl_get_provider_name_by_id( $provider_id)
 */
 function wpl_process_login_check_php_session()
 {
-	if( isset( $_SESSION["wpl::plugin"] ) && $_SESSION["wpl::plugin"] )
+	$wplPluginVersion = wpl_plugin_version();
+	
+	if( isset( $wplPluginVersion ) && $wplPluginVersion )
 	{
 		return true;
 	}

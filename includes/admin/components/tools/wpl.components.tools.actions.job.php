@@ -9,6 +9,8 @@
 *  (c) 2011-2015 Mohamed Mrassi and contributors | http://wordpress.org/plugins/wordpress-social-login/
 */
 
+require_once( WORDPRESS_PIXELPIN_LOGIN_ABS_PATH . 'wp-pixelpin-login.php' );
+
 // Exit if accessed directly
 if ( !defined( 'ABSPATH' ) ) exit;
 
@@ -66,7 +68,9 @@ function wpl_component_tools_do_diagnostics()
 				</tr>
 
 				<?php
-					$test = isset( $_SESSION["wpl::plugin"] ) && $_SESSION["wpl::plugin"];
+					$wplPluginVersion = wpl_plugin_version();
+					
+					$test = isset( $wplPluginVersion ) && $wplPluginVersion;
 					// $test = 0;
 				?>
 				<tr>
@@ -680,7 +684,11 @@ MYSQL VERSION:            <?php echo $wpdb->db_version() . "\n"; ?>
 
 SESSION:                  <?php echo isset( $_SESSION ) ? 'Enabled' : 'Disabled'; echo "\n"; ?>
 SESSION:NAME:             <?php echo esc_html( ini_get( 'session.name' ) ); echo "\n"; ?>
-SESSION:WPL               <?php echo $_SESSION["wpl::plugin"]; echo "\n"; ?>
+SESSION:WPL               <?php
+								$wplPluginVersion = wpl_plugin_version();
+								
+								echo $wplPluginVersion; echo "\n"; 
+						  ?>
 
 COOKIE PATH:              <?php echo esc_html( ini_get( 'session.cookie_path' ) ); echo "\n"; ?>
 SAVE PATH:                <?php echo esc_html( ini_get( 'session.save_path' ) ); echo "\n"; ?>

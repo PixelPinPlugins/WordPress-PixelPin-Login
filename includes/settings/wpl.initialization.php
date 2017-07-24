@@ -13,6 +13,8 @@
 * Check WPL requirements and register WPL settings 
 */
 
+require_once( WORDPRESS_PIXELPIN_LOGIN_ABS_PATH . 'wp-pixelpin-login.php' );
+
 // Exit if accessed directly
 if( !defined( 'ABSPATH' ) ) exit;
 
@@ -25,10 +27,13 @@ if( !defined( 'ABSPATH' ) ) exit;
 */
 function wpl_check_requirements()
 {
+	
+	$wplPluginVersion = wpl_plugin_version();
+	
 	if
 	(
 		   ! version_compare( PHP_VERSION, '5.2.0', '>=' )
-		|| ! isset( $_SESSION["wpl::plugin"] )
+		|| ! isset( $wplPluginVersion )
 		|| ! function_exists('curl_init')
 		|| ! function_exists('json_decode')
 	)

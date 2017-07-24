@@ -141,13 +141,13 @@ function wpl_component_networks_setup()
 							<?php if ( $require_client_id ){ // key or id ? ?>
 								<tr valign="top" <?php if( ! get_option( 'wpl_settings_' . $provider_id . '_enabled' ) ) echo 'style="display:none"'; ?> class="wpl_tr_settings_<?php echo $provider_id; ?>" >
 									<td><?php _wpl_e("Client ID", 'wordpress-pixelpin-login') ?>:</td>
-									<td><input dir="ltr" type="text" name="<?php echo 'wpl_settings_' . $provider_id . '_app_id' ?>" value="<?php echo get_option( 'wpl_settings_' . $provider_id . '_app_id' ); ?>" ></td>
+									<td><input pattern=".{30,30}" require title="The Client ID is exactly 30 characters long" dir="ltr" type="text" name="<?php echo 'wpl_settings_' . $provider_id . '_app_id' ?>" value="<?php echo get_option( 'wpl_settings_' . $provider_id . '_app_id' ); ?>" ></td>
 									<td><a href="http://developer.pixelpin.io/developeraccount.php" target="_blank">Need A Client ID? Create a PixelPin Developer Account.</a></td>
 								</tr>
 							<?php } else { ?>
 								<tr valign="top" <?php if( ! get_option( 'wpl_settings_' . $provider_id . '_enabled' ) ) echo 'style="display:none"'; ?> class="wpl_tr_settings_<?php echo $provider_id; ?>" >
 									<td><?php _wpl_e("Client Key", 'wordpress-pixelpin-login') ?>:</td>
-									<td><input dir="ltr" type="text" name="<?php echo 'wpl_settings_' . $provider_id . '_app_key' ?>" value="<?php echo get_option( 'wpl_settings_' . $provider_id . '_app_key' ); ?>" ></td>
+									<td><input pattern=".{30,30}" require title="The Client Key is exactly 30 characters long" dir="ltr" type="text" name="<?php echo 'wpl_settings_' . $provider_id . '_app_key' ?>" value="<?php echo get_option( 'wpl_settings_' . $provider_id . '_app_key' ); ?>" ></td>
 									<td><a href="http://developer.pixelpin.io/developeraccount.php" target="_blank">Need A Client ID? Create a PixelPin Developer Account.</a></td>
 								</tr>
 							<?php }; ?>
@@ -155,7 +155,7 @@ function wpl_component_networks_setup()
 							<?php if( ! $require_api_key ) { ?>
 								<tr valign="top" <?php if( ! get_option( 'wpl_settings_' . $provider_id . '_enabled' ) ) echo 'style="display:none"'; ?> class="wpl_tr_settings_<?php echo $provider_id; ?>" >
 									<td><?php _wpl_e("Client Secret", 'wordpress-pixelpin-login') ?>:</td>
-									<td><input dir="ltr" type="text" name="<?php echo 'wpl_settings_' . $provider_id . '_app_secret' ?>" value="<?php echo get_option( 'wpl_settings_' . $provider_id . '_app_secret' ); ?>" ></td>
+									<td><input pattern=".{30,30}" require title="The Client Secret is exactly 30 characters long" dir="ltr" type="text" name="<?php echo 'wpl_settings_' . $provider_id . '_app_secret' ?>" value="<?php echo get_option( 'wpl_settings_' . $provider_id . '_app_secret' ); ?>" ></td>
 									<td><a href="http://developer.pixelpin.io/developeraccount.php" target="_blank">Need A Client Secret? Create a PixelPin Developer Account.</a></td>
 								</tr>
 							<?php } ?>

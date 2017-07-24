@@ -1,8 +1,8 @@
 <?php
-add_action( 'show_user_profile', 'extra_user_profile_fields' );
-add_action( 'edit_user_profile', 'extra_user_profile_fields' );
+add_action( 'show_user_profile', 'wpl_extra_user_profile_fields' );
+add_action( 'edit_user_profile', 'wpl_extra_user_profile_fields' );
 
-function extra_user_profile_fields( $user ) { ?>
+function wpl_extra_user_profile_fields( $user ) { ?>
 <?php
 global $wpdb;
 
@@ -33,7 +33,7 @@ $genderEnabled = get_option('wpl_settings_pixelpin_gender_enabled');
 	<tr <?php if( $phoneEnabled == '0' ) echo 'style="display:none"'; ?>>
 		<th><label for="phone"><?php _e("Phone Number"); ?></label></th>
 		<td>
-			<input type="text" name="phone" id="phone" value="<?php echo $row->phone ?>" class="regular-text" /><br />
+			<input type="number" name="phone" id="phone" value="<?php echo $row->phone ?>" class="regular-text" /><br />
 		</td>
 	</tr>
 </table>
@@ -76,25 +76,35 @@ $genderEnabled = get_option('wpl_settings_pixelpin_gender_enabled');
 
 <?php }
 
-add_action( 'personal_options_update', 'save_extra_user_profile_fields' );
-add_action( 'edit_user_profile_update', 'save_extra_user_profile_fields' );
+add_action( 'personal_options_update', 'wpl_save_extra_user_profile_fields' );
+add_action( 'edit_user_profile_update', 'wpl_save_extra_user_profile_fields' );
 
-function save_extra_user_profile_fields( $user_id ) {
+function wpl_save_extra_user_profile_fields( $user_id ) {
 
 	global $wpdb;
 
 	$table_name = $wpdb->prefix . "wplusersprofiles";
 
 	$userID = get_current_user_id();
+	
+	//Sanitise
+	$gender = sanitize_text_field($_POST['gender']);
+	$phone = sanitize_text_field($_POST['phone']);
+	$address = sanitize_text_field($_POST['address']);
+	$city = sanitize_text_field($_POST['city']);
+	$region = sanitize_text_field($_POST['region']);
+	$zip = sanitize_text_field($_POST['zip']);
+	$country = sanitize_text_field($_POST['country']);
+	
 
 	$data = array(
-		'gender' => $_POST['gender'],
-		'phone' => $_POST['phone'],
-		'address' => $_POST['address'],
-		'city' => $_POST['city'],
-		'region' => $_POST['region'],
-		'zip' => $_POST['zip'],
-		'country' => $_POST['country'],
+		'gender' => $gender,
+		'phone' => $phone,
+		'address' => $address,
+		'city' => $city,
+		'region' => $region,
+		'zip' => $zip,
+		'country' => $country,
 	);
 
 	$where = array( 'user_id' => $userID );
