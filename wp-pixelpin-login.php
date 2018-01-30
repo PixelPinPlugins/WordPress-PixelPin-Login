@@ -3,7 +3,7 @@
 Plugin Name: WordPress PixelPin Login
 Plugin URI: http://developer.pixelpin.io/ppwordpress.php
 Description: Allow your visitors to comment and login with pixelpin.
-Version: 1.0.3
+Version: 1.0.4
 Author: PixelPin Plugins
 Author URI: https://github.com/PixelPinPlugins
 License: MIT License
@@ -23,11 +23,11 @@ global $WORDPRESS_PIXELPIN_LOGIN_PROVIDERS_CONFIG;
 global $WORDPRESS_PIXELPIN_LOGIN_COMPONENTS;
 global $WORDPRESS_PIXELPIN_LOGIN_ADMIN_TABS;
 
-$WORDPRESS_PIXELPIN_LOGIN_VERSION = "1.0.3";
+$WORDPRESS_PIXELPIN_LOGIN_VERSION = "1.0.4";
 
 
 function wpl_plugin_version() {
-	$WORDPRESS_PIXELPIN_LOGIN_VERSION = "1.0.3";
+	$WORDPRESS_PIXELPIN_LOGIN_VERSION = "1.0.4";
 	$wplPluginVersion = "WordPress PixelPin Login " . $WORDPRESS_PIXELPIN_LOGIN_VERSION;
 	
 	return $wplPluginVersion;
