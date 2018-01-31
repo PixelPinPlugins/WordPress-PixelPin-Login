@@ -142,7 +142,7 @@ msgstr ""
 #: admin/components/buddypress/wpl.components.buddypress.setup.php:109
 #: admin/components/users/wpl.components.users.profiles.php:56
 msgid "Zip"
-msgstr ""
+msgstr "Post Code"
 
 #: admin/components/auth-paly/index.php:97
 msgid "Connect with PixelPin to get started"
