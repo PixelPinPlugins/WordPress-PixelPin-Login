@@ -3,7 +3,7 @@ Contributors: pixelpinplugins, callumbrankin, miled
 Tags: login, register, pixelpin
 Requires at least: 3.0
 Tested up to: 4.9.2
-Stable tag: 1.2.0
+Stable tag: 1.3.0
 License: MIT License
 License URI: http://opensource.org/licenses/MIT
 
