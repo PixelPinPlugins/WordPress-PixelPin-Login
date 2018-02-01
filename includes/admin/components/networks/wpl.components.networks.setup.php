@@ -40,6 +40,10 @@ function wpl_component_networks_setup()
 	}
 ?>
 <script>
+	jQuery( window ).load(function() {
+		toggleppssopreview();
+	});
+
 	function toggleproviderkeys(idp)
 	{
 		if(typeof jQuery=="undefined")
@@ -52,12 +56,35 @@ function wpl_component_networks_setup()
 		if(jQuery('#wpl_settings_' + idp + '_enabled').val()==1)
 		{
 			jQuery('.wpl_tr_settings_' + idp).show();
+			jQuery('.wpl_tr_ppsso_settings_' + idp).show();
 			JQuery('#ppenable').hide();
 		}
 		else
 		{
 			jQuery('.wpl_tr_settings_' + idp).hide();
+			jQuery('.wpl_tr_ppsso_settings_' + idp).hide();
 			jQuery('.wpl_div_settings_help_' + idp).hide();
+		}
+
+		return false;
+	}
+
+	function toggleppssosettings(idp)
+	{
+		if(typeof jQuery=="undefined")
+		{
+			alert( "Error: WordPress PixelPin Login require jQuery to be installed on your wordpress in order to work!" );
+
+			return;
+		}
+
+		if(jQuery('#wpl_settings_' + idp + '_ppsso_custom').val()==1)
+		{
+			jQuery('.wpl_tr_ppsso_settings_' + idp).show();
+		}
+		else
+		{
+			jQuery('.wpl_tr_ppsso_settings_' + idp).hide();
 		}
 
 		return false;
@@ -75,6 +102,39 @@ function wpl_component_networks_setup()
 		jQuery('.wpl_div_settings_help_' + idp).toggle();
 
 		return false;
+	}
+
+	function toggleppssopreview(){
+		var previewSSOButton = document.getElementById("previewSSObutton");
+		previewSSOButton.className = '';
+
+		var customiseDropdown = document.getElementById("wpl_settings_PixelPin_ppsso_custom");
+		var customiseValue = customiseDropdown.value;
+
+		var buttonColourDropdown = document.getElementById("wpl_settings_PixelPin_ppsso_colour");
+		var buttonColourValue = buttonColourDropdown.value;
+
+		var buttonSizeDropdown = document.getElementById("wpl_settings_PixelPin_ppsso_size");
+		var buttonSizeValue = buttonSizeDropdown.value;
+
+		var showButtonTextDropdown = document.getElementById("wpl_settings_PixelPin_ppsso_show_text");
+		var showButtonTextValue = showButtonTextDropdown.value;
+
+		var buttonText = document.getElementById("wpl_settings_PixelPin_ppsso_text");
+		var buttonTextValue = buttonText.value;
+		
+		if(customiseValue === '0'){
+			jQuery('#previewSSObutton').addClass('ppsso-btn');
+			previewSSOButton.innerHTML = 'Log In With <span class="ppsso-logotype">PixelPin</span>';
+		} else {
+			if(showButtonTextValue === '0'){
+				jQuery('#previewSSObutton').addClass('ppsso-btn ' + buttonColourValue + ' ' + buttonSizeValue);
+				previewSSOButton.innerHTML = '';
+			} else {
+				jQuery('#previewSSObutton').addClass('ppsso-btn ' + buttonColourValue + ' ' + buttonSizeValue);
+				previewSSOButton.innerHTML = buttonTextValue + ' <span class="ppsso-logotype">PixelPin</span>';
+			}
+		}
 	}
 </script>
 <?php
@@ -228,7 +288,75 @@ function wpl_component_networks_setup()
 						<?php } // if require registration ?>
 					</tbody>
 				</table>
-
+				<table class="form-table editcomment">
+					<tbody>
+						<?php if ( $provider_new_app_link ){ ?>
+							<tr <?php if( ! get_option( 'wpl_settings_' . $provider_id . '_enabled' ) ) echo 'style="display:none"'; ?> class="wpl_tr_settings_<?php echo $provider_id; ?>" >
+								<td style="width:200px"><?php _wpl_e("Do you want to customise the Log In Button?", 'wordpress-pixelpin-login') ?>:</td>
+								<td>
+									<select
+										name="<?php echo 'wpl_settings_' . $provider_id . '_ppsso_custom' ?>"
+										id="<?php echo 'wpl_settings_' . $provider_id . '_ppsso_custom' ?>"
+										onChange="toggleppssosettings('<?php echo $provider_id; ?>'); toggleppssopreview();"
+									>
+										<option value="1" <?php if( get_option( 'wpl_settings_' . $provider_id . '_ppsso_custom' )) echo "selected"; ?> ><?php _wpl_e("Yes", 'wordpress-pixelpin-login') ?></option>
+										<option value="0" <?php if( ! get_option( 'wpl_settings_' . $provider_id . '_ppsso_custom' )) echo "selected"; ?> ><?php _wpl_e("No", 'wordpress-pixelpin-login') ?></option>
+									</select>
+								</td>
+								<td style="width:260px">&nbsp;</td>
+							</tr>
+								<tr <?php if( ! get_option( 'wpl_settings_' . $provider_id . '_ppsso_custom' ) ) echo 'style="display:none"'; ?> class="wpl_tr_ppsso_settings_<?php echo $provider_id; ?>" >
+									<td style="width:200px"><?php _wpl_e("Log in Button Colour", 'wordpress-pixelpin-login') ?>:</td>
+									<td>
+										<select
+											name="<?php echo 'wpl_settings_' . $provider_id . '_ppsso_colour' ?>"
+											id="<?php echo 'wpl_settings_' . $provider_id . '_ppsso_colour' ?>"
+											onChange="toggleppssosettings('<?php echo $provider_id; ?>');  toggleppssopreview();"
+										>
+											<option value="" <?php if( get_option( 'wpl_settings_' . $provider_id . '_ppsso_colour' ) === "" ) echo "selected"; ?> ><?php _wpl_e("Default (Purple)", 'wordpress-pixelpin-login') ?></option>
+											<option value="ppsso-cyan" <?php if( get_option( 'wpl_settings_' . $provider_id . '_ppsso_colour' ) === "ppsso-cyan"  ) echo "selected"; ?> ><?php _wpl_e("Cyan", 'wordpress-pixelpin-login') ?></option>
+											<option value="ppsso-pink" <?php if( get_option( 'wpl_settings_' . $provider_id . '_ppsso_colour' ) === "ppsso-pink"  ) echo "selected"; ?> ><?php _wpl_e("Pink", 'wordpress-pixelpin-login') ?></option>
+											<option value="ppsso-white" <?php if( get_option( 'wpl_settings_' . $provider_id . '_ppsso_colour' ) === "ppsso-white"  ) echo "selected"; ?> ><?php _wpl_e("White (For Dark Backgrounds)", 'wordpress-pixelpin-login') ?></option>
+										</select>
+									</td>
+									<td style="width:260px">&nbsp;</td>
+								</tr>
+								<tr <?php if( ! get_option( 'wpl_settings_' . $provider_id . '_ppsso_custom' ) ) echo 'style="display:none"'; ?> class="wpl_tr_ppsso_settings_<?php echo $provider_id; ?>" >
+									<td style="width:200px"><?php _wpl_e("Log in Button Size", 'wordpress-pixelpin-login') ?>:</td>
+									<td>
+										<select
+											name="<?php echo 'wpl_settings_' . $provider_id . '_ppsso_size' ?>"
+											id="<?php echo 'wpl_settings_' . $provider_id . '_ppsso_size' ?>"
+											onChange="toggleppssosettings('<?php echo $provider_id; ?>');  toggleppssopreview();"
+										>
+											<option value="ppsso-logo-lg" <?php if( get_option( 'wpl_settings_' . $provider_id . '_ppsso_size' ) === "ppsso-logo-lg" ) echo "selected"; ?> ><?php _wpl_e("Default (Large)", 'wordpress-pixelpin-login') ?></option>
+											<option value="ppsso-md ppsso-logo-md" <?php if( get_option( 'wpl_settings_' . $provider_id . '_ppsso_size' ) === "ppsso-md ppsso-logo-md"  ) echo "selected"; ?> ><?php _wpl_e("Medium", 'wordpress-pixelpin-login') ?></option>
+											<option value="ppsso-sm ppsso-logo-sm" <?php if( get_option( 'wpl_settings_' . $provider_id . '_ppsso_size' ) === "ppsso-sm ppsso-logo-sm"  ) echo "selected"; ?> ><?php _wpl_e("Small", 'wordpress-pixelpin-login') ?></option>
+										</select>
+									</td>
+									<td style="width:260px">&nbsp;</td>
+								</tr>
+								<tr <?php if( ! get_option( 'wpl_settings_' . $provider_id . '_ppsso_custom' ) ) echo 'style="display:none"'; ?> class="wpl_tr_ppsso_settings_<?php echo $provider_id; ?>" >
+									<td style="width:200px"><?php _wpl_e("Show Log in Button Text?", 'wordpress-pixelpin-login') ?>:</td>
+									<td>
+										<select
+											name="<?php echo 'wpl_settings_' . $provider_id . '_ppsso_show_text' ?>"
+											id="<?php echo 'wpl_settings_' . $provider_id . '_ppsso_show_text' ?>"
+											onChange="toggleppssosettings('<?php echo $provider_id; ?>');  toggleppssopreview();"
+										>
+											<option value="1" <?php if( get_option( 'wpl_settings_' . $provider_id . '_ppsso_show_text' ) === "1" ) echo "selected"; ?> ><?php _wpl_e("Yes", 'wordpress-pixelpin-login') ?></option>
+											<option value="0" <?php if( get_option( 'wpl_settings_' . $provider_id . '_ppsso_show_text' ) === "0" ) echo "selected"; ?> ><?php _wpl_e("No", 'wordpress-pixelpin-login') ?></option>
+										</select>
+									</td>
+									<td style="width:260px">&nbsp;</td>
+								</tr>
+								<tr <?php if( ! get_option( 'wpl_settings_' . $provider_id . '_ppsso_custom' ) ) echo 'style="display:none"'; ?> valign="top" class="wpl_tr_ppsso_settings_<?php echo $provider_id; ?>" >
+									<td><?php _wpl_e("Log in Button Text (Can be empty)", 'wordpress-pixelpin-login') ?>:</td>
+									<td><input dir="ltr" type="text" onChange="toggleppssopreview();" id="<?php echo 'wpl_settings_' . $provider_id . '_ppsso_text' ?>" name="<?php echo 'wpl_settings_' . $provider_id . '_ppsso_text' ?>" value="<?php if (get_option( 'wpl_settings_' . $provider_id . '_ppsso_text' )) { echo get_option( 'wpl_settings_' . $provider_id . '_ppsso_text' ); } ?>" ></td>
+								</tr>
+						<?php } // if require registration ?>
+					</tbody>
+				</table>
 				<?php if ( get_option( 'wpl_settings_' . $provider_id . '_enabled' ) ) : ?>
 					<?php if (  $provider_id == "Steam" ) : ?>
 						<div class="fade updated">

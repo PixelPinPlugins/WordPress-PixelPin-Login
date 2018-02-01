@@ -156,6 +156,11 @@ function wpl_database_uninstall()
 		delete_option( 'wpl_settings_' . $provider['provider_id'] . '_app_key' );
 		delete_option( 'wpl_settings_' . $provider['provider_id'] . '_app_secret' );
 		delete_option( 'wpl_settings_' . $provider['provider_id'] . '_app_scope' );
+		delete_option( 'wpl_settings_' . $provider['provider_id'] . '_ppsso_colour' );
+		delete_option( 'wpl_settings_' . $provider['provider_id'] . '_ppsso_custom' );
+		delete_option( 'wpl_settings_' . $provider['provider_id'] . '_ppsso_size' );
+		delete_option( 'wpl_settings_' . $provider['provider_id'] . '_ppsso_show_text' );
+		delete_option( 'wpl_settings_' . $provider['provider_id'] . '_ppsso_text' );
 	}
 
 	delete_option('wpl_settings_buddypress_xprofile_map' );

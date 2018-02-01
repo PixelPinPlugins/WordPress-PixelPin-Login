@@ -22,6 +22,7 @@ function wpl_component_networks_sidebar()
 	$sections = array(
 		'what_is_this'   => 'wpl_component_networks_sidebar_what_is_this',
 		'add_more_idps'  => 'wpl_component_networks_sidebar_add_more_idps',
+		'auth_button_preview' => 'wpl_component_networks_sidebar_auth_button_preview',
 		'basic_insights' => 'wpl_component_networks_sidebar_basic_insights',
 	);
 
@@ -125,6 +126,74 @@ function wpl_component_networks_sidebar_add_more_idps()
 }
 
 add_action( 'wpl_component_networks_sidebar_add_more_idps', 'wpl_component_networks_sidebar_add_more_idps' );
+
+// --------------------------------------------------------------------
+
+function wpl_component_networks_sidebar_auth_button_preview()
+{
+	if( ! wp_style_is( 'wpl-widget', 'registered' ) )
+	{
+		wp_register_style( "wpl-widget", "https://developer-assets.pixelpin.io/sso-buttons/sso-button.css" );
+
+	}
+
+	wp_enqueue_style( "wpl-widget" );
+?>
+<style>
+.wp-pixelpin-login-provider-list { padding: 10px; }
+.wp-pixelpin-login-provider-list a {text-decoration: none; }
+.wp-pixelpin-login-provider-list img{ border: 0 none; }
+</style>
+<div class="postbox">
+	<div class="inside">
+		<h3><?php _wpl_e("Button preview", 'wordpress-pixelpin-login') ?></h3>
+
+		<div style="padding:0 20px;">
+			<p>
+				<?php _wpl_e("This is a preview of what the login button will look like", 'wordpress-pixelpin-login') ?>. 
+			</p>
+
+			<h4>Live:</h4>
+			<div style="width: 380px; padding: 10px; border: 1px solid #ddd; background-color: #fff;">
+				<?php 
+					$ppsso_custom = get_option('wpl_settings_pixelpin_ppsso_custom');
+					$ppsso_colour = get_option('wpl_settings_pixelpin_ppsso_colour');
+					$ppsso_size = get_option('wpl_settings_pixelpin_ppsso_size');
+					$ppsso_show_text = get_option('wpl_settings_pixelpin_ppsso_show_text');
+					$ppsso_text = get_option('wpl_settings_pixelpin_ppsso_text');
+				?>
+				<?php if(get_option('wpl_settings_pixelpin_ppsso_custom')){ ?> 
+					<a href="#" 
+						title="<?php echo sprintf( _wpl__("Connect with PixelPin %s", 'wordpress-pixelpin-login'), $provider_name ) ?>" 
+						class="ppsso-btn <?php echo $ppsso_size ?> <?php echo $ppsso_colour ?>" 
+						data-provider="<?php echo $provider_id ?>">
+						<?php if(get_option('wpl_settings_pixelpin_ppsso_show_text')){ echo $ppsso_text; ?> 
+							<span class="ppsso-logotype">PixelPin</span> 
+						<?php } ?>
+					</a>
+				<?php } else { ?>
+					<a href="#" 
+						title="<?php echo sprintf( _wpl__("Connect with PixelPin %s", 'wordpress-pixelpin-login'), $provider_name ) ?>" 
+						class="ppsso-btn" 
+						data-provider="<?php echo $provider_id ?>">
+						Log In With <span class="ppsso-logotype">PixelPin</span> 
+					</a>
+				<?php } ?>
+			</div> 
+			<h4>Preview:</h4>
+			<div style="width: 380px; padding: 10px; border: 1px solid #ddd; background-color: #fff;">
+				<a href='#' id='previewSSObutton' class='ppsso-btn <?php echo $ppsso_size ?> <?php echo $ppsso_colour ?>'>
+						<?php if(get_option('wpl_settings_pixelpin_ppsso_show_text')){ echo $ppsso_text; ?> 
+							<span class="ppsso-logotype">PixelPin</span> 
+						<?php } ?></a>
+			</div> 
+		</div>
+	</div> 
+</div> 		
+<?php
+}
+
+add_action( 'wpl_component_networks_sidebar_auth_button_preview', 'wpl_component_networks_sidebar_auth_button_preview' );
 
 // --------------------------------------------------------------------
 

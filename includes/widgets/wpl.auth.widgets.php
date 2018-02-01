@@ -221,6 +221,12 @@ function wpl_render_auth_widget( $args = array() )
 			// HOOKABLE: allow use of other icon sets
 			$provider_icon_markup = apply_filters( 'wpl_render_auth_widget_alter_provider_icon_markup', $provider_id, $provider_name, $authenticate_url );
 
+			$ppsso_custom = get_option('wpl_settings_pixelpin_ppsso_custom');
+			$ppsso_colour = get_option('wpl_settings_pixelpin_ppsso_colour');
+			$ppsso_size = get_option('wpl_settings_pixelpin_ppsso_size');
+			$ppsso_show_text = get_option('wpl_settings_pixelpin_ppsso_show_text');
+			$ppsso_text = get_option('wpl_settings_pixelpin_ppsso_text');
+
 			if( $provider_icon_markup != $provider_id )
 			{
 				echo $provider_icon_markup;
@@ -229,10 +235,23 @@ function wpl_render_auth_widget( $args = array() )
 			{
 ?>
 
-		<a rel="nofollow" href="<?php echo $authenticate_url; ?>" title="<?php echo sprintf( _wpl__("Connect with PixelPin %s", 'wordpress-pixelpin-login'), $provider_name ) ?>" class="wp-pixelpin-login-provider wp-pixelpin-login-provider-<?php echo strtolower( $provider_id ); ?>" data-provider="<?php echo $provider_id ?>">
-			<?php if( $pixelpin_icon_set == 'none' ){ echo apply_filters( 'wpl_render_auth_widget_alter_provider_name', $provider_name ); } else { ?><img alt="<?php echo $provider_name ?>" title="<?php echo sprintf( _wpl__("Connect with PixelPin %s", 'wordpress-pixelpin-login'), $provider_name ) ?>" src="<?php echo $assets_base_url . strtolower( $provider_id ) . '.png' ?>" /><?php } ?>
-
-		</a>
+			<?php if(get_option('wpl_settings_pixelpin_ppsso_custom')){ ?> 
+				<a href="<?php echo $authenticate_url; ?>" 
+					title="<?php echo sprintf( _wpl__("Connect with PixelPin %s", 'wordpress-pixelpin-login'), $provider_name ) ?>" 
+					class="ppsso-btn <?php echo $ppsso_size ?> <?php echo $ppsso_colour ?>" 
+					data-provider="<?php echo $provider_id ?>">
+					<?php if(get_option('wpl_settings_pixelpin_ppsso_show_text')){ echo $ppsso_text; ?> 
+						<span class="ppsso-logotype">PixelPin</span> 
+					<?php } ?>
+				</a>
+			<?php } else { ?>
+				<a href="<?php echo $authenticate_url; ?>" 
+					title="<?php echo sprintf( _wpl__("Connect with PixelPin %s", 'wordpress-pixelpin-login'), $provider_name ) ?>" 
+					class="ppsso-btn" 
+					data-provider="<?php echo $provider_id ?>">
+					Log In With <span class="ppsso-logotype">PixelPin</span> 
+				</a>
+			<?php } ?>
 <?php
 			}
 
@@ -507,6 +526,8 @@ add_action( 'after_signup_form', 'wpl_render_auth_widget_in_wp_register_form' );
 */
 function wpl_add_stylesheets()
 {
+	wp_register_style( "wpl-widget", "https://developer-assets.pixelpin.io/sso-buttons/sso-button.css"  );
+	
 	if( ! wp_style_is( 'wpl-widget', 'registered' ) )
 	{
 		wp_register_style( "wpl-widget", WORDPRESS_PIXELPIN_LOGIN_PLUGIN_URL . "assets/css/style.css" );
