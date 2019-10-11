@@ -223,9 +223,6 @@ function wpl_register_setting()
 		*/
 
 		register_setting( 'wpl-settings-group', 'wpl_settings_' . $provider_id . '_enabled' );
-		register_setting( 'wpl-settings-group', 'wpl_settings_' . $provider_id . '_address_enabled' );
-		register_setting( 'wpl-settings-group', 'wpl_settings_' . $provider_id . '_phone_enabled' );
-		register_setting( 'wpl-settings-group', 'wpl_settings_' . $provider_id . '_gender_enabled' );
 		//SSO Button Styling
 		register_setting( 'wpl-settings-group', 'wpl_settings_' . $provider_id . '_ppsso_custom' );
 		register_setting( 'wpl-settings-group', 'wpl_settings_' . $provider_id . '_ppsso_colour' );

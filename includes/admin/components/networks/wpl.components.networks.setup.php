@@ -219,51 +219,6 @@ function wpl_component_networks_setup()
 									<td><a href="http://developer.pixelpin.io/developeraccount.php" target="_blank">Need A Client Secret? Create a PixelPin Developer Account.</a></td>
 								</tr>
 							<?php } ?>
-								
-							<tr <?php if( ! get_option( 'wpl_settings_' . $provider_id . '_enabled' ) ) echo 'style="display:none"'; ?> class="wpl_tr_settings_<?php echo $provider_id; ?>" >
-								<td style="width:125px"><?php _wpl_e("Show User's Gender?", 'wordpress-pixelpin-login') ?>:</td>
-								<td>
-									<select
-										name="<?php echo 'wpl_settings_' . $provider_id . '_gender_enabled' ?>"
-										id="<?php echo 'wpl_settings_' . $provider_id . '_gender_enabled' ?>"
-										onChange="toggleproviderkeys('<?php echo $provider_id; ?>')"
-									>
-										<option value="1" <?php if(   get_option( 'wpl_settings_' . $provider_id . '_gender_enabled' ) ) echo "selected"; ?> ><?php _wpl_e("Yes", 'wordpress-pixelpin-login') ?></option>
-										<option value="0" <?php if( ! get_option( 'wpl_settings_' . $provider_id . '_gender_enabled' ) ) echo "selected"; ?> ><?php _wpl_e("No", 'wordpress-pixelpin-login') ?></option>
-									</select>
-								</td>
-								<td style="width:260px">&nbsp;</td>
-							</tr>
-
-							<tr <?php if( ! get_option( 'wpl_settings_' . $provider_id . '_enabled' ) ) echo 'style="display:none"'; ?> class="wpl_tr_settings_<?php echo $provider_id; ?>" >
-								<td style="width:125px"><?php _wpl_e("Require User's Phone Number?", 'wordpress-pixelpin-login') ?>:</td>
-								<td>
-									<select
-										name="<?php echo 'wpl_settings_' . $provider_id . '_phone_enabled' ?>"
-										id="<?php echo 'wpl_settings_' . $provider_id . '_phone_enabled' ?>"
-										onChange="toggleproviderkeys('<?php echo $provider_id; ?>')"
-									>
-										<option value="1" <?php if(   get_option( 'wpl_settings_' . $provider_id . '_phone_enabled' ) ) echo "selected"; ?> ><?php _wpl_e("Yes", 'wordpress-pixelpin-login') ?></option>
-										<option value="0" <?php if( ! get_option( 'wpl_settings_' . $provider_id . '_phone_enabled' ) ) echo "selected"; ?> ><?php _wpl_e("No", 'wordpress-pixelpin-login') ?></option>
-									</select>
-								</td>
-								<td style="width:260px">&nbsp;</td>
-							</tr>
-
-							<tr <?php if( ! get_option( 'wpl_settings_' . $provider_id . '_enabled' ) ) echo 'style="display:none"'; ?> class="wpl_tr_settings_<?php echo $provider_id; ?>" >
-								<td style="width:125px"><?php _wpl_e("Require User's Postal Address?", 'wordpress-pixelpin-login') ?>:</td>
-								<td>
-									<select
-										name="<?php echo 'wpl_settings_' . $provider_id . '_address_enabled' ?>"
-										id="<?php echo 'wpl_settings_' . $provider_id . '_address_enabled' ?>"
-										onChange="toggleproviderkeys('<?php echo $provider_id; ?>')"
-									>
-										<option value="1" <?php if(   get_option( 'wpl_settings_' . $provider_id . '_address_enabled' ) ) echo "selected"; ?> ><?php _wpl_e("Yes", 'wordpress-pixelpin-login') ?></option>
-										<option value="0" <?php if( ! get_option( 'wpl_settings_' . $provider_id . '_address_enabled' ) ) echo "selected"; ?> ><?php _wpl_e("No", 'wordpress-pixelpin-login') ?></option>
-									</select>
-								</td>
-								<td style="width:260px">&nbsp;</td>
-							</tr>
 
 							<tr valign="top" <?php if( ! get_option( 'wpl_settings_' . $provider_id . '_enabled' ) ) echo 'style="display:none"'; ?> class="wpl_tr_settings_<?php echo $provider_id; ?>" >
 									<td><?php _wpl_e("Redirect URI", 'wordpress-pixelpin-login') ?>:</td>
@@ -313,7 +268,7 @@ function wpl_component_networks_setup()
 											id="<?php echo 'wpl_settings_' . $provider_id . '_ppsso_colour' ?>"
 											onChange="toggleppssosettings('<?php echo $provider_id; ?>');  toggleppssopreview();"
 										>
-											<option value="" <?php if( get_option( 'wpl_settings_' . $provider_id . '_ppsso_colour' ) === "" ) echo "selected"; ?> ><?php _wpl_e("Default (Purple)", 'wordpress-pixelpin-login') ?></option>
+											<option value="" <?php if( get_option( 'wpl_settings_' . $provider_id . '_ppsso_colour' ) === "" ) echo "selected"; ?> ><?php _wpl_e("Purple (Default)", 'wordpress-pixelpin-login') ?></option>
 											<option value="ppsso-cyan" <?php if( get_option( 'wpl_settings_' . $provider_id . '_ppsso_colour' ) === "ppsso-cyan"  ) echo "selected"; ?> ><?php _wpl_e("Cyan", 'wordpress-pixelpin-login') ?></option>
 											<option value="ppsso-pink" <?php if( get_option( 'wpl_settings_' . $provider_id . '_ppsso_colour' ) === "ppsso-pink"  ) echo "selected"; ?> ><?php _wpl_e("Pink", 'wordpress-pixelpin-login') ?></option>
 											<option value="ppsso-white" <?php if( get_option( 'wpl_settings_' . $provider_id . '_ppsso_colour' ) === "ppsso-white"  ) echo "selected"; ?> ><?php _wpl_e("White (For Dark Backgrounds)", 'wordpress-pixelpin-login') ?></option>
@@ -329,8 +284,8 @@ function wpl_component_networks_setup()
 											id="<?php echo 'wpl_settings_' . $provider_id . '_ppsso_size' ?>"
 											onChange="toggleppssosettings('<?php echo $provider_id; ?>');  toggleppssopreview();"
 										>
-											<option value="ppsso-logo-lg" <?php if( get_option( 'wpl_settings_' . $provider_id . '_ppsso_size' ) === "ppsso-logo-lg" ) echo "selected"; ?> ><?php _wpl_e("Default (Large)", 'wordpress-pixelpin-login') ?></option>
-											<option value="ppsso-md ppsso-logo-md" <?php if( get_option( 'wpl_settings_' . $provider_id . '_ppsso_size' ) === "ppsso-md ppsso-logo-md"  ) echo "selected"; ?> ><?php _wpl_e("Medium", 'wordpress-pixelpin-login') ?></option>
+											<option value="ppsso-logo-lg" <?php if( get_option( 'wpl_settings_' . $provider_id . '_ppsso_size' ) === "ppsso-logo-lg" ) echo "selected"; ?> ><?php _wpl_e("Large", 'wordpress-pixelpin-login') ?></option>
+											<option value="ppsso-md ppsso-logo-md" <?php if( get_option( 'wpl_settings_' . $provider_id . '_ppsso_size' ) === "ppsso-md ppsso-logo-md"  ) echo "selected"; ?> ><?php _wpl_e("Medium (Default)", 'wordpress-pixelpin-login') ?></option>
 											<option value="ppsso-sm ppsso-logo-sm" <?php if( get_option( 'wpl_settings_' . $provider_id . '_ppsso_size' ) === "ppsso-sm ppsso-logo-sm"  ) echo "selected"; ?> ><?php _wpl_e("Small", 'wordpress-pixelpin-login') ?></option>
 										</select>
 									</td>

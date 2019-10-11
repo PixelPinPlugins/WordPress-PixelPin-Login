@@ -149,9 +149,6 @@ function wpl_database_uninstall()
 	foreach( $WORDPRESS_PIXELPIN_LOGIN_PROVIDERS_CONFIG as $provider )
 	{
 		delete_option( 'wpl_settings_' . $provider['provider_id'] . '_enabled' );
-		delete_option( 'wpl_settings_' . $provider['provider_id'] . '_address_enabled' );
-		delete_option( 'wpl_settings_' . $provider['provider_id'] . '_phone_enabled' );
-		delete_option( 'wpl_settings_' . $provider['provider_id'] . '_gender_enabled' );
 		delete_option( 'wpl_settings_' . $provider['provider_id'] . '_app_id' );
 		delete_option( 'wpl_settings_' . $provider['provider_id'] . '_app_key' );
 		delete_option( 'wpl_settings_' . $provider['provider_id'] . '_app_secret' );

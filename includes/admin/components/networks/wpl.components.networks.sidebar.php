@@ -164,7 +164,7 @@ function wpl_component_networks_sidebar_auth_button_preview()
 				?>
 				<?php if(get_option('wpl_settings_pixelpin_ppsso_custom')){ ?> 
 					<a href="#" 
-						title="<?php echo sprintf( _wpl__("Connect with PixelPin %s", 'wordpress-pixelpin-login'), $provider_name ) ?>" 
+						title="<?php echo sprintf( _wpl__("Connect with %s", 'wordpress-pixelpin-login'), $provider_name ) ?>"
 						class="ppsso-btn <?php echo $ppsso_size ?> <?php echo $ppsso_colour ?>" 
 						data-provider="<?php echo $provider_id ?>">
 						<?php if(get_option('wpl_settings_pixelpin_ppsso_show_text')){ echo $ppsso_text; ?> 
@@ -173,7 +173,7 @@ function wpl_component_networks_sidebar_auth_button_preview()
 					</a>
 				<?php } else { ?>
 					<a href="#" 
-						title="<?php echo sprintf( _wpl__("Connect with PixelPin %s", 'wordpress-pixelpin-login'), $provider_name ) ?>" 
+						title="<?php echo sprintf( _wpl__("Connect with %s", 'wordpress-pixelpin-login'), $provider_name ) ?>"
 						class="ppsso-btn" 
 						data-provider="<?php echo $provider_id ?>">
 						Log In With <span class="ppsso-logotype">PixelPin</span> 

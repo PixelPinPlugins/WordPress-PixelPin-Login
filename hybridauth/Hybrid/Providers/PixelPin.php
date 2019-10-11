@@ -39,56 +39,13 @@ class Hybrid_Providers_PixelPin extends Hybrid_Provider_Model_OAuth2
 	{
 		parent::initialize();
 
-		$this->api->api_base_url  = "https://login.pixelpin.io/connect/";
-		$this->api->authorize_url = "https://login.pixelpin.io/connect/authorize";
-		$this->api->token_url     = "https://login.pixelpin.io/connect/token"; 
+		$this->api->api_base_url  = "https://api.login.pixelpin.io/";
+		$this->api->authorize_url = "https://login.pixelpin.io/authorize";
+		$this->api->token_url     = "https://api.login.pixelpin.io/token";
 
 		$this->api->sign_token_name = "access_token";
-		
-		$addressEnabled = get_option('wpl_settings_pixelpin_address_enabled');
-		
-		$phoneEnabled = get_option('wpl_settings_pixelpin_phone_enabled');
 
-		if ($addressEnabled == '1' && $phoneEnabled == '1')
-		{
-			$scope = "openid email profile phone address";
-		}
-		else
-		{
-			if ($addressEnabled == '1')
-			{
-				$scope = "openid email profile address";
-			}
-			else
-			{
-				if ($phoneEnabled == '1')
-				{
-					$scope = "openid email profile phone";
-				}
-				else
-				{
-					$scope = "openid email profile";
-				}
-			}
-			if ($phoneEnabled == '1')
-			{
-				$scope = "openid email profile phone";
-			}
-			else
-			{
-				if ($addressEnabled == '1')
-				{
-					$scope = "openid email profile address";
-				}
-				else
-				{
-					$scope = "openid email profile";
-				}
-			}
-		}
-
-		$this->scope = $scope;
-		
+		$this->scope = "openid email profile";
 	}
 
 	public function request( $url, $params = array(), $type="GET", $http_headers = null )
@@ -166,7 +123,7 @@ class Hybrid_Providers_PixelPin extends Hybrid_Provider_Model_OAuth2
 		$parameters[$this->api->sign_token_name] = $this->api->access_token;
 		
 		$response = null;
-		$response = $this->request( "https://login.pixelpin.io/connect/userinfo", $parameters, "POST", $http_headers );
+		$response = $this->request( "https://api.login.pixelpin.io/userinfo", $parameters, "POST", $http_headers );
 		if( $response && $this->api->decode_json ){
 			$response = json_decode( $response ); 
 		}

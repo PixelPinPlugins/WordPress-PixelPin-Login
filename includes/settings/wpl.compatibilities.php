@@ -48,7 +48,7 @@ function wpl_update_compatibilities()
 
 	if( ! get_option( 'wpl_settings_connect_with_label' ) )
 	{
-		update_option( 'wpl_settings_connect_with_label', _wpl__("Connect with PixelPin:", 'wordpress-pixelpin-login') );
+		update_option( 'wpl_settings_connect_with_label', '' );
 	}
 
 	if( ! get_option( 'wpl_settings_users_avatars' ) )
@@ -152,6 +152,28 @@ function wpl_update_compatibilities()
 	if( ! get_option( 'wpl_settings_buddypress_xprofile_map' ) )
 	{
 		update_option( 'wpl_settings_buddypress_xprofile_map', '' );
+	}
+
+	# pixelpin defaults
+	if( ! get_option( 'wpl_settings_pixelpin_enabled' ) )
+	{
+		update_option( 'wpl_settings_pixelpin_enabled', '1' );
+	}
+	if( ! get_option( 'wpl_settings_pixelpin_ppsso_custom' ) )
+	{
+		update_option( 'wpl_settings_pixelpin_ppsso_custom', '1' );
+	}
+	if( ! get_option( 'wpl_settings_pixelpin_ppsso_size' ) )
+	{
+		update_option( 'wpl_settings_pixelpin_ppsso_size', 'ppsso-md ppsso-logo-md' );
+	}
+	if( ! get_option( 'wpl_settings_pixelpin_ppsso_show_text' ) )
+	{
+		update_option( 'wpl_settings_pixelpin_ppsso_show_text', '1' );
+	}
+	if( ! get_option( 'wpl_settings_pixelpin_ppsso_text' ) )
+	{
+		update_option( 'wpl_settings_pixelpin_ppsso_text', 'Log in with' );
 	}
 
 	global $WORDPRESS_PIXELPIN_LOGIN_PROVIDERS_CONFIG;
