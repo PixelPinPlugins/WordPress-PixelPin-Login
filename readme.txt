@@ -1,9 +1,9 @@
 === WordPress PixelPin Login ===
-Contributors: pixelpinplugins, callumbrankin, miled
+Contributors: pixelpinplugins, callumbrankin, miled, garethpixelpin
 Tags: login, register, pixelpin
 Requires at least: 3.0
-Tested up to: 4.9.2
-Stable tag: 1.3.0
+Tested up to: 5.2.3
+Stable tag: 1.4.0
 License: MIT License
 License URI: http://opensource.org/licenses/MIT
 
